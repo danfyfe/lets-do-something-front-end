@@ -11,14 +11,14 @@ function App() {
         <div className='title-container'>
           <h1>Let's Do Something!</h1>
         </div>
-
-        <div className='menu-container'>
+        
+        {/*<div className='menu-container'>
           <div className='menu'>
-            <div className='menu-bar'></div>
-            <div className='menu-bar'></div>
-            <div className='menu-bar'></div>
+            <div className='menu-bar-1'></div>
+            <div className='menu-bar-2'></div>
+            <div className='menu-bar-3'></div>
           </div>
-        </div>
+        </div>*/}
       </header>
       <div className='content'>
       </div>
