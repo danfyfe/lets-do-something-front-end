@@ -9,6 +9,10 @@ class EventsContainer extends React.Component {
         <h1 className='events-header'>Events</h1>
         <div className='event-cards-container'>
           <EventCard/>
+          <EventCard/>
+          <EventCard/>
+          <EventCard/>
+        
         </div>
       </div>
     )

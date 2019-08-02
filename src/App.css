@@ -46,7 +46,10 @@
 .event-cards-container {
   width: 95%;
   height: 90%;
-  margin: auto;
+  margin: 1vh auto 5vh auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .event-card {
@@ -54,7 +57,26 @@
   height: 95%;
   border: 0.5px lightgrey solid;
   border-radius: 10px;
+  margin: 1vw 1vh;
 }
+
+.event-title {
+  margin: 5% 5% 1% 5%;
+}
+
+.event-time-container {
+  margin: 1% 5% 5% 5%;
+}
+
+.event-time {
+  padding: 5%;
+  font-size: 75%;
+  color: #808080
+}
+
+
+
+
 
 
 footer {
