@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import EventsContainer from './containers/EventsContainer.js'
+
 function App() {
   return (
     <div className="main">
@@ -13,7 +15,9 @@ function App() {
         </div>
 
       </div>
-      <div className='content'>
+      <div className='main-content'>
+
+        <EventsContainer/>
       </div>
 
       <footer>

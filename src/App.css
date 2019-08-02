@@ -27,8 +27,33 @@
 }
 
 
-.content {
+.main-content {
   height: 100vh;
+}
+
+.events-container {
+  width: 90%;
+  height: 90vh;
+  border: 0.5px solid #e3e29d;
+  margin: 5vh auto;
+  border-radius: 10px;
+}
+
+.events-header {
+  margin: 1vw 2vh;
+}
+
+.event-cards-container {
+  width: 95%;
+  height: 90%;
+  margin: auto;
+}
+
+.event-card {
+  width: 25%;
+  height: 95%;
+  border: 0.5px lightgrey solid;
+  border-radius: 10px;
 }
 
 
