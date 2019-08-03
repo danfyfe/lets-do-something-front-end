@@ -33,7 +33,8 @@
 
 .events-container {
   width: 90%;
-  height: 90vh;
+  height: auto;
+  min-height: 50vh;
   border: 0.5px solid #e3e29d;
   margin: 5vh auto;
   border-radius: 10px;
@@ -43,21 +44,43 @@
   margin: 1vw 2vh;
 }
 
+@media only screen and (max-width: 600px) {
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .events-header {
+    font-size: 1.5em;
+  }
+
+  .event-card {
+    width: 100% !important;
+  }
+
+  .event-description {
+    display: none;
+  }
+
+}
+
 .event-cards-container {
   width: 95%;
   height: 90%;
   margin: 1vh auto 5vh auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .event-card {
   width: 25%;
-  height: 95%;
-  border: 0.5px lightgrey solid;
+  height: auto;
+  border: 0.5px grey solid;
   border-radius: 10px;
   margin: 1vw 1vh;
+  box-shadow: 1px 2px 3px 0px #0000006f;
 }
 
 .event-title {
@@ -72,6 +95,30 @@
   padding: 5%;
   font-size: 75%;
   color: #808080
+}
+
+.event-description {
+  /* border-top: 0.5px lightgrey solid;
+  border-bottom: 0.5px lightgrey solid; */
+  text-indent: 1em;
+  font-size: 75%;
+  height: auto;
+  padding: 5%;
+}
+
+.attendees-container {
+  min-width: 50%;
+  width: 90%;
+  height: auto;
+  margin: 0 auto 5% auto;
+  border: 0.5px silver solid;
+  border-radius: 10px;
+}
+
+.attendee-card {
+  padding: 2% 0 2% 5%;
+  margin: 1%;
+  font-size: 75%;
 }
 
 

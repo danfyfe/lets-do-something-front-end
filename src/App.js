@@ -11,7 +11,7 @@ function App() {
           <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
         </div>
         <div className='title-container'>
-          <h1>Let's Do Something!</h1>
+          <h1 className='title'>Let's Do Something!</h1>
         </div>
 
       </div>
