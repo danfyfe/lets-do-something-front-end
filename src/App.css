@@ -89,22 +89,28 @@
 }
 
 .event-time-container {
-  margin: 1% 5% 5% 5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .event-time {
-  padding: 5%;
+  padding: 2%;
   font-size: 75%;
-  color: #808080
+  color: #808080;
+  margin: auto;
+}
+
+.event-time-to {
+  font-size: 75%;
+  padding: 2%;
 }
 
 .event-description {
-  /* border-top: 0.5px lightgrey solid;
-  border-bottom: 0.5px lightgrey solid; */
   text-indent: 1em;
   font-size: 75%;
   height: auto;
-  padding: 5%;
+  padding: 2% 5%;
 }
 
 .attendees-container {

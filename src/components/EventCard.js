@@ -7,8 +7,9 @@ const EventCard = () => {
     <div className='event-card'>
       <h3 className='event-title'>Event Title</h3>
       <div className='event-time-container'>
-        <span className='event-time'>Start</span>
-        <span className='event-time'>End</span>
+        <div className='event-time'>Start</div>
+        <div className='event-time-to'>to</div>
+        <div className='event-time'>End</div>
       </div>
       <div className='event-description'>
         Event description! This is where you put the breif description of all the fun you will be having!
