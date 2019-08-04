@@ -42,8 +42,24 @@
   border-radius: 10px;
 }
 
-.calenar-day {
+.calendar {
+  width: 95%;
+  height: auto;
+  border: 0.5px solid #e3e29d;
+  margin: 1vh auto;
+  border-radius: 5px;
+}
+
+.calendar-month-container {
   
+}
+
+.calendar-month-text {
+
+}
+
+.calenar-day {
+
 }
 
 
