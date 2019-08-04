@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import EventsContainer from './containers/EventsContainer.js'
+import Calendar from './components/Calendar.js'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
       </div>
       <div className='main-content'>
-
+        <Calendar/>
         <EventsContainer/>
       </div>
 

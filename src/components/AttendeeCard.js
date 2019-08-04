@@ -3,7 +3,7 @@ import React from 'react'
 const AttendeeCard = () => {
   return(
     <div className='attendee-card'>
-      attendee!
+      First Last
     </div>
   )
 }
