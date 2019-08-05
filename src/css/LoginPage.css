@@ -1,6 +1,44 @@
-.login-logo-container {
-  width: 80%;
-  height: auto;
+body {
+  background-color: #FFDE07;
+}
+
+.login-container {
+  background-image: url(https://i.imgur.com/z0gkiOz.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fffff2;
+  width: 90%;
+  height: 90vh;
   border: 0.5px solid #e3e29d;
+  border-radius: 10px;
   margin: 5vh auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  margin: 0 auto;
+}
+
+.login-form-container {
+  width: 50%;
+  height: 80%;
+  margin: auto;
+}
+.login-form {
+  width: 50%;
+  height: 80%;
+  margin: 0 auto;
+  border: 0.5px solid #d3d3d3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  width: 50%;
+  height: 4%;
+  margin: 1% auto;
+  border: 0.5px solid #d3d3d3;
+  border-radius: 2px;
 }
