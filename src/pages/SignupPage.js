@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../css/SignUp.css';
+import '../css/Messages.css'
 import API_ENDPOINT from '../ApiEndpoint.js'
 
 import { connect } from 'react-redux'
@@ -16,6 +17,14 @@ const SignupPage = props => {
 
   const sendToLoginPage = () => {
     props.history.push('/')
+  }
+
+  const renderErrorMessage = () => {
+    return <>
+      <div className='error-message-container'>
+        <h5>{props.state.errorMessage}</h5>
+      </div>
+    </>
   }
 
   const createUser = (e) => {
@@ -52,6 +61,7 @@ const SignupPage = props => {
 
           <h3>SignUp!</h3>
 
+          {props.state.errorMessage !== '' ? renderErrorMessage() : null}
           <form className='signup-form'>
             <label>Username</label>
             <input className='signup-input' type='text' placeholder='Username' onChange={e => setUsername(e.target.value.toLowerCase())}/>
