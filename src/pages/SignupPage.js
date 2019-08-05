@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
-import '../css/SignUp.css';
-import '../css/Messages.css'
 import API_ENDPOINT from '../ApiEndpoint.js'
 
 import { connect } from 'react-redux'
 
+import ErrorMessage from '../messages/ErrorMessage.js'
+
+import '../css/SignUp.css';
 
 const SignupPage = props => {
 
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordConfirm, setPasswordConfirm] = useState('')
-  const [email, setEmail] = useState('')
+  const [ username, setUsername ] = useState('')
+  const [ password, setPassword ] = useState('')
+  const [ passwordConfirm, setPasswordConfirm ] = useState('')
+  const [ email, setEmail ] = useState('')
 
 
 
@@ -21,9 +22,7 @@ const SignupPage = props => {
 
   const renderErrorMessage = () => {
     return <>
-      <div className='error-message-container'>
-        <h5>{props.state.errorMessage}</h5>
-      </div>
+      <ErrorMessage errorMessage={props.state.errorMessage}/>
     </>
   }
 
@@ -46,7 +45,10 @@ const SignupPage = props => {
         if (data.error) {
           props.setErrorMessage(data.error)
         }
-        // localStorage.setItem('token', data.jwt)
+        localStorage.setItem('token', data.jwt)
+        if (localStorage.token !== 'undefined') {
+          props.history.push('/')
+        }
       })
   }
 
@@ -64,7 +66,7 @@ const SignupPage = props => {
           {props.state.errorMessage !== '' ? renderErrorMessage() : null}
           <form className='signup-form'>
             <label>Username</label>
-            <input className='signup-input' type='text' placeholder='Username' onChange={e => setUsername(e.target.value.toLowerCase())}/>
+            <input className='signup-input' type='text' placeholder='Username' onChange={e => setUsername(e.target.value)}/>
             <label>Email</label>
             <input className='signup-input' type='text' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
             <label>Password</label>
@@ -89,7 +91,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
     setErrorMessage: errorMessage => dispatch({type:'SET_ERROR_MESSAGE', errorMessage})
   }
 }

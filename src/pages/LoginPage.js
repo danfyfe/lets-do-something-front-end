@@ -1,13 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Redirect } from 'react-router'
+
+import { connect } from 'react-redux'
+
 import '../css/LoginPage.css';
+import '../css/Messages.css'
+import API_ENDPOINT from '../ApiEndpoint.js'
+
+import ErrorMessage from '../messages/ErrorMessage.js'
 
 
 
 const LoginPage = (props) => {
+
+  const [ username, setUsername ] = useState('')
+  const [ password, setPassword ] = useState('')
+
+
+
   const sendToSignUpPage = () => {
     props.history.push('/signup')
   }
-  return(
+
+  const renderErrorMessage = () => {
+    return <>
+      <ErrorMessage errorMessage={props.state.errorMessage}/>
+    </>
+  }
+
+  const logIn = (e) => {
+    e.preventDefault()
+    fetch(`${API_ENDPOINT}/login`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:  localStorage.getItem("token")
+      },
+      body: JSON.stringify({
+        user: { username, password }
+      })
+    }).then(resp=>resp.json())
+    .then( data => {
+      if (data.error) {
+        props.setErrorMessage(data.error)
+      }
+      localStorage.setItem('token', data.jwt)
+      if (localStorage.token !== 'undefined') {
+        props.history.push('/')
+      }
+    })
+  }
+
+
+  return( localStorage.token && localStorage.token !== 'undefined' ? <Redirect to={'/profile'}/> :
     <>
     <div className='main'>
       <div className='title-container'>
@@ -17,13 +62,13 @@ const LoginPage = (props) => {
         <div className='login-form-container'>
 
           <h3>LogIn!</h3>
-
+          {props.state.errorMessage !== '' ? renderErrorMessage() : null}
           <form className='login-form'>
             <label>Username</label>
-            <input className='login-input' type='text' placeholder='Username'/>
+            <input className='login-input' type='text' placeholder='Username' onChange={e => setUsername(e.target.value)}/>
             <label>Password</label>
-            <input className='login-input' type='password' placeholder='Password'/>
-            <button>Submit</button>
+            <input className='login-input' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+            <button onClick={logIn}>Submit</button>
           </form>
 
           <hr width={'75%'}/>
@@ -40,4 +85,15 @@ const LoginPage = (props) => {
   )
 }
 
-export default LoginPage
+const mapStateToProps = state => {
+  return { state }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
+    setErrorMessage: errorMessage => dispatch({type:'SET_ERROR_MESSAGE', errorMessage})
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(LoginPage)
