@@ -55,24 +55,42 @@
   margin: auto;
 }
 
-.rbc-month-view {
+.rbc-month-view, .rbc-time-view {
   width: 95%;
   border: 0.5px solid #e3e29d;
   margin: 3vh auto;
 }
 
-.rbc-row-rbc-month-header {
+.rbc-row, .rbc-month-header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 1% 0;
 }
 
-.rbc-month-row {
+.rbc-row {
   display: flex;
   flex-direction: row;
-  background-color: red;
-  
+  padding: 1%;
+}
+
+.rbc-date-cell {
+  height: 10vh;
+  width: 100%;
+  border: 0.25px solid #D3D3D3;
+}
+
+.rbc-date-cell a {
+  text-align: right;
+}
+
+.rbc-time-header {
+  padding: 1%;
+  margin: 0;
+}
+
+.rbc-time-content {
+
 }
 
 
