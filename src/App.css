@@ -1,3 +1,4 @@
+/* @import 'react-big-calendar/lib/sass/styles'; */
 
 .header {
   display: flex;
@@ -42,25 +43,39 @@
   border-radius: 10px;
 }
 
-.calendar {
+.rbc-toolbar {
   width: 95%;
-  height: auto;
   border: 0.5px solid #e3e29d;
-  margin: 1vh auto;
-  border-radius: 5px;
+  margin: 3vh auto;
+  display: flex;
+  flex-direction: row;
 }
 
-.calendar-month-container {
+.rbc-btn-group {
+  margin: auto;
+}
+
+.rbc-month-view {
+  width: 95%;
+  border: 0.5px solid #e3e29d;
+  margin: 3vh auto;
+}
+
+.rbc-row-rbc-month-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1% 0;
+}
+
+.rbc-month-row {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
   
 }
 
-.calendar-month-text {
 
-}
-
-.calenar-day {
-
-}
 
 
 

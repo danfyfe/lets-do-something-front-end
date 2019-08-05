@@ -1,14 +1,20 @@
 import React from 'react'
+import { Calendar, momentLocalizer } from 'react-big-calendar'
+import moment from 'moment'
 
-const Calendar = () => {
+const localizer = momentLocalizer(moment)
+
+const MyCalendar = (props) => {
   return(
     <div className='calendar-container'>
-      <div className='calendar'>
-        <div className='calendar-month'>
-        </div>
-      </div>
+      <Calendar
+        localizer={localizer}
+        events={[]}
+        startAccessor='start'
+        endAccessor='end'
+        />
     </div>
   )
 }
 
-export default Calendar
+export default MyCalendar
