@@ -1,13 +1,16 @@
 const defaultState = {
-  currentUser: {}
+  currentUser: {},
+  errorMessage: ''
 }
 
 
 function appReducer(state = defaultState, action) {
   switch (action.type) {
-    case "IDK":
+    case "SET_ERROR_MESSAGE":
 
-      return state
+      return { ...state, errorMessage: action.errorMessage}
+    case 'SET_CURRENT_USER':
+      return { ...state, currentUser: action.user}
     default:
       return state
   }

@@ -20,9 +20,9 @@ const LoginPage = (props) => {
 
           <form className='login-form'>
             <label>Username</label>
-            <input className='login-input' type='text' placeholder='  Username'/>
+            <input className='login-input' type='text' placeholder='Username'/>
             <label>Password</label>
-            <input className='login-input' type='password' placeholder='  Password'/>
+            <input className='login-input' type='password' placeholder='Password'/>
             <button>Submit</button>
           </form>
 
