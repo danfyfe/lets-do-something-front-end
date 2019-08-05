@@ -14,31 +14,62 @@ body {
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .title-container {
   margin: 0 auto;
+  text-align: center;
 }
 
 .login-form-container {
-  width: 50%;
-  height: 80%;
+  background-color: #fffff2;
+  width: 25%;
+  height: auto;
   margin: auto;
-}
-.login-form {
-  width: 50%;
-  height: 80%;
-  margin: 0 auto;
   border: 0.5px solid #d3d3d3;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
 
+.login-form-container > h3 {
+  margin: 5% auto;
+}
+
+.login-form {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+button {
+  width: 25%;
+  height: 3vh;
+  margin: 5% auto;
+  background-color: #FFDE07;
+  border-radius: 10px;
+  border: none;
+}
+
 .login-input {
   width: 50%;
-  height: 4%;
-  margin: 1% auto;
+  height: 2vh;
+  margin: 2% auto;
   border: 0.5px solid #d3d3d3;
   border-radius: 2px;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.signup-container > h4 {
+  margin: auto;
+  text-align: center;
 }
