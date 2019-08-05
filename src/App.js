@@ -1,23 +1,21 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 
-import './App.css';
+import './css/App.css';
 
 import { connect } from 'react-redux'
 
 import ProfilePage from './pages/ProfilePage.js'
-import HomePage from './pages/HomePage.js'
+import LoginPage from './pages/LoginPage.js'
 
 const  App = () => {
   return (
-    <div className="main">
-
-      <div className='main-content'>
-        <HomePage/>
-      </div>
-
-  
-    </div>
+  <>
+    <Switch>
+      <Route path='/' render={({ history }) => <LoginPage history={history} /> } />
+      <Route path='/profile' render={({ history }) => <ProfilePage history={history} /> } />
+    </Switch>
+  </>
   );
 }
 
