@@ -7,14 +7,13 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #fffff2;
-  width: 90%;
-  height: 90vh;
+  width: 50%;
+  height: 80vh;
   border: 0.5px solid #e3e29d;
   border-radius: 10px;
-  margin: 5vh auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .title-container {
@@ -24,13 +23,14 @@ body {
 
 .login-form-container {
   background-color: #fffff2;
-  width: 25%;
+  width: 40%;
   height: auto;
   margin: auto;
   border: 0.5px solid #d3d3d3;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+
 }
 
 .login-form-container > h3 {

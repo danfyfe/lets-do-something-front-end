@@ -7,10 +7,10 @@ const LoginPage = () => {
   return(
     <>
     <div className='main'>
+      <div className='title-container'>
+      <h1>Lets Do Something!</h1>
+      </div>
       <div className='login-container'>
-        <div className='title-container'>
-          <h1>Lets Do Something!</h1>
-        </div>
         <div className='login-form-container'>
 
           <h3>LogIn!</h3>
@@ -27,7 +27,7 @@ const LoginPage = () => {
             <h4>or</h4>
             <button>SignUp!</button>
           </div>
-          
+
         </div>
       </div>
     </div>
