@@ -3,7 +3,10 @@ import '../css/LoginPage.css';
 
 
 
-const LoginPage = () => {
+const LoginPage = (props) => {
+  const sendToSignUpPage = () => {
+    props.history.push('/signup')
+  }
   return(
     <>
     <div className='main'>
@@ -16,16 +19,18 @@ const LoginPage = () => {
           <h3>LogIn!</h3>
 
           <form className='login-form'>
+            <label>Username</label>
             <input className='login-input' type='text' placeholder='  Username'/>
+            <label>Password</label>
             <input className='login-input' type='password' placeholder='  Password'/>
             <button>Submit</button>
           </form>
 
           <hr width={'75%'}/>
 
-          <div className='signup-container'>
+          <div className='login-signup-container'>
             <h4>or</h4>
-            <button>SignUp!</button>
+            <button onClick={sendToSignUpPage}>SignUp!</button>
           </div>
 
         </div>

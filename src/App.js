@@ -7,12 +7,14 @@ import { connect } from 'react-redux'
 
 import ProfilePage from './pages/ProfilePage.js'
 import LoginPage from './pages/LoginPage.js'
+import SignupPage from './pages/SignupPage.js'
 
 const  App = () => {
   return (
   <>
     <Switch>
-      <Route path='/' render={({ history }) => <LoginPage history={history} /> } />
+      <Route exact path='/' render={({ history }) => <LoginPage history={history} /> } />
+      <Route path='/signup' render={({history}) => <SignupPage history={history} />} />
       <Route path='/profile' render={({ history }) => <ProfilePage history={history} /> } />
     </Switch>
   </>

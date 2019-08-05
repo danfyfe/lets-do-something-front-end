@@ -2,7 +2,7 @@ body {
   background-color: #FFDE07;
 }
 
-.login-container {
+.signup-container {
   background-image: url(https://i.imgur.com/z0gkiOz.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -21,7 +21,7 @@ body {
   text-align: center;
 }
 
-.login-form-container {
+.signup-form-container {
   background-color: #fffff2;
   width: 50%;
   height: auto;
@@ -32,11 +32,11 @@ body {
   flex-direction: column;
 }
 
-.login-form-container > h3 {
+.signup-form-container > h3 {
   margin: 5% auto;
 }
 
-.login-form {
+.signup-form {
   width: 90%;
   height: auto;
   margin: auto;
@@ -55,11 +55,11 @@ button {
 }
 
 label {
-  padding: 1%;
   font-size: 75%;
+  padding: 1%;
 }
 
-.login-input {
+.signup-input {
   width: 75%;
   height: 3vh;
   margin: 2% auto;
@@ -67,13 +67,9 @@ label {
   border-radius: 2px;
 }
 
-.login-signup-container {
+.signup-button-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 5%;
 }
 
-.login-signup-container > h4 {
-  margin: auto;
-  text-align: center;
-}
