@@ -46,7 +46,7 @@ const LoginPage = (props) => {
       }
       localStorage.setItem('token', data.jwt)
       if (localStorage.token !== 'undefined') {
-        props.history.push('/')
+        props.history.push('/profile')
       }
     })
   }

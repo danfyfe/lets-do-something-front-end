@@ -2,6 +2,8 @@ import React from 'react'
 
 import EventCard from '../components/EventCard.js'
 
+import '../css/Events.css';
+
 class EventsContainer extends React.Component {
   render(){
     return(
@@ -12,7 +14,7 @@ class EventsContainer extends React.Component {
           <EventCard/>
           <EventCard/>
           <EventCard/>
-        
+
         </div>
       </div>
     )

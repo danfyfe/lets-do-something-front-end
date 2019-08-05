@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  /* background-color: #FF5454; */
+  background-color: #FFDE07;
+  height: 12vh;
+  width: 100vw;
+}
+
+.logo-container {
+
+}
+
+.logo {
+  height: 12vh;
+  margin: 1vh 1vw;
+}
+
+.title-container {
+  margin-left: 2vw;
+  text-align: left;
+}
+
+.title {
+
+}
