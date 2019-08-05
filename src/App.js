@@ -1,30 +1,34 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom'
+
 import './App.css';
 
-import EventsContainer from './containers/EventsContainer.js'
-import Calendar from './components/Calendar.js'
+import { connect } from 'react-redux'
 
-function App() {
+import ProfilePage from './pages/ProfilePage.js'
+import HomePage from './pages/HomePage.js'
+
+const  App = () => {
   return (
     <div className="main">
-      <div className='header'>
-        <div className='logo-container'>
-          <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
-        </div>
-        <div className='title-container'>
-          <h1 className='title'>Let's Do Something!</h1>
-        </div>
 
-      </div>
       <div className='main-content'>
-        <Calendar/>
-        <EventsContainer/>
+        <HomePage/>
       </div>
 
-      <footer>
-      </footer>
+  
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return { state }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
