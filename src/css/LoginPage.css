@@ -30,7 +30,6 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-
 }
 
 .login-form-container > h3 {
