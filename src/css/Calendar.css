@@ -9,6 +9,7 @@
   border-radius: 10px;
 }
 
+
 .rbc-toolbar {
   width: 95%;
   border: 0.5px solid #e3e29d;
@@ -20,6 +21,10 @@
 
 .rbc-btn-group, .rbc-toolbar-label {
   margin: 1vh auto;
+}
+
+.rbc-btn-group > button {
+  width: auto;
 }
 
 .rbc-month-view, .rbc-time-view {
