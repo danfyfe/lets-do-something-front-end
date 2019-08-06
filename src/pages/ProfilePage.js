@@ -12,7 +12,6 @@ import Footer from '../containers/Footer.js'
 class ProfilePage extends React.Component {
 
   componentDidMount(){
-    
     fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
       headers: {
@@ -31,7 +30,7 @@ class ProfilePage extends React.Component {
     return(
 
       <>
-      <Header/>
+      <Header history={this.props.history}/>
       <Calendar/>
       <EventsContainer/>
       <Footer/>

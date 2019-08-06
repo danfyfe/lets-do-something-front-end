@@ -4,11 +4,11 @@
   /* background-color: #FF5454; */
   background-color: #FFDE07;
   height: 12vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .logo-container {
-
+  margin: auto;
 }
 
 .logo {
