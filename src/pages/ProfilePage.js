@@ -2,25 +2,16 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import API_ENDPOINT from '../ApiEndpoint.js'
+// import API_ENDPOINT from '../ApiEndpoint.js'
 
 import Header from '../containers/Header.js'
-import Calendar from '../components/Calendar.js'
-import EventsContainer from '../containers/EventsContainer.js'
+import UserInfoContainer from '../containers/UserInfoContainer.js'
 import Footer from '../containers/Footer.js'
 
 class ProfilePage extends React.Component {
 
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/profile`, {
-      method: 'POST',
-      headers: {
-        Authorization:  localStorage.getItem("token")
-      }
-    }).then(resp=>resp.json())
-    .then(user => {
-      this.props.setCurrentUser(user.user)
-    })
+
   }
 
   render(){
@@ -31,8 +22,7 @@ class ProfilePage extends React.Component {
 
       <>
       <Header history={this.props.history}/>
-      <Calendar/>
-      <EventsContainer/>
+      <UserInfoContainer/>
       <Footer/>
       </>
     )
@@ -46,7 +36,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user})
+
   }
 }
 

@@ -10,7 +10,8 @@ const SideMenu = props => {
     return <>
       <div className='side-menu'>
         <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
-        <button className='side-menu-link' onClick={()=>props.history.push('/user')}>User</button>
+        <button className='side-menu-link' onClick={()=>props.history.push('/home')}>Home</button>
+        <button className='side-menu-link' onClick={()=>props.history.push('/profile')}>Profile</button>
       </div>
     </>
   }

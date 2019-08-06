@@ -5,10 +5,10 @@ import './css/App.css';
 
 import { connect } from 'react-redux'
 
-import ProfilePage from './pages/ProfilePage.js'
+import HomePage from './pages/HomePage.js'
 import LoginPage from './pages/LoginPage.js'
 import SignupPage from './pages/SignupPage.js'
-import UserPage from './pages/UserPage.js'
+import ProfilePage from './pages/ProfilePage.js'
 
 const  App = () => {
   return (
@@ -16,8 +16,8 @@ const  App = () => {
     <Switch>
       <Route exact path='/' render={({ history }) => <LoginPage history={history} /> } />
       <Route path='/signup' render={({ history }) => <SignupPage history={history} />} />
+      <Route path='/home' render={({ history }) => <HomePage history={history} /> } />
       <Route path='/profile' render={({ history }) => <ProfilePage history={history} /> } />
-      <Route path='/user' render={({ history }) => <UserPage history={history} /> } />
     </Switch>
   </>
   );
