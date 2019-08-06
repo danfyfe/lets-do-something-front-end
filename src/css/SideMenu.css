@@ -13,11 +13,11 @@
 
 .side-menu {
   background-color: #fffff2;
-  border-left: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;
+  border: 1px solid #d3d3d3;
   border-bottom-left-radius: 10px;
   position: absolute;
   right: 0;
+  top: 12vh;
   width: 25%;
   height: 50%;
 }

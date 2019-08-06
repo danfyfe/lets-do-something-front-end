@@ -8,7 +8,9 @@ import '../css/UserInfoContainer.css';
 class UserInfoContainer extends React.Component {
   render(){
     return (<>
-
+      <div className='user-info-container'>
+        
+      </div>
       </>)
   }
 }
