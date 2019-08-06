@@ -2,6 +2,9 @@ import React from 'react'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 
+import { connect } from 'react-redux'
+
+
 import '../css/Calendar.css';
 
 const localizer = momentLocalizer(moment)
@@ -19,4 +22,14 @@ const MyCalendar = (props) => {
   )
 }
 
-export default MyCalendar
+const mapStateToProps = state => {
+  return { state }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(MyCalendar)

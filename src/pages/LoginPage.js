@@ -91,7 +91,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
     setErrorMessage: errorMessage => dispatch({type:'SET_ERROR_MESSAGE', errorMessage})
   }
 }
