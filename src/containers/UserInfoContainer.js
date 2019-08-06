@@ -2,17 +2,19 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
+import Username from '../components/UserInfo/Username.js'
+
 
 class UserInfoContainer extends React.Component {
   render(){
-    console.log(this.props.user)
-    const { username, email } = this.props.user
+    const { username, email, firstName, lastName, avatar } = this.props.user
     return (<>
       <div className='user-info-container'>
-        <label>Username: </label> <ul><li>{username}</li></ul>
-        <label>First Name: </label> <ul><li>{}</li></ul>
-        <label>Last Name: </label> <ul><li>{}</li></ul>
-        <label>Email: </label> <ul><li>{email}</li></ul>
+        <Username username={username}/>
+        <label>First Name: </label> <ul><li><span>{firstName}</span><button>Edit</button></li></ul>
+        <label>Last Name: </label> <ul><li><span>{lastName}</span><button>Edit</button></li></ul>
+        <label>Email: </label> <ul><li><span>{email}</span><button>Edit</button></li></ul>
+        <label>Avatar: </label> <ul><li><span><img src={avatar} alt='user avatar'/></span><button>Edit</button></li></ul>
       </div>
       </>)
   }
