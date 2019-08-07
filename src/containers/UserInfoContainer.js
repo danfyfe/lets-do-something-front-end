@@ -5,11 +5,12 @@ import { connect } from 'react-redux'
 // import Username from '../components/UserInfo/Username.js'
 // import FirstName from '../components/UserInfo/FirstName.js'
 import EditUserInfo from '../components/UserInfo/EditUserInfo.js'
+import EditUserImage from '../components/UserInfo/EditUserImage.js'
 
 class UserInfoContainer extends React.Component {
   render(){
 
-    const { username } = this.props.user
+    const { username, image } = this.props.user
 
     const renderEditUserInfos = () => {
       let attributeObjs = []
@@ -21,7 +22,7 @@ class UserInfoContainer extends React.Component {
 
         attributeObjs.push(attributeObj)
       }
-      let usableAttributesObjs = attributeObjs.slice(0,5)
+      let usableAttributesObjs = attributeObjs.slice(0,4)
 
       return usableAttributesObjs.map(attributeObj => {
         return <EditUserInfo username={username} attributeObj={attributeObj}/>
@@ -32,12 +33,7 @@ class UserInfoContainer extends React.Component {
     return (<>
       <div className='user-info-container'>
         {renderEditUserInfos()}
-        {/*<Username username={username}/>
-        <FirstName username={username} first_name={first_name}/>
-        <label>Last Name: </label> <ul><li><span>{lastName}</span><button>Edit</button></li></ul>
-        <label>Email: </label> <ul><li><span>{email}</span><button>Edit</button></li></ul>
-        <label>Date of Birth: </label> <ul><li><span>{dob}</span><button>Edit</button></li></ul>
-        <label>Avatar: </label> <ul><li><span><img src={avatar} alt='user avatar'/></span><button>Edit</button></li></ul>*/}
+        <EditUserImage imageUrl={image}/>
       </div>
       </>)
   }

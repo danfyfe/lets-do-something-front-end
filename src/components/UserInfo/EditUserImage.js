@@ -6,22 +6,7 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 
 
 const EditUserImage = props => {
-  const { username } = props
-  const attribute = Object.keys(props.attributeObj)[0]
-  const value = Object.values(props.attributeObj)[0]
-  // console.log('props.attributeObj', value)
-
-  const attributeWords = attribute.split('_')
-
-  let attributeTitle = ''
-
-  for (var i = 0; i < attributeWords.length; i++) {
-    let firstLetter = attributeWords[i].charAt(0).toUpperCase()
-    let restOfWord = attributeWords[i].slice(1)
-    let capitalziedWord = firstLetter + restOfWord
-    attributeTitle += capitalziedWord + ' '
-  }
-
+  const { username, imageUrl } = props
 
   const [ editing, setEditing ] = useState(false)
   const [ newAttribute, setNewAttribute ] = useState('')
@@ -35,7 +20,7 @@ const EditUserImage = props => {
   const renderEditForm = () => {
     return <>
       <form>
-        <input type='text' placeholder={'New ' + attributeTitle} onChange={(e) => setNewAttribute(e.target.value)}/>
+        <input type='text' placeholder='New Image' onChange={(e) => setNewAttribute(e.target.value)}/>
         <button onClick={updateAttribute}>Submit</button>
         <button onClick={() => setEditing(!editing)}>Cancel</button>
       </form>
@@ -45,7 +30,7 @@ const EditUserImage = props => {
   const updateAttribute = (e) => {
     e.preventDefault()
 
-    fetch(`${API_ENDPOINT}/users/${attribute}`, {
+    fetch(`${API_ENDPOINT}/users/image`, {
       method: 'PATCH',
       headers: {
         Authorization:  localStorage.getItem("token"),
@@ -68,7 +53,7 @@ const EditUserImage = props => {
 
   return(
     <>
-      <label>{attributeTitle}:</label> <ul><li><span>{value}</span>{editing ? renderEditForm() : renderEditButton()}</li></ul>
+      <label>Image:</label> <ul><li><span><img href={imageUrl} alt='user avatar'/></span>{editing ? renderEditForm() : renderEditButton()}</li></ul>
     </>
   )
 }
