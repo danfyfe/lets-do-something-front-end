@@ -28,8 +28,6 @@ const EditUserImage = props => {
     attributeTitle += capitalziedWord + ' '
   }
 
-
-
   const renderEditButton = () => {
     return <>
       <button onClick={() => setEditing(!editing)}>Edit</button>

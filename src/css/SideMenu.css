@@ -37,8 +37,15 @@
 .close-button {
   background-color: #FFDE07;
 }
+
+
+
 .side-menu-link {
   background-color: #fffff2;
+}
 
+.close-button:hover, .side-menu-link:hover {
+  background-color: #d3d3d3;
+  color: #FFF;
 }
 

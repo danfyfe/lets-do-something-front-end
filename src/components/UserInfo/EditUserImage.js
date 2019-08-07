@@ -2,30 +2,17 @@ import React, { useState } from 'react'
 
 import { connect } from 'react-redux'
 
+
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 
 const EditUserImage = props => {
   const { username, imageUrl } = props
 
-  const [ editing, setEditing ] = useState(false)
   const [ newAttribute, setNewAttribute ] = useState('')
 
-  const renderEditButton = () => {
-    return <>
-      <button onClick={() => setEditing(!editing)}>Edit</button>
-    </>
-  }
 
-  const renderEditForm = () => {
-    return <>
-      <form>
-        <input type='text' placeholder='New Image' onChange={(e) => setNewAttribute(e.target.value)}/>
-        <button onClick={updateAttribute}>Submit</button>
-        <button onClick={() => setEditing(!editing)}>Cancel</button>
-      </form>
-    </>
-  }
+
 
   const updateAttribute = (e) => {
     e.preventDefault()
@@ -46,14 +33,14 @@ const EditUserImage = props => {
         props.setErrorMessage(data.error)
       } else {
         props.setCurrentUser(data.user)
-        setEditing(!editing)
+
       }
     })
   }
 
   return(
     <>
-      <label>Image:</label> <ul><li><span><img href={imageUrl} alt='user avatar'/></span>{editing ? renderEditForm() : renderEditButton()}</li></ul>
+      <label>Image:</label> <ul><li><span><img href={imageUrl} alt='user avatar'/></span><button id='upload_widget'>Upload</button></li></ul>
     </>
   )
 }
