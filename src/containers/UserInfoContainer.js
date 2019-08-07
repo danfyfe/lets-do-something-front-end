@@ -2,26 +2,30 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import Username from '../components/UserInfo/Username.js'
-import FirstName from '../components/UserInfo/FirstName.js'
+// import Username from '../components/UserInfo/Username.js'
+// import FirstName from '../components/UserInfo/FirstName.js'
 import EditUserInfo from '../components/UserInfo/EditUserInfo.js'
 
 class UserInfoContainer extends React.Component {
   render(){
 
     const { username } = this.props.user
-    console.log('this.props.user',this.props.user)
 
     const renderEditUserInfos = () => {
       let attributeObjs = []
 
       for(let attribute in this.props.user) {
         let attributeObj = {}
+
         attributeObj[attribute] = this.props.user[attribute]
 
         attributeObjs.push(attributeObj)
       }
+      let usableAttributesObjs = attributeObjs.slice(0,5)
 
+      return usableAttributesObjs.map(attributeObj => {
+        return <EditUserInfo username={username} attributeObj={attributeObj}/>
+      })
     }
 
 

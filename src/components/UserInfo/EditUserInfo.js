@@ -6,8 +6,22 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 
 
 const EditUserInfo = props => {
-  const { username, attribute } = props
-  console.log('edit user info props',props)
+  const { username } = props
+  const attribute = Object.keys(props.attributeObj)[0]
+  const value = Object.values(props.attributeObj)[0]
+  // console.log('props.attributeObj', value)
+
+  const attributeWords = attribute.split('_')
+
+  let attributeTitle = ''
+
+  for (var i = 0; i < attributeWords.length; i++) {
+    let firstLetter = attributeWords[i].charAt(0).toUpperCase()
+    let restOfWord = attributeWords[i].slice(1)
+    let capitalziedWord = firstLetter + restOfWord
+    attributeTitle += capitalziedWord + ' '
+  }
+
 
   const [ editing, setEditing ] = useState(false)
   const [ newAttribute, setNewAttribute ] = useState('')
@@ -21,7 +35,7 @@ const EditUserInfo = props => {
   const renderEditForm = () => {
     return <>
       <form>
-        <input type='text' placeholder='New ' onChange={(e) => setNewAttribute(e.target.value)}/>
+        <input type='text' placeholder={'New ' + attributeTitle} onChange={(e) => setNewAttribute(e.target.value)}/>
         <button onClick={updateAttribute}>Submit</button>
         <button onClick={() => setEditing(!editing)}>Cancel</button>
       </form>
@@ -54,7 +68,7 @@ const EditUserInfo = props => {
 
   return(
     <>
-      <label>Username: </label> <ul><li><span>{username}</span>{editing ? renderEditForm() : renderEditButton()}</li></ul>
+      <label>{attributeTitle}:</label> <ul><li><span>{value}</span>{editing ? renderEditForm() : renderEditButton()}</li></ul>
     </>
   )
 }
