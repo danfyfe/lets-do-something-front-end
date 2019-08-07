@@ -25,7 +25,7 @@ class UserInfoContainer extends React.Component {
       let usableAttributesObjs = attributeObjs.slice(0,4)
 
       return usableAttributesObjs.map(attributeObj => {
-        return <EditUserInfo username={username} attributeObj={attributeObj}/>
+        return <EditUserInfo key={Object.keys(attributeObj)[0]} username={username} attributeObj={attributeObj}/>
       })
     }
 

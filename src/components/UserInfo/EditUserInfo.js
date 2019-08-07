@@ -6,10 +6,16 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 
 
 const EditUserImage = props => {
+  const [ editing, setEditing ] = useState(false)
+  const [ newAttribute, setNewAttribute ] = useState('')
+
   const { username } = props
+
   const attribute = Object.keys(props.attributeObj)[0]
   const value = Object.values(props.attributeObj)[0]
-  // console.log('props.attributeObj', value)
+
+  const newAttributeObj = {}
+  newAttributeObj[`${attribute}`] = newAttribute
 
   const attributeWords = attribute.split('_')
 
@@ -23,8 +29,6 @@ const EditUserImage = props => {
   }
 
 
-  const [ editing, setEditing ] = useState(false)
-  const [ newAttribute, setNewAttribute ] = useState('')
 
   const renderEditButton = () => {
     return <>
@@ -53,7 +57,7 @@ const EditUserImage = props => {
         Accept: 'application/json'
       },
       body: JSON.stringify({
-        username: username, attribute: { attribute: newAttribute }
+        username: username, attribute: newAttributeObj
       })
     }).then(resp=>resp.json())
     .then( data => {
