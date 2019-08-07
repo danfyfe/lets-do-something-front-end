@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 import API_ENDPOINT from '../ApiEndpoint.js'
 
 import Header from '../containers/Header.js'
-import EventsContainer from '../containers/EventsContainer.js'
+import Calendar from '../components/Calendar.js'
 import Footer from '../containers/Footer.js'
 
-class EventsPage extends React.Component {
+class HomePage extends React.Component {
 
   componentDidMount(){
     fetch(`${API_ENDPOINT}/profile`, {
@@ -30,7 +30,7 @@ class EventsPage extends React.Component {
 
       <>
       <Header history={this.props.history}/>
-      <EventsContainer />
+      <Calendar/>
       <Footer/>
       </>
     )
@@ -49,4 +49,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(EventsPage)
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage)

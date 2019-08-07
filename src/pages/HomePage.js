@@ -5,9 +5,8 @@ import { connect } from 'react-redux'
 import API_ENDPOINT from '../ApiEndpoint.js'
 
 import Header from '../containers/Header.js'
-import Calendar from '../components/Calendar.js'
-import EventsContainer from '../containers/EventsContainer.js'
 import Footer from '../containers/Footer.js'
+import Feed from '../containers/Feed.js'
 
 class HomePage extends React.Component {
 
@@ -31,8 +30,7 @@ class HomePage extends React.Component {
 
       <>
       <Header history={this.props.history}/>
-      <Calendar/>
-      <EventsContainer/>
+      <Feed/>
       <Footer/>
       </>
     )
