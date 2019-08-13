@@ -16,8 +16,12 @@ const UserMessagesContainer = props => {
           <h4>Sort By</h4>
           <h4>+</h4>
         </div>
-      </div>
 
+      </div>
+      
+      <UserMessageCard />
+      <UserMessageCard />
+      <UserMessageCard />
       <UserMessageCard />
     </div>
   )
