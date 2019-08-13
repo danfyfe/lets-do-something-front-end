@@ -17,7 +17,7 @@ const UserMessageCard = props => {
 
         <div className='user-message-card-top-right'>
           <div className='user-image-container'>
-             <img src='' alt='user avatar'/>
+             <img src='https://i.imgur.com/KmHDi3Q.jpg' alt='user avatar'/>
           </div>
           <p>Username</p>
         </div>
