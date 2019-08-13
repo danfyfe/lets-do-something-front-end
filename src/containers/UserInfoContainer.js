@@ -22,6 +22,7 @@ class UserInfoContainer extends React.Component {
 
         attributeObjs.push(attributeObj)
       }
+      
       let usableAttributesObjs = attributeObjs.slice(0,4)
 
       return usableAttributesObjs.map(attributeObj => {
