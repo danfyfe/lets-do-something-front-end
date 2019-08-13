@@ -7,10 +7,11 @@ import '../css/HomePage.css';
 
 
 const Feed = props => {
+  console.log(props.state.currentUser)
   return(
     <>
 
-        <UserMessagesContainer/>
+        <UserMessagesContainer />
 
     </>
   )
