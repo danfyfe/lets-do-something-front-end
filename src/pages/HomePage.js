@@ -30,7 +30,10 @@ class HomePage extends React.Component {
 
       <>
       <Header history={this.props.history}/>
-      <Feed />
+      <div className='home-page-container'>
+      <h3>Your Feed</h3>
+        <Feed />
+      </div>
       <Footer/>
       </>
     )
