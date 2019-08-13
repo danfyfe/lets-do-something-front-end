@@ -18,12 +18,38 @@
   flex-direction: column;
 }
 
+.user-messages-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-messages-top-left > h4, .user-messages-top-right > h4 {
+  margin: 2vh 2vw;
+}
+
+
+
+
+.user-messages-top-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-messages-top-right {
+  display: flex;
+  flex-direction: row;
+}
+
 .user-message-card {
   border: 0.5px solid #d3d3d3;
   width: 95%;
   height: auto;
   margin: auto;
   padding: 1%;
-  
+
 }
+
+
 
