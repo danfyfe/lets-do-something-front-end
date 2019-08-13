@@ -3,16 +3,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import UserMessagesContainer from './UserMessagesContainer.js'
+import InvitationsContainer from './InvitationsContainer.js'
 import '../css/HomePage.css';
 
 
 const Feed = props => {
-  console.log(props.state.currentUser)
   return(
-    <>
-
+    <>        
         <UserMessagesContainer />
-
+        <InvitationsContainer />
     </>
   )
 }
