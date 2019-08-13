@@ -30,7 +30,7 @@ class HomePage extends React.Component {
 
       <>
       <Header history={this.props.history}/>
-      <Feed/>
+      <Feed />
       <Footer/>
       </>
     )

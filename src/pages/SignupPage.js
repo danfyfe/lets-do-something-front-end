@@ -3,7 +3,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 import { connect } from 'react-redux'
 
-import ErrorMessage from '../messages/ErrorMessage.js'
+import ErrorMessage from '../status-messages/ErrorMessage.js'
 
 import '../css/SignUp.css';
 

@@ -18,10 +18,11 @@ const  App = () => {
     <Switch>
       <Route exact path='/' render={({ history }) => <LoginPage history={history} /> } />
       <Route path='/signup' render={({ history }) => <SignupPage history={history} />} />
-      <Route path='/home' render={({ history }) => <HomePage history={history} /> } />
-      <Route path='/profile' render={({ history }) => <ProfilePage history={history} /> } />
+      <Route path='/home' render={({ history }) => <HomePage history={history} /> }
+      />
       <Route path='/events' render={({ history }) => <EventsPage history={history} /> } />
       <Route path='/calendar' render={({ history }) => <CalendarPage history={history} /> } />
+      <Route path='/profile' render={({ history }) => <ProfilePage history={history} /> } />
     </Switch>
   </>
   );

@@ -7,7 +7,7 @@ import '../css/LoginPage.css';
 import '../css/Messages.css'
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-import ErrorMessage from '../messages/ErrorMessage.js'
+import ErrorMessage from '../status-messages/ErrorMessage.js'
 
 
 
@@ -46,13 +46,13 @@ const LoginPage = (props) => {
       }
       localStorage.setItem('token', data.jwt)
       if (localStorage.token !== 'undefined') {
-        props.history.push('/profile')
+        props.history.push('/home')
       }
     })
   }
 
 
-  return( localStorage.token && localStorage.token !== 'undefined' ? <Redirect to={'/profile'}/> :
+  return( localStorage.token && localStorage.token !== 'undefined' ? <Redirect to={'/home'}/> :
     <>
     <div className='main'>
       <div className='title-container'>

@@ -2,10 +2,16 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
+import UserMessagesContainer from './UserMessagesContainer.js'
+import '../css/Feed.css';
+
+
 const Feed = props => {
+  console.log(props)
   return(
     <>
-      feed
+      <h3>Your Feed</h3>
+      <UserMessagesContainer/>
     </>
   )
 }
