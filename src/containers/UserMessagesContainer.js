@@ -9,12 +9,12 @@ const UserMessagesContainer = props => {
       <div className='user-messages-top'>
 
         <div className='user-messages-top-left'>
-          <h4>Messages</h4>
+          <span>Messages</span>
         </div>
 
         <div className='user-messages-top-right'>
-          <h4>Sort By</h4>
-          <h4>+</h4>
+          <span>Sort By</span>
+          <span>+</span>
         </div>
 
       </div>

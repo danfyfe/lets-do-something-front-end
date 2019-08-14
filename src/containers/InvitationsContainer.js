@@ -9,12 +9,11 @@ const InvitationsContainer = props => {
       <div className='invitations-top'>
 
         <div className='invitations-top-left'>
-          <h4>Invitations</h4>
+          <span>Invitations</span>
         </div>
 
         <div className='invitations-top-right'>
-          <h4>Sort By</h4>
-          <h4>+</h4>
+          <span>+</span>
         </div>
 
       </div>
