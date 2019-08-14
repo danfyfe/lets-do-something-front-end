@@ -168,11 +168,32 @@ span {
 }
 
 .invitation-card {
-  width: auto;
+  background-color: #fffff2;
+  border: 0.5px solid #d3d3d3;
+  border-radius: 5px;
+  width: 95%;
+  height: auto;
+  margin: 1% auto;
   display: flex;
   flex-direction: column;
 }
 
+.invitation-card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+h6 {
+  margin: auto;
+}
+
+.invitation-card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 
 

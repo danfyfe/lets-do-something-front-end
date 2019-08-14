@@ -6,10 +6,25 @@ const InvitationCard = props => {
 
       <div className='invitation-card-top'>
         <div className='invitation-card-top-left'>
-          <span>Title</span>
+          <h6>Event Title</h6>
         </div>
         <div className='invitation-card-top-right'>
+          <h6>Inviting User</h6>
         </div>
+      </div>
+
+      <div className='invitation-card-middle'>
+        <p>Event description</p>
+      </div>
+
+      <div className='invitation-card-bottom'>
+        <div className='invitation-card-bottom-left'>
+          <button>Going</button>
+        </div>
+        <div className='invitation-card-bottom-right'>
+          <button>Not Going</button>
+        </div>
+
       </div>
 
 
