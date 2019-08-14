@@ -18,7 +18,7 @@ const UserMessagesContainer = props => {
         </div>
 
       </div>
-      
+
       <UserMessageCard />
       <UserMessageCard />
       <UserMessageCard />

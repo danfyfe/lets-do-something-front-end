@@ -40,7 +40,7 @@
 .user-messages-top-left {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .user-messages-top-right {
@@ -73,7 +73,7 @@
 }
 
 .user-message-card-title > h5 {
-  margin: 1%;
+  margin: 2%;
 }
 
 .user-message-card-content > p {
@@ -145,16 +145,38 @@
   background-color: #FFDE07;
   border: 0.5px solid #d3d3d3;
   border-radius: 10px;
-  width: 50%;
+  /* width: 50%; */
   height: auto;
   padding: 2%;
   margin: 2%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
+.invitations-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.invitations-top-left {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
 
+.invitations-top-right {
+  display: flex;
+  flex-direction: row;
+}
 
+.invitations-top-left > h4, .invitations-top-right > h4 {
+  margin: 2vh 2vw;
+}
+
+.invitations-bottom {
+  width: 100%;
+  height: 10vh;
+}
 
 
