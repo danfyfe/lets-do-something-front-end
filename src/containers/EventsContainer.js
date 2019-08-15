@@ -8,7 +8,10 @@ class EventsContainer extends React.Component {
   render(){
     return(
       <div className='events-container'>
-        <h1 className='events-header'>Events</h1>
+        <div className='events-container-top'>
+          <h1 className='events-header'>Events</h1>
+          <h1 className='events-header'>+</h1>
+        </div>
         <div className='event-cards-container'>
           <EventCard/>
           <EventCard/>

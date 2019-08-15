@@ -8,6 +8,12 @@
   border-radius: 10px;
 }
 
+.events-container-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .events-header {
   margin: 1vw 2vh;
 }
