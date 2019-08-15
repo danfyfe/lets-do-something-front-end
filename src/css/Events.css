@@ -14,8 +14,12 @@
   justify-content: space-between;
 }
 
-.events-header {
+.events-container-header, .events-container-add {
   margin: 1vw 2vh;
+}
+
+.events-container-add:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
