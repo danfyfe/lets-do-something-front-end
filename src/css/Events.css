@@ -4,14 +4,8 @@
   height: auto;
   min-height: 50vh;
   background-color: #FFDE07;
-  /* border: 0.5px solid #e3e29d; */
   margin: 0.5% auto;
   border-radius: 10px;
-}
-
-h6 {
-  padding: 1%;
-  margin: auto;
 }
 
 .events-container-top {

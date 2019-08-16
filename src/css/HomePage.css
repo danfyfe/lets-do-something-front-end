@@ -30,7 +30,6 @@ i {
   border-radius: 10px;
   width: 65%;
   margin: 0.5% auto;
-  /* padding: 1%; */
   height: auto;
   display: flex;
   flex-direction: column;
@@ -42,7 +41,6 @@ i {
   width: 65%;
   margin-right: 0.5%;
   height: auto;
-  /* padding: 1%; */
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +49,7 @@ i {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1%;
+  /* padding: 1%; */
 }
 
 
@@ -60,19 +58,25 @@ i {
 }
 
 .top-left {
+  padding: 2%;
   display: flex;
   flex-direction: row;
 }
 
 .top-right {
-  width: 25%;
+  padding: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.add-button {
+  margin-left: 1%;
+}
+
 .user-message-card {
   background-color: #fffff2;
+  width: 95%;
   margin: 1% auto;
   display: flex;
   flex-direction: column;
