@@ -3,9 +3,15 @@
   width: 65%;
   height: auto;
   min-height: 50vh;
-  border: 0.5px solid #e3e29d;
+  background-color: #FFDE07;
+  /* border: 0.5px solid #e3e29d; */
   margin: 0.5% auto;
   border-radius: 10px;
+}
+
+h6 {
+  padding: 1%;
+  margin: auto;
 }
 
 .events-container-top {
@@ -44,22 +50,19 @@
 }
 
 .event-cards-container {
-  width: 95%;
-  height: 90%;
   margin: 1vh auto 2vh auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 1%;
 }
 
 .event-card {
-  width: 25%;
-  height: auto;
-  border: 0.5px grey solid;
-  border-radius: 10px;
-  margin: 1vw 1vh;
-  box-shadow: 1px 2px 3px 0px #0000006f;
+  width: 100%;
+  background-color: #fffff2;
+  margin: 1% auto;
+  /* box-shadow: 1px 2px 3px 0px #0000006f; */
 }
 
 .event-title {
