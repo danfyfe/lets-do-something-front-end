@@ -14,7 +14,6 @@ const UserMessagesContainer = props => {
 
         <div className='user-messages-top-right'>
           <h6>Sort By</h6>
-          <i className='arrow down'></i>
           <h6 className='add-button'>+</h6>
         </div>
 

@@ -17,6 +17,7 @@ i {
   width: 5px;
   height: 5px;
 }
+
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -46,8 +47,9 @@ i {
 }
 
 
-.user-messages-top-right > h6 {
+.user-messages-top-right > h6, .user-messages-top-right > i {
   cursor: pointer;
+  /* padding: 1%; */
 }
 
 .user-messages-top-left {
@@ -56,8 +58,10 @@ i {
 }
 
 .user-messages-top-right {
+  width: 25%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .user-message-card {
