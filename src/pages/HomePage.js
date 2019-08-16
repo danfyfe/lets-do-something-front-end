@@ -38,6 +38,7 @@ class HomePage extends React.Component {
         <EventsContainer/>
 
         <Calendar/>
+        
       <Footer/>
       </>
     )
