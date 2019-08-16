@@ -2,7 +2,7 @@ import React from 'react'
 
 import EventCard from '../components/EventCard.js'
 
-import '../css/HomePage.css';
+import '../css/Events.css';
 
 class EventsContainer extends React.Component {
   state = {
@@ -18,11 +18,12 @@ class EventsContainer extends React.Component {
   render(){
     return(
       <div className='events container'>
-        <div className='events container top'>
-          <div className='events container top-left'>
+        <div className='events top'>
+          <div className='events top-left'>
             <h6>Events</h6>
           </div>
-          <div className='events container top-right'>
+          <div className='events top-right'>
+            <h6>Sort By</h6>
             <h6 className='add-button' onClick={this.setCreatingEvent}>+</h6>
           </div>
         </div>
@@ -31,7 +32,7 @@ class EventsContainer extends React.Component {
           <EventCard/>
           <EventCard/>
           <EventCard/>
-  
+
       </div>
     )
   }

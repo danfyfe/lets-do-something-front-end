@@ -20,14 +20,6 @@ h6 {
   justify-content: space-between;
 }
 
-.events-container-header, .events-container-add {
-  margin: 1vw 2vh;
-}
-
-.events-container-add:hover {
-  cursor: pointer;
-}
-
 @media only screen and (max-width: 600px) {
 
   .title {
@@ -49,17 +41,8 @@ h6 {
 
 }
 
-.event-cards-container {
-  margin: 1vh auto 2vh auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 1%;
-}
-
 .event-card {
-  width: 100%;
+  /* width: 100%; */
   background-color: #fffff2;
   margin: 1% auto;
   /* box-shadow: 1px 2px 3px 0px #0000006f; */
