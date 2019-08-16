@@ -1,5 +1,5 @@
-.home-page-container {
-  width: 75%;
+.feed-container {
+  width: 65%;
   margin: auto;
   background-color: #fffff2;
   display: flex;
@@ -24,6 +24,8 @@ i {
   margin: auto;
 }
 
+
+
 /* h6 {
   margin: auto;
 } */
@@ -32,7 +34,7 @@ i {
   background-color: #FFDE07;
   border: 0.5px solid #d3d3d3;
   border-radius: 10px;
-  width: 100%;
+  width: 70%;
   height: auto;
   padding: 1%;
   margin: 2% 1% 2% 0;

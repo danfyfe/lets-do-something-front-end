@@ -9,9 +9,11 @@ import '../css/HomePage.css';
 
 const Feed = props => {
   return(
-    <>        
+    <>
+    <div className='feed-container'>
         <UserMessagesContainer />
         <InvitationsContainer />
+    </div>
     </>
   )
 }
