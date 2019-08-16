@@ -70,6 +70,9 @@ i {
   justify-content: space-between;
 }
 
+.sort-by {
+}
+
 .add-button {
   margin-left: 1%;
 }
@@ -165,7 +168,7 @@ i {
 .invitations-container {
   background-color: #FFDE07;
   border-radius: 10px;
-  width: 30%;
+  width: auto;
   height: auto;
   padding: 1%;
   display: flex;

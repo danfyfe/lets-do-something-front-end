@@ -23,7 +23,7 @@ class EventsContainer extends React.Component {
             <h6>Events</h6>
           </div>
           <div className='events top-right'>
-            <h6>Sort By</h6>
+            <h6 className='sort-by'>Sort By</h6>
             <h6 className='add-button' onClick={this.setCreatingEvent}>+</h6>
           </div>
         </div>

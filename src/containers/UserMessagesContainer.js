@@ -13,7 +13,7 @@ const UserMessagesContainer = props => {
         </div>
 
         <div className='user messages top-right'>
-          <h6>Sort By</h6>
+          <h6 className='sort-by'>Sort By</h6>
           <h6 className='add-button'>+</h6>
         </div>
 
