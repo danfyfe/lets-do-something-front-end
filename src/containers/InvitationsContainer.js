@@ -9,11 +9,11 @@ const InvitationsContainer = props => {
       <div className='invitations-top'>
 
         <div className='invitations-top-left'>
-          <span>Invitations</span>
+          <h6>Invitations</h6>
         </div>
 
         <div className='invitations-top-right'>
-          <span>+</span>
+          <h6 className='add-button'>+</h6>
         </div>
 
       </div>

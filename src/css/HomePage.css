@@ -6,10 +6,26 @@
   flex-direction: row;
 }
 
-span {
-  font-size: 80%;
+h6 {
   padding: 1%;
+  margin: auto;
 }
+
+i {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  width: 5px;
+  height: 5px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin: auto;
+}
+
+/* h6 {
+  margin: auto;
+} */
 
 .user-messages-container {
   background-color: #FFDE07;
@@ -29,11 +45,8 @@ span {
   justify-content: space-between;
 }
 
-.user-messages-top-left > h4, .user-messages-top-right > h4 {
-  margin: 2vh 2vw;
-}
 
-.user-messages-top-right > h4 {
+.user-messages-top-right > h6 {
   cursor: pointer;
 }
 
@@ -49,8 +62,8 @@ span {
 
 .user-message-card {
   background-color: #fffff2;
-  width: 100%;
-  height: auto;
+  /* width: 100%;
+  height: auto; */
   margin: 1% auto;
   display: flex;
   flex-direction: column;
@@ -181,9 +194,6 @@ span {
   margin: 1%;
 }
 
-h6 {
-  margin: auto;
-}
 
 .invitation-card-bottom {
   display: flex;
