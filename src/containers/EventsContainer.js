@@ -21,8 +21,8 @@ class EventsContainer extends React.Component {
     return(
       <div className='events-container'>
         <div className='events-container-top'>
-          <h1 className='events-container-header'>Events</h1>
-          <h1 className='events-container-add' onClick={this.setCreatingEvent}>+</h1>
+          <h6 className='events-container-header'>Events</h6>
+          <h6 className='events-container-add' onClick={this.setCreatingEvent}>+</h6>
         </div>
         <div className='event-cards-container'>
           <EventCard/>

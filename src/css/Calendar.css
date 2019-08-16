@@ -11,7 +11,6 @@
 }
 
 .rbc-calendar {
-  margin: auto;
   width: 100%;
 }
 
@@ -20,7 +19,7 @@
   width: 100%;
   border: 0.5px solid #e3e29d;
   border-radius: 5px;
-  margin: 3vh auto;
+  margin: 1vh auto;
   display: flex;
   flex-direction: row;
 }
@@ -37,7 +36,7 @@
   width: 100%;
   border: 0.5px solid #e3e29d;
   border-radius: 5px;
-  margin: 3vh auto;
+  margin: 1vh auto;
 }
 
 .rbc-row, .rbc-month-header {

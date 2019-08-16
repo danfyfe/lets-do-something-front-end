@@ -1,10 +1,10 @@
 /* events */
 .events-container {
-  width: 90%;
+  width: 65%;
   height: auto;
   min-height: 50vh;
   border: 0.5px solid #e3e29d;
-  margin: 5vh auto;
+  margin: 0.5% auto;
   border-radius: 10px;
 }
 

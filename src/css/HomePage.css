@@ -1,10 +1,11 @@
 .feed-container {
   width: 65%;
-  margin: auto;
+  margin: 0.5% auto;
   background-color: #fffff2;
   display: flex;
   flex-direction: row;
 }
+
 
 h6 {
   padding: 1%;
@@ -24,20 +25,13 @@ i {
   margin: auto;
 }
 
-
-
-/* h6 {
-  margin: auto;
-} */
-
 .user-messages-container {
   background-color: #FFDE07;
-  border: 0.5px solid #d3d3d3;
   border-radius: 10px;
   width: 70%;
+  margin-right: 0.5%;
   height: auto;
   padding: 1%;
-  margin: 2% 1% 2% 0;
   display: flex;
   flex-direction: column;
 }
@@ -49,9 +43,8 @@ i {
 }
 
 
-.user-messages-top-right > h6, .user-messages-top-right > i {
+.user-messages-top-right > h6, .invitations-top-right > h6 {
   cursor: pointer;
-  /* padding: 1%; */
 }
 
 .user-messages-top-left {
@@ -68,8 +61,6 @@ i {
 
 .user-message-card {
   background-color: #fffff2;
-  /* width: 100%;
-  height: auto; */
   margin: 1% auto;
   display: flex;
   flex-direction: column;
@@ -139,7 +130,6 @@ i {
 
 .user-message-card-bottom-left p {
   font-size: 60%;
-  /* margin: 1% 2%; */
 }
 
 .user-message-card-bottom-right {
@@ -158,12 +148,10 @@ i {
 
 .invitations-container {
   background-color: #FFDE07;
-  border: 0.5px solid #d3d3d3;
   border-radius: 10px;
   width: 30%;
   height: auto;
   padding: 1%;
-  margin: 2% 0 2% 1%;
   display: flex;
   flex-direction: column;
 }

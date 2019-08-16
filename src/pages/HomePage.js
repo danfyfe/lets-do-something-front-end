@@ -8,11 +8,12 @@ import Header from '../containers/Header.js'
 import Footer from '../containers/Footer.js'
 import Calendar from '../components/Calendar.js'
 import Feed from '../containers/Feed.js'
+import EventsContainer from '../containers/EventsContainer.js'
 
 class HomePage extends React.Component {
 
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/home`, {
+    fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
       headers: {
         Authorization:  localStorage.getItem("token")
@@ -31,10 +32,12 @@ class HomePage extends React.Component {
 
       <>
       <Header history={this.props.history}/>
-        <Calendar/>
-    
+
         <Feed />
 
+        <EventsContainer/>
+
+        <Calendar/>
       <Footer/>
       </>
     )
