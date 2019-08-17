@@ -21,7 +21,7 @@
 }
 
 .event-title-container {
-  
+  width: 50%;
 }
 
 .event-title {
@@ -31,17 +31,18 @@
 }
 
 .event-time-container {
+  width: 50%;
   display: flex;
   flex-direction: row;
 }
 
 .event-time {
-  padding: 1%;
+  padding: 0 1%;
   font-size: 75%;
   color: #808080;
   /* width: 100%; */
   text-align: center;
-  /* margin: auto; */
+  margin: auto;
 }
 
 .event-description {
