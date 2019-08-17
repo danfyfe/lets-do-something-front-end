@@ -14,50 +14,34 @@
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 600px) {
-
-  .title {
-    font-size: 1em;
-    margin-top: 15%;
-  }
-
-  .events-header {
-    font-size: 1.5em;
-  }
-
-  .event-card {
-    width: 100% !important;
-  }
-
-  .event-description {
-    display: none;
-  }
-
+.event-card {
+  background-color: #fffff2;
+  width: 95%;
+  margin: 1% auto;
 }
 
-.event-card {
-  /* width: 100%; */
-  background-color: #fffff2;
-  margin: 1% auto;
-  /* box-shadow: 1px 2px 3px 0px #0000006f; */
+.event-title-container {
+  
 }
 
 .event-title {
-  margin: 5% 5% 1% 5%;
+  /* margin: 5% 5% 1% 5%; */
+  padding: 1%;
+  margin: 0;
 }
 
 .event-time-container {
-  margin: 0 auto;
-  padding: 0 4%;
   display: flex;
   flex-direction: row;
 }
 
 .event-time {
-  padding: 2%;
+  padding: 1%;
   font-size: 75%;
   color: #808080;
-  margin: auto;
+  /* width: 100%; */
+  text-align: center;
+  /* margin: auto; */
 }
 
 .event-description {
@@ -69,15 +53,20 @@
 
 .attendees-container {
   min-width: 50%;
+  font-size: 50%;
   width: 90%;
   height: auto;
   margin: 0 auto 5% auto;
-  border: 0.5px silver solid;
+  /* border: 0.5px silver solid; */
   border-radius: 10px;
 }
 
 .attendee-card {
-  padding: 2% 0 2% 5%;
+  /* padding: 2% 0 2% 5%;
   margin: 1%;
+  font-size: 75%; */
+  padding: 2%;
   font-size: 75%;
+  color: #808080;
+  margin: auto;
 }
