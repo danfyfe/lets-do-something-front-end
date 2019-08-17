@@ -23,6 +23,9 @@ const UserMessagesContainer = props => {
       <UserMessageCard />
       <UserMessageCard />
       <UserMessageCard />
+      
+      <div className='user-messages container-bottom'>
+      </div>
     </div>
   )
 

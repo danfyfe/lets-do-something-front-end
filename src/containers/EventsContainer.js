@@ -32,7 +32,9 @@ class EventsContainer extends React.Component {
           <EventCard/>
           <EventCard/>
           <EventCard/>
-
+        <div className='events container-bottom'>
+          
+        </div>
       </div>
     )
   }
