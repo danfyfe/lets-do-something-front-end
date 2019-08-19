@@ -9,6 +9,10 @@ const EventsContainer = props => {
 
   const [ adding, setAdding ] = useState(false)
 
+  const cancelAddForm = () => {
+    setAdding(!adding)
+  }
+
     return(
       <div className='events container'>
         <div className='events top'>
@@ -20,8 +24,7 @@ const EventsContainer = props => {
             <h6 className='add-button' onClick={()=>setAdding(!adding)}>+</h6>
           </div>
         </div>
-        {adding ? <AddEventForm/> : null}
-        <AddEventForm />
+        {adding ? <AddEventForm cancelForm={()=>cancelAddForm()}/> : null}
 
         <div className='event-cards-container'>
           <EventCard/>
