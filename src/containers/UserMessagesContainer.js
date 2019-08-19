@@ -9,7 +9,7 @@ const UserMessagesContainer = props => {
       <div className='user messages top'>
 
         <div className='user messages top-left'>
-          <h6>Messages</h6>
+          <h5>Messages</h5>
         </div>
 
         <div className='user messages top-right'>

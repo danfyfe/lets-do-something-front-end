@@ -18,7 +18,7 @@ const EventsContainer = props => {
       <div className='events container'>
         <div className='events top'>
           <div className='events top-left'>
-            <h6>Events</h6>
+            <h5>Events</h5>
           </div>
           <div className='events top-right'>
             <h6 className='sort-by'>Sort By</h6>
