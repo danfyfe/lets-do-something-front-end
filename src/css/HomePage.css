@@ -10,10 +10,12 @@
   position: fixed;
   top: 15vh;
   right: 0vw;
-  margin-top: 1%;
-  height: 20vh;
-  width: 10vw;
   background-color: #FFDE07;
+  /* height: 20vh; */
+  width: 5vw;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -22,12 +24,6 @@ h6 {
   margin: auto;
 }
 
-i {
-  border: solid black;
-  border-width: 0 1px 1px 0;
-  width: 5px;
-  height: 5px;
-}
 
 .down {
   transform: rotate(45deg);

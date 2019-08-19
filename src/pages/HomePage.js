@@ -40,9 +40,10 @@ class HomePage extends React.Component {
 
         <FixedSideMenu/>
 
+        <Calendar/>
+        
         <EventsContainer/>
 
-        <Calendar/>
 
       <Footer/>
       </>
