@@ -9,9 +9,9 @@ const FixedSideMenu = props => {
 
   const renderOpenCloseIcon = () => {
     if (open) {
-      return   <Icon onClick={()=>setOpen(false)} size='large' name='angle double right'/>
+      return   <Icon link onClick={()=>setOpen(false)} size='large' name='angle double right'/>
     } else {
-      return   <Icon onClick={()=>setOpen(true)} size='large' name='angle double left'/>
+      return   <Icon link onClick={()=>setOpen(true)} size='large' name='angle double left'/>
     }
   }
 
