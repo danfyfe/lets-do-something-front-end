@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import EventCard from '../components/EventCard.js'
+import AddEventForm from '../components/forms/AddEventForm.js'
 
 import '../css/Events.css';
 
@@ -19,11 +20,15 @@ const EventsContainer = props => {
             <h6 className='add-button' onClick={()=>setAdding(!adding)}>+</h6>
           </div>
         </div>
+        {adding ? <AddEventForm/> : null}
+        <AddEventForm/>
 
+        <div className='event-cards-container'>
           <EventCard/>
           <EventCard/>
           <EventCard/>
           <EventCard/>
+        </div>
         <div className='events container-bottom'>
 
         </div>
