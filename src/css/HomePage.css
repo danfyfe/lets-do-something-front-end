@@ -8,7 +8,7 @@
 
 .fixed-side-menu {
   position: fixed;
-  top: 14vh;
+  top: 13vh;
   right: 0vw;
   background-color: #FFDE07;
   min-width: 5vw;
@@ -23,7 +23,6 @@
 
 .fixed-side-menu-bottom {
   padding: 1%;
-  width: 50%;
 }
 
 
@@ -60,6 +59,7 @@ h6 {
 }
 
 .top {
+  max-height: 5vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
