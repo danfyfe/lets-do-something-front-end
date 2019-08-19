@@ -9,8 +9,10 @@ import '../css/HomePage.css'
 import Header from '../containers/Header.js'
 import Footer from '../containers/Footer.js'
 import Calendar from '../components/Calendar.js'
-// import Feed from '../containers/Feed.js'
-import UserMessagesContainer from '../containers/UserMessagesContainer.js'
+
+// import UserMessagesContainer from '../containers/UserMessagesContainer.js'
+
+import FixedSideMenu from '../containers/FixedSideMenu.js'
 import EventsContainer from '../containers/EventsContainer.js'
 
 class HomePage extends React.Component {
@@ -36,7 +38,7 @@ class HomePage extends React.Component {
       <>
       <Header history={this.props.history}/>
 
-        <UserMessagesContainer />
+        <FixedSideMenu/>
 
         <EventsContainer/>
 

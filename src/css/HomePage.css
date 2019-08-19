@@ -6,6 +6,16 @@
   flex-direction: row;
 } */
 
+.fixed-side-menu {
+  position: fixed;
+  top: 15vh;
+  right: 0vw;
+  margin-top: 1%;
+  height: 20vh;
+  width: 10vw;
+  background-color: #FFDE07;
+}
+
 
 h6 {
   padding: 1%;
