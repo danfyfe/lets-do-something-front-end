@@ -11,12 +11,19 @@
   top: 15vh;
   right: 0vw;
   background-color: #FFDE07;
-  /* height: 20vh; */
   min-width: 5vw;
-  width: auto;
+  max-width: 40%;
   border-radius: 10px 0 0 10px;
   display: flex;
   flex-direction: column;
+  -webkit-box-shadow: 1px 15px 50px -8px rgba(133,133,133,0.53);
+  -moz-box-shadow: 1px 15px 50px -8px rgba(133,133,133,0.53);
+  box-shadow: 1px 15px 50px -8px rgba(133,133,133,0.53);
+}
+
+.fixed-side-menu-bottom {
+  padding: 1%;
+  width: 50%;
 }
 
 
@@ -26,11 +33,7 @@ h6 {
 }
 
 
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  margin: auto;
-}
+
 
 .container {
   background-color: #FFDE07;
@@ -42,15 +45,19 @@ h6 {
   flex-direction: column;
 }
 
-/* .messages-container {
+.messages-container {
   background-color: #FFDE07;
   border-radius: 10px;
-  width: 65%;
-  margin-right: 0.5%;
+  /* width: 50%; */
+  /* margin-right: 0.5%; */
   height: auto;
   display: flex;
   flex-direction: column;
-} */
+}
+
+.message-cards-container {
+  overflow: scroll;
+}
 
 .top {
   display: flex;

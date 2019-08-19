@@ -17,13 +17,16 @@ const FixedSideMenu = props => {
 
   return(
     <div className='fixed-side-menu'>
-      <div className='top'>
+    {open ? <UserMessagesContainer/> :
+      <>
+        <div className='top'>
         <h6>Messages</h6>
-      </div>
-      <div className='middle'>
-        {open ? <UserMessagesContainer/> : null}
-      </div>
-      <div className='bottom'>
+        </div>
+        <div className='middle'>
+        </div>
+      </>
+    }
+      <div className='fixed-side-menu-bottom'>
         {renderOpenCloseIcon()}
       </div>
     </div>

@@ -4,7 +4,7 @@ import UserMessageCard from '../components/UserMessageCard.js'
 
 const UserMessagesContainer = props => {
   return(
-    <div className='user messages container'>
+    <div className='user messages-container'>
 
       <div className='user messages top'>
 
@@ -18,12 +18,13 @@ const UserMessagesContainer = props => {
         </div>
 
       </div>
+      <div className='user message-cards-container'
+>      <UserMessageCard />
+      <UserMessageCard />
+      <UserMessageCard />
+      <UserMessageCard />
+      </div>
 
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      
       <div className='user-messages container-bottom'>
       </div>
     </div>
