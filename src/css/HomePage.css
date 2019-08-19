@@ -12,7 +12,8 @@
   right: 0vw;
   background-color: #FFDE07;
   /* height: 20vh; */
-  width: 5vw;
+  min-width: 5vw;
+  width: auto;
   border-radius: 10px 0 0 10px;
   display: flex;
   flex-direction: column;
