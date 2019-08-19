@@ -21,7 +21,7 @@ const EventsContainer = props => {
           </div>
         </div>
         {adding ? <AddEventForm/> : null}
-        <AddEventForm/>
+        <AddEventForm />
 
         <div className='event-cards-container'>
           <EventCard/>
