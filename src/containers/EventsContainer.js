@@ -9,19 +9,24 @@ import AddEventForm from '../components/forms/AddEventForm.js'
 
 import '../css/Events.css';
 
-const EventsContainer = props => {
-
-  const [ adding, setAdding ] = useState(false)
-
-  const renderEventCards = () => {
-    if (props.events) {
-      return props.events.map( event => {
-        return <EventCard event={event}/>
-      })
-    }
+class EventsContainer extends React.Component{
+  state = {
+    adding: false
   }
-  // console.log(props.events)
+
+  componentDidMount(){
+    
+  }
+
+
+  setAdding = () => {
+    this.setState({
+      adding: !this.state.adding
+    })
+  }
+  render(){
     return(
+
       <div className='events container'>
         <div className='events top'>
           <div className='events top-left'>
@@ -29,19 +34,24 @@ const EventsContainer = props => {
           </div>
           <div className='events top-right'>
             <h6 className='sort-by'>Sort By</h6>
-            <h5 className='add-button' onClick={()=>setAdding(!adding)}>+</h5>
+            <h5 className='add-button' onClick={this.setAdding}>+</h5>
           </div>
-        </div>
-        {adding ? <AddEventForm cancelForm={()=>setAdding(!adding)}/> : null}
+      </div>
+
+        {this.state.adding ? <AddEventForm cancelForm={this.setAdding}/> : null}
 
         <div className='event-cards-container'>
-        {renderEventCards()}
+
         </div>
+
         <div className='events container-bottom'>
 
         </div>
+
       </div>
+
     )
+  }
 }
 
 const mapStateToProps = state => {

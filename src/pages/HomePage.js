@@ -19,7 +19,6 @@ import EventsContainer from '../containers/EventsContainer.js'
 class HomePage extends React.Component {
 
   componentDidMount(){
-    // this.props.fetching()
     fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
       headers: {

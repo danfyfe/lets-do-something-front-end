@@ -2,7 +2,10 @@ import React from 'react'
 
 // import AttendeeCard from './AttendeeCard.js'
 
-const EventCard = () => {
+const EventCard = props => {
+
+  console.log(props.event)
+  
   return(
     <div className='event-card'>
       <div className='event-card top'>
@@ -16,7 +19,7 @@ const EventCard = () => {
           <p className='event-time'>08/11/19 at 5pm</p>
         </div>
       </div>
-      
+
       <div className='event-description'>
         <p>Event description! This is where you put the breif description of all the fun you will be having!</p>
       </div>
