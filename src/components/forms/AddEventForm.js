@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import DatePicker from "react-datepicker";
 
+import { connect } from 'react-redux'
+
 import "react-datepicker/dist/react-datepicker.css";
 
 import { addEvent } from '../../actions/eventActions.js'
 
 
 const AddEventForm = props => {
-  // console.log('add event', addEvent)
-
+  const { id } = props.state.currentUser
 
   const [ title, setTitle ] = useState('')
   const [ description, setDescription ] = useState('')
-  const [ startDate, setStartDate ] = useState(new Date())
-  const [ endDate, setEndDate ] = useState(new Date())
+  const [ start, setStartDate ] = useState(new Date())
+  const [ end, setEndDate ] = useState(new Date())
   const [ password, setPassword ] = useState('')
+  const [ owner_id, setOwnerId ] = useState(id)
+
 
   return(
     <div className='add-event-form-container'>
@@ -49,7 +52,7 @@ const AddEventForm = props => {
 
           <label>Start</label>
           <DatePicker
-            selected={startDate}
+            selected={start}
             onChange={setStartDate}
             showTimeSelect
             timeFormat='HH:mm'
@@ -58,7 +61,7 @@ const AddEventForm = props => {
 
           <label>End</label>
           <DatePicker
-            selected={endDate}
+            selected={end}
             onChange={setEndDate}
             showTimeSelect
             timeFormat='HH:mm'
@@ -71,11 +74,22 @@ const AddEventForm = props => {
 
 
       <div className='add-event-form-buttons'>
-        <button>Submit</button>
+        <button onClick={()=>addEvent({ title, description, start, end, password, owner_id})}>Submit</button>
         <button onClick={props.cancelForm}>Cancel</button>
       </div>
     </div>
   )
 }
 
-export default AddEventForm
+
+const mapStateToProps = state => {
+  return { state }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setErrorMessage: errorMessage => dispatch({type:'SET_ERROR_MESSAGE', errorMessage})
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(AddEventForm)
