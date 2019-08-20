@@ -6,6 +6,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 import '../css/HomePage.css'
 
+import Loading from '../components/Loading.js'
 import Header from '../containers/Header.js'
 import Footer from '../containers/Footer.js'
 import Calendar from '../components/Calendar.js'
@@ -18,6 +19,8 @@ import EventsContainer from '../containers/EventsContainer.js'
 class HomePage extends React.Component {
 
   componentDidMount(){
+    this.props.fetching()
+
     fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
       headers: {
@@ -26,24 +29,30 @@ class HomePage extends React.Component {
     }).then(resp=>resp.json())
     .then(user => {
       this.props.setCurrentUser(user.user)
-    })
+    }).then(this.props.fetched())
   }
+
 
   render(){
     if (!localStorage.token || localStorage.token === "undefined") {
       this.props.history.push("/")
     }
-    return(
 
+    // const { id } = this.props.state.currentUser.id
+    // console.log(this.props.state.currentUser)
+
+    return(
       <>
       <Header history={this.props.history}/>
-
+      {this.props.state.fetching && this.props.state.currentUser.id ? <Loading/> :
+        <>
         <FixedSideMenu/>
 
         <Calendar/>
-        
-        <EventsContainer/>
 
+        <EventsContainer userId={this.props.state.currentUser.id}/>
+        </>
+      }
 
       <Footer/>
       </>
@@ -58,7 +67,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user})
+    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
+    fetching: () => dispatch({type:'FETCHING'}),
+    fetched: () => dispatch({type:'FETCHED'})
   }
 }
 

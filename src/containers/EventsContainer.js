@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import { Icon } from 'semantic-ui-react'
+
+import { getEvents } from '../actions/eventActions.js'
 
 import EventCard from '../components/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
@@ -9,6 +11,10 @@ import '../css/Events.css';
 const EventsContainer = props => {
 
   const [ adding, setAdding ] = useState(false)
+
+  useEffect(() => {
+    console.log(props)
+  });
 
   const cancelAddForm = () => {
     setAdding(!adding)
@@ -28,7 +34,7 @@ const EventsContainer = props => {
         {adding ? <AddEventForm cancelForm={()=>cancelAddForm()}/> : null}
 
         <div className='event-cards-container'>
-          
+
         </div>
         <div className='events container-bottom'>
 

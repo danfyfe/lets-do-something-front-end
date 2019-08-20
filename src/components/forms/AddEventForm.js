@@ -11,13 +11,13 @@ import { addEvent } from '../../actions/eventActions.js'
 const AddEventForm = props => {
   const { id } = props.state.currentUser
 
+
   const [ title, setTitle ] = useState('')
   const [ description, setDescription ] = useState('')
   const [ start, setStartDate ] = useState(new Date())
   const [ end, setEndDate ] = useState(new Date())
   const [ password, setPassword ] = useState('')
-  const [ owner_id, setOwnerId ] = useState(id)
-
+  const [ owner_id ] = useState(id)
 
   return(
     <div className='add-event-form-container'>
@@ -74,7 +74,7 @@ const AddEventForm = props => {
 
 
       <div className='add-event-form-buttons'>
-        <button onClick={()=>addEvent({ title, description, start, end, password, owner_id})}>Submit</button>
+        <button onClick={()=>addEvent({ title, description, start, end, password, owner_id}, props.cancelForm)}>Submit</button>
         <button onClick={props.cancelForm}>Cancel</button>
       </div>
     </div>
