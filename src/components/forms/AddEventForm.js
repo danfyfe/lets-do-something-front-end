@@ -3,23 +3,18 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
+import { addEvent } from '../../actions/eventActions.js'
+
 
 const AddEventForm = props => {
+  // console.log('add event', addEvent)
+
 
   const [ title, setTitle ] = useState('')
   const [ description, setDescription ] = useState('')
   const [ startDate, setStartDate ] = useState(new Date())
   const [ endDate, setEndDate ] = useState(new Date())
   const [ password, setPassword ] = useState('')
-
-  // console.log('start date', startDate)
-  // console.log('end date', endDate)
-  // console.log('title', title)
-  // console.log('description', description)
-  // console.log('password', password)
-
-
-
 
   return(
     <div className='add-event-form-container'>

@@ -18,8 +18,8 @@ const UserMessagesContainer = props => {
         </div>
 
       </div>
-      <div className='user message-cards-container'
->      <UserMessageCard />
+      <div className='user message-cards-container'>
+      <UserMessageCard />
       <UserMessageCard />
       <UserMessageCard />
       <UserMessageCard />
