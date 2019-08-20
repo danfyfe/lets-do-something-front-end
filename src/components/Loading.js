@@ -6,7 +6,7 @@ import '../css/loading.css'
 const Loading = props => {
   return(
     <div className='loading'>
-      LOADING
+      LOADING...LOADING...LOADING
     </div>
   )
 

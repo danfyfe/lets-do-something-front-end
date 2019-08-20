@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { connect } from 'react-redux'
 
@@ -19,8 +19,7 @@ import EventsContainer from '../containers/EventsContainer.js'
 class HomePage extends React.Component {
 
   componentDidMount(){
-    this.props.fetching()
-
+    // this.props.fetching()
     fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
       headers: {
@@ -30,39 +29,37 @@ class HomePage extends React.Component {
     .then(user => {
       this.props.setCurrentUser(user.user)
     }).then(this.props.fetched())
-  }
+  };
 
 
   render(){
     if (!localStorage.token || localStorage.token === "undefined") {
       this.props.history.push("/")
     }
-
-    // const { id } = this.props.state.currentUser.id
-    // console.log(this.props.state.currentUser)
-
+    // console.log(this.props.state.fetched)
     return(
       <>
       <Header history={this.props.history}/>
-      {this.props.state.fetching && this.props.state.currentUser.id ? <Loading/> :
+      {!this.props.state.fetched ? <Loading/> :
         <>
         <FixedSideMenu/>
 
         <Calendar/>
 
-        <EventsContainer userId={this.props.state.currentUser.id}/>
+        <EventsContainer events={this.props.state.currentUser.events}/>
         </>
       }
 
       <Footer/>
       </>
     )
-
   }
 }
 
 const mapStateToProps = state => {
-  return { state }
+  return {
+    state
+   }
 }
 
 const mapDispatchToProps = dispatch => {

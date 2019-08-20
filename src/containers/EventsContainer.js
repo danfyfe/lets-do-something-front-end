@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-// import { Icon } from 'semantic-ui-react'
+
+import { connect } from 'react-redux'
 
 import { getEvents } from '../actions/eventActions.js'
 
@@ -12,14 +13,14 @@ const EventsContainer = props => {
 
   const [ adding, setAdding ] = useState(false)
 
-  useEffect(() => {
-    console.log(props)
-  });
-
-  const cancelAddForm = () => {
-    setAdding(!adding)
+  const renderEventCards = () => {
+    if (props.events) {
+      return props.events.map( event => {
+        return <EventCard event={event}/>
+      })
+    }
   }
-
+  // console.log(props.events)
     return(
       <div className='events container'>
         <div className='events top'>
@@ -31,10 +32,10 @@ const EventsContainer = props => {
             <h5 className='add-button' onClick={()=>setAdding(!adding)}>+</h5>
           </div>
         </div>
-        {adding ? <AddEventForm cancelForm={()=>cancelAddForm()}/> : null}
+        {adding ? <AddEventForm cancelForm={()=>setAdding(!adding)}/> : null}
 
         <div className='event-cards-container'>
-
+        {renderEventCards()}
         </div>
         <div className='events container-bottom'>
 
@@ -43,4 +44,16 @@ const EventsContainer = props => {
     )
 }
 
-export default EventsContainer
+const mapStateToProps = state => {
+  return { state }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
+    fetching: () => dispatch({type:'FETCHING'}),
+    fetched: () => dispatch({type:'FETCHED'})
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(EventsContainer)
