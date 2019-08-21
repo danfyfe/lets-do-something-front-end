@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-
+import React from 'react'
+// import axios from 'axios'
+// import { fetchUser } from '../actions/userActions.js'
 import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
@@ -24,7 +25,7 @@ class HomePage extends React.Component {
       headers: {
         Authorization:  localStorage.getItem("token")
       }
-    }).then(resp=>resp.json())
+    }).then(resp => resp.json())
     .then(user => {
       this.props.setCurrentUser(user.user)
     }).then(this.props.fetched())
@@ -35,18 +36,18 @@ class HomePage extends React.Component {
     if (!localStorage.token || localStorage.token === "undefined") {
       this.props.history.push("/")
     }
-    // console.log(this.props.state.fetched)
     return(
       <>
       <Header history={this.props.history}/>
-      {!this.props.state.fetched ? <Loading/> :
+      {this.props.state.fetched && this.props.state.currentUser.id ?
         <>
         <FixedSideMenu/>
 
         <Calendar/>
 
-        <EventsContainer events={this.props.state.currentUser.events}/>
-        </>
+        <EventsContainer id={this.props.state.currentUser.id}/>
+
+        </> : <Loading/>
       }
 
       <Footer/>

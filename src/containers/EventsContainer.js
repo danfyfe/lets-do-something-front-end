@@ -2,7 +2,9 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import { getEvents } from '../actions/eventActions.js'
+// import { getEvents } from '../actions/eventActions.js'
+
+import API_ENDPOINT from '../ApiEndpoint.js'
 
 import EventCard from '../components/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
@@ -11,19 +13,37 @@ import '../css/Events.css';
 
 class EventsContainer extends React.Component{
   state = {
-    adding: false
+    adding: false,
+    events: []
   }
 
   componentDidMount(){
-    
+    fetch(`${API_ENDPOINT}/users/${this.props.id}/events`,{
+      method: 'GET',
+      headers: {
+        Authorization:  localStorage.getItem("token")
+      }
+    }).then(resp => resp.json())
+    .then( events => {
+      // console.log('events',events)
+      this.setState({
+        events
+      })
+    })
   }
-
 
   setAdding = () => {
     this.setState({
       adding: !this.state.adding
     })
   }
+
+  renderEventCards = () => {
+    return this.state.events.map( event => {
+      return <EventCard event={event} />
+    })
+  }
+
   render(){
     return(
 
@@ -41,7 +61,7 @@ class EventsContainer extends React.Component{
         {this.state.adding ? <AddEventForm cancelForm={this.setAdding}/> : null}
 
         <div className='event-cards-container'>
-
+          {this.renderEventCards()}
         </div>
 
         <div className='events container-bottom'>
