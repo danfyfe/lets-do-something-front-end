@@ -189,14 +189,24 @@ h6 {
 }
 
 .add-message-form-container {
-  height: 10vh;
-  margin: auto;
+  width: 95%;
+  margin: 1% auto;
   background-color: #fffff2;
+  display: flex;
+  flex-direction: column;
 }
 
 .add-message-form {
   width: 95%;
-  
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-message-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 
