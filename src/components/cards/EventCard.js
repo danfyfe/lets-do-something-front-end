@@ -42,27 +42,28 @@ const EventCard = props => {
       <>{open ?
         <>
         <div className='event-description'>
-        <p>{description}</p>
+          <p>{description}</p>
         </div>
 
         <div className='event-card-bottom'>
 
-        <div className='attendees-container'>
-        <span>{users.length} Attendees</span>
-        </div>
+          <div className='attendees-container'>
+            <span>{users.length} Attendees</span>
+          </div>
 
-        <div className='owner-container'>
-        <span>Created By: {owner.username}</span>
-        </div>
+          <div className='owner-container'>
+            <span>Created By: {owner.username}</span>
+          </div>
+
+          <div className='collapse-button-container'>
+            {renderOpenCloseIcon()}
+          </div>
 
         </div>
-        </> : null
-      }</>
-
-        <div className='collapse-button-container'>
+        </> : <div className='collapse-button-container'>
           {renderOpenCloseIcon()}
         </div>
-
+      }</>
 
     </div>
   )

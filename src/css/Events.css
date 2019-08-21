@@ -74,7 +74,7 @@
 }
 
 .attendees-container, .owner-container {
-  min-width: 50%;
+  /* min-width: 50%; */
   font-size: 50%;
   width: 90%;
   height: auto;
