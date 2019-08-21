@@ -1,6 +1,6 @@
 import React from 'react'
 
-import UserMessageCard from '../components/UserMessageCard.js'
+import UserMessageCard from '../components/cards/UserMessageCard.js'
 
 const UserMessagesContainer = props => {
   return(

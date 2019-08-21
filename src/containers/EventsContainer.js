@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-import EventCard from '../components/EventCard.js'
+import EventCard from '../components/cards/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
 
 import '../css/Events.css';
@@ -25,7 +25,6 @@ class EventsContainer extends React.Component{
       }
     }).then(resp => resp.json())
     .then( events => {
-      // console.log('events',events)
       this.setState({
         events
       })
@@ -40,7 +39,7 @@ class EventsContainer extends React.Component{
 
   renderEventCards = () => {
     return this.state.events.map( event => {
-      return <EventCard event={event} />
+      return <EventCard key={event.id} event={event} />
     })
   }
 
@@ -65,7 +64,7 @@ class EventsContainer extends React.Component{
         </div>
 
         <div className='events container-bottom'>
-
+          
         </div>
 
       </div>

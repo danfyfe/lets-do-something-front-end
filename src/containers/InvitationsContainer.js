@@ -1,6 +1,6 @@
 import React from 'react'
 
-import InvitationCard from '../components/InvitationCard.js'
+import InvitationCard from '../components/cards/InvitationCard.js'
 
 const InvitationsContainer = props => {
   return(

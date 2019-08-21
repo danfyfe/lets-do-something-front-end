@@ -26,13 +26,18 @@
   margin: 1% auto;
 }
 
+.event-card-top {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
 .event-title-container {
   width: 50%;
 }
 
 .event-title {
   /* margin: 5% 5% 1% 5%; */
-  /* padding: 1%; */
   margin: 0;
 }
 
@@ -43,13 +48,16 @@
   justify-content: flex-end;
 }
 
-.event-time {
+.event-time, .event-time-to {
   padding: 0 1%;
   font-size: 75%;
   color: #808080;
-  /* width: 100%; */
   text-align: center;
   margin: 0;
+  max-height: 2vh;
+}
+.event-time-to {
+  color: inherit;
 }
 
 .event-description {
@@ -59,14 +67,22 @@
   padding: 2% 5%;
 }
 
-.attendees-container {
+.event-card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.attendees-container, .owner-container {
   min-width: 50%;
   font-size: 50%;
   width: 90%;
   height: auto;
-  margin: 0 auto 2% auto;
-  /* border: 0.5px silver solid; */
   border-radius: 10px;
+  display: flex;
+
+  /* margin: 0 auto 2% auto; */
+  /* border: 0.5px silver solid; */
 }
 
 .attendee-card {
@@ -119,5 +135,9 @@ input, textarea {
 
 h5 {
   padding: 1%;
+  margin: auto;
+}
+
+span {
   margin: auto;
 }
