@@ -64,7 +64,7 @@
   text-indent: 1em;
   font-size: 75%;
   height: auto;
-  padding: 2% 5%;
+  padding: 0 5%;
 }
 
 .event-card-bottom {
@@ -80,22 +80,23 @@
   height: auto;
   border-radius: 10px;
   display: flex;
-
-  /* margin: 0 auto 2% auto; */
-  /* border: 0.5px silver solid; */
 }
 
 .attendee-card {
-  /* padding: 2% 0 2% 5%;
-  margin: 1%;
-  font-size: 75%; */
   padding: 2%;
   font-size: 75%;
   color: #808080;
   margin: auto;
 }
 
+.collapse-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 1%;
+}
 
+
+/* add event form */
 .add-event-form-container {
   background-color: #fffff2;
   width: 95%;
