@@ -188,6 +188,26 @@ h6 {
   width: 15%;
 }
 
+.add-message-form-container {
+  height: 10vh;
+  margin: auto;
+  background-color: #fffff2;
+}
+
+.add-message-form {
+  width: 95%;
+  
+}
+
+
+
+
+
+
+
+
+
+
 
 .invitations-container {
   background-color: #FFDE07;

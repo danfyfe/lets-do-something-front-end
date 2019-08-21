@@ -5,7 +5,7 @@ import UserMessagesContainer from '../containers/UserMessagesContainer.js'
 
 const FixedSideMenu = props => {
 
-  const [ open, setOpen ] = useState(false)
+  const [ open, setOpen ] = useState(true)
 
   const renderOpenCloseIcon = () => {
     if (open) {

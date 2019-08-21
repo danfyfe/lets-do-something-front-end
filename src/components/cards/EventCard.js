@@ -19,9 +19,9 @@ const EventCard = props => {
 
   const renderOpenCloseIcon = () => {
     if (open) {
-      return   <Icon link onClick={()=>setOpen(false)} size='normal' name='angle double up'/>
+      return   <Icon link onClick={()=>setOpen(false)} name='angle double up'/>
     } else {
-      return   <Icon link onClick={()=>setOpen(true)} size='normal' name='angle double down'/>
+      return   <Icon link onClick={()=>setOpen(true)} name='angle double down'/>
     }
   }
 
