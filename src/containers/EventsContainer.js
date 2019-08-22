@@ -9,7 +9,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 import EventCard from '../components/cards/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
 
-import '../css/Events.css';
+// import '../css/Events.css';
 
 class EventsContainer extends React.Component{
   state = {
@@ -64,7 +64,7 @@ class EventsContainer extends React.Component{
         </div>
 
         <div className='events container-bottom'>
-          
+
         </div>
 
       </div>

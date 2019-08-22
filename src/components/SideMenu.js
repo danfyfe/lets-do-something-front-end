@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import '../css/SideMenu.css'
+// import '../css/SideMenu.css'
 
 const SideMenu = props => {
 

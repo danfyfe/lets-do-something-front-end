@@ -5,7 +5,7 @@ import moment from 'moment'
 import { connect } from 'react-redux'
 
 
-import '../css/Calendar.css';
+// import '../css/Calendar.css';
 
 const localizer = momentLocalizer(moment)
 

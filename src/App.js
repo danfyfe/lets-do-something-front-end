@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage.js'
 import LoginPage from './pages/LoginPage.js'
 import SignupPage from './pages/SignupPage.js'
 import ProfilePage from './pages/ProfilePage.js'
+
 // import EventsPage from './pages/EventsPage.js'
 // import CalendarPage from './pages/CalendarPage.js'
 
@@ -18,9 +19,7 @@ const  App = () => {
     <Switch>
       <Route exact path='/' render={({ history }) => <LoginPage history={history} /> } />
       <Route path='/signup' render={({ history }) => <SignupPage history={history} />} />
-      <Route path='/home' render={({ history }) => <HomePage history={history} /> }
-      />
-
+      <Route path='/home' render={({ history }) => <HomePage history={history} /> } />
       <Route path='/profile' render={({ history }) => <ProfilePage history={history} /> } />
     </Switch>
   </>

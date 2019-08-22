@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import ErrorMessage from '../status-messages/ErrorMessage.js'
 
-import '../css/SignUp.css';
+// import '../css/SignUp.css';
 
 const SignupPage = props => {
 
@@ -65,14 +65,19 @@ const SignupPage = props => {
 
           {props.state.errorMessage !== '' ? renderErrorMessage() : null}
           <form className='signup-form'>
+
             <label>Username</label>
             <input className='signup-input' type='text' placeholder='Username' onChange={e => setUsername(e.target.value)}/>
+
             <label>Email</label>
             <input className='signup-input' type='text' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
+
             <label>Password</label>
             <input className='signup-input' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+
             <label>Confirm Password</label>
             <input className='signup-input' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
+
             <div className='signup-button-container'>
               <button onClick={createUser}>Submit</button>
               <button onClick={sendToLoginPage}>Cancel</button>

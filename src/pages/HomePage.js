@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-import '../css/HomePage.css'
+// import '../css/HomePage.css'
 
 import Loading from '../components/Loading.js'
 import Header from '../containers/Header.js'

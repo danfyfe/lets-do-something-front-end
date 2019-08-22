@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../css/Header.css';
+// import '../css/Header.css';
 
 import SideMenu from '../components/SideMenu.js'
 

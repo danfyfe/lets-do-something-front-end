@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-import '../css/ProfilePage.css';
+// import '../css/ProfilePage.css';
 
 import Header from '../containers/Header.js'
 import UserInfoContainer from '../containers/UserInfoContainer.js'
