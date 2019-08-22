@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 import ErrorMessage from '../status-messages/ErrorMessage.js'
 
-import '../css/SignUp.css';
 
 const SignupPage = props => {
 
@@ -55,14 +54,14 @@ const SignupPage = props => {
   return(
     <>
     <div className='main'>
-      <div className='title container-fluid'>
+      <div className='title container-fluid text-center'>
         <h2>Lets Do Something!</h2>
       </div>
       <div className='container d-flex'>
         <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
       </div>
 
-      <div className='signup container'>
+      <div className='signup container text-center'>
           <h4>SignUp!</h4>
 
         <div className='signup-form container'>
@@ -83,23 +82,26 @@ const SignupPage = props => {
 
             <div className='form-row m-auto'>
               <div className='col-auto'>
-                <input className='form-control form-control-sm' type='email' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
+                <input
+                  className='form-control form-control-sm' type='email' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
               </div>
             </div>
 
             <div className='form-row m-auto'>
               <div className='col-auto'>
-                <input className='form-control form-control-sm' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+                <input
+                  className='form-control form-control-sm' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
               </div>
             </div>
 
             <div className='form-row m-auto'>
               <div className='col-auto'>
-                <input className='form-control form-control-sm' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
+                <input
+                  className='form-control form-control-sm' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
               </div>
             </div>
 
-            <div className='form-row m-auto'>
+            <div className='m-auto'>
               <div className='col-auto'>
                 <button onClick={createUser}>Sign up</button>
               </div>
@@ -113,9 +115,8 @@ const SignupPage = props => {
 
         <div className='or-log-in container'>
           <p>Already have an account?</p>
-          <button onClick={sendToLoginPage}>Log In</button>
+          <button onClick={sendToLoginPage}>Log In!</button>
         </div>
-
 
       </div>
     </div>

@@ -56,30 +56,54 @@ const LoginPage = (props) => {
   return( localStorage.token && localStorage.token !== 'undefined' ? <Redirect to={'/home'}/> :
     <>
     <div className='main'>
-      <div className='title-container'>
-      <h1>Lets Do Something!</h1>
+      <div className='title container-fluid text-center'>
+        <h2>Lets Do Something!</h2>
       </div>
-      <div className='login-container'>
-        <div className='login-form-container'>
+      <div className='container d-flex'>
+        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
+      </div>
 
-          <h3>LogIn!</h3>
+      <div className='login container text-center'>
+        <h4>LogIn!</h4>
+
+        <div className='login-form container'>
+
           {props.state.errorMessage !== '' ? renderErrorMessage() : null}
-          <form className='login-form'>
-            <label>Username</label>
-            <input className='login-input' type='text' placeholder='Username' onChange={e => setUsername(e.target.value)}/>
-            <label>Password</label>
-            <input className='login-input' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
-            <button onClick={logIn}>Submit</button>
+
+          <form className='d-flex flex-column'>
+
+            <div className='form-row m-auto'>
+              <div className='col-auto'>
+                <input
+                  className='login-input'
+                  type='text' placeholder='Username' onChange={e => setUsername(e.target.value)}/>
+              </div>
+            </div>
+
+            <div className='form-row m-auto'>
+              <div className='col-auto'>
+                <input
+                  className='login-input' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+              </div>
+            </div>
+
+            <div className='m-auto'>
+              <div className='col-auto'>
+                <button onClick={logIn}>Log in</button>
+              </div>
+            </div>
+
           </form>
 
-          <hr width={'75%'}/>
-
-          <div className='login-signup-container'>
-            <h4>or</h4>
-            <button onClick={sendToSignUpPage}>SignUp!</button>
-          </div>
-
         </div>
+
+        <hr width={'75%'}/>
+
+        <div className='login-signup container'>
+          <p>No account?</p>
+          <button onClick={sendToSignUpPage}>SignUp!</button>
+        </div>
+
       </div>
     </div>
     </>

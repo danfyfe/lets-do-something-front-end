@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.title {
+  background-color: #FFDE07;
+}
+
 #root {
   background-color: #fffff2;
   min-height: 100vh;
