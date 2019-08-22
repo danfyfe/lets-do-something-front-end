@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+#root {
+  background-color: #fffff2;
+  min-height: 100vh;
+}
+
 
 button {
   background-color: #FFDE07;
@@ -29,5 +34,5 @@ input, textarea {
 
 .logo {
   width: 25%;
-  margin: auto;
+  margin: 1% auto;
 }

@@ -69,9 +69,9 @@ const SignupPage = props => {
 
           {props.state.errorMessage !== '' ? renderErrorMessage() : null}
 
-          <form className='flex-column'>
+          <form className='d-flex flex-column'>
 
-            <div className='form-row'>
+            <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input
                   className='form-control form-control-sm'
@@ -81,25 +81,25 @@ const SignupPage = props => {
               </div>
             </div>
 
-            <div className='form-row'>
+            <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input className='form-control form-control-sm' type='email' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
               </div>
             </div>
 
-            <div className='form-row'>
+            <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input className='form-control form-control-sm' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
               </div>
             </div>
 
-            <div className='form-row'>
+            <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input className='form-control form-control-sm' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
               </div>
             </div>
 
-            <div className='form-row'>
+            <div className='form-row m-auto'>
               <div className='col-auto'>
                 <button onClick={createUser}>Sign up</button>
               </div>
@@ -109,7 +109,12 @@ const SignupPage = props => {
 
         </div>
 
+        <hr width={'75%'}/>
 
+        <div className='or-log-in container'>
+          <p>Already have an account?</p>
+          <button onClick={sendToLoginPage}>Log In</button>
+        </div>
 
 
       </div>
