@@ -14,19 +14,24 @@ const SideModal = props => {
 
   const renderSideModal = () => {
     console.log(props.user)
-    const { image } = props.user
+    const { image, username } = props.user
     return <>
       <div className='dropdown-background'>
       </div>
 
       <div className='df-side-modal'>
-        <div className='user-image-container'>
+        <div className='user-container'>
           <img className='user-image' src={image} alt='user avatar'/>
+          <span className='user-name'>{username}</span>
         </div>
+        <hr width={75}/>
         <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
+        <hr width={25}/>
         <button onClick={()=>props.history.push('/home')}>Home</button>
+        <hr width={25}/>
         <button onClick={()=>props.history.push('/profile')}>Profile</button>
-        <button onClick={handleLogOut}>LogOut</button>
+        <hr width={25}/>
+        <button onClick={handleLogOut}>Log Out</button>
       </div>
 
 
