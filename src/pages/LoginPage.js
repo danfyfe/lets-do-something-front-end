@@ -52,16 +52,22 @@ const LoginPage = (props) => {
     })
   }
 
-
   return( localStorage.token && localStorage.token !== 'undefined' ? <Redirect to={'/home'}/> :
     <>
     <div className='main'>
+
+
       <div className='title container-fluid text-center'>
         <h2>Lets Do Something!</h2>
       </div>
+
+
       <div className='container d-flex'>
         <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
       </div>
+
+
+<div className='container d-flex'>
 
       <div className='login container text-center'>
         <h4>LogIn!</h4>
@@ -105,6 +111,9 @@ const LoginPage = (props) => {
         </div>
 
       </div>
+
+      </div>
+
     </div>
     </>
   )
