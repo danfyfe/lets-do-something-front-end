@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 // import '../css/SideMenu.css'
 
-const Dropdown = props => {
+const SideModal = props => {
 
   const [ menuOpen, setMenuOpen] = useState(false)
 
@@ -11,32 +11,34 @@ const Dropdown = props => {
     props.history.push('/')
   }
 
-  const dropDownMenu = () => {
+  const renderSideModal = () => {
     return <>
-      <div className='dropdown'>
-        <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
-        <button className='side-menu-link' onClick={()=>props.history.push('/home')}>Home</button>
-        <button className='side-menu-link' onClick={()=>props.history.push('/profile')}>Profile</button>
-        <button className='side-menu-link' onClick={handleLogOut}>LogOut</button>
+      <div className='dropdown-background'>
+
+
       </div>
+      <div className='df-dropdown'>
+        <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
+        <button onClick={()=>props.history.push('/home')}>Home</button>
+        <button onClick={()=>props.history.push('/profile')}>Profile</button>
+        <button onClick={handleLogOut}>LogOut</button>
+      </div>
+
+
     </>
   }
 
   return(
     <>
       <div className='dropdown m-auto'>
-        <button className='dropdown-button'aria-haspopup="true" aria-expanded="false" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-        {menuOpen?
-          <>
-            {dropDownMenu()}
-          </> : null
-        }
+        <button className='dropdown-button' type='button' id='dropdownMenuButton' aria-haspopup="true" aria-expanded="false" onClick={()=>setMenuOpen(!menuOpen)}>☰</button>
+        {menuOpen ? renderSideModal() : null}
       </div>
     </>
   )
 }
 
-export default Dropdown
+export default SideModal
 
 // <div className='side-menu'>
 //   <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
@@ -46,8 +48,6 @@ export default Dropdown
 // </div>
 
 
-//
-// <button className='dropdown-button' type='button' id='dropdownMenuButton' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
 // <div className='dropdown-menu' aria-labelledby="dropdownMenuButton">
-//   <a className='dropdown-item'>Hi</a>
+//   <button className='dropdown-item'>Hi</button>
 // </div>

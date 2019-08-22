@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../css/Header.css';
 
-import Dropdown from '../containers/Dropdown.js'
+import SideModal from '../containers/SideModal.js'
 
 const Header = props => {
   return (<>
@@ -12,7 +12,7 @@ const Header = props => {
 
         <h4 className='m-auto text-center'>Let's Do Something!</h4>
 
-        <Dropdown history={props.history}/>
+        <SideModal history={props.history}/>
 
     </div>
   </>)
