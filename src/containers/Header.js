@@ -8,10 +8,9 @@ const Header = props => {
   return (<>
     <div className='header d-flex justify-content-between'>
 
-        <img className='logo' src='https://i.imgur.com/vd654cN.png' alt='logo of dance party'/>
+        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
 
-
-        <h2 className=''>Let's Do Something!</h2>
+        <h4 className='m-auto text-center'>Let's Do Something!</h4>
 
         <Dropdown history={props.history}/>
 
