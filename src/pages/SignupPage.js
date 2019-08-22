@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import ErrorMessage from '../status-messages/ErrorMessage.js'
 
-// import '../css/SignUp.css';
+import '../css/SignUp.css';
 
 const SignupPage = props => {
 
@@ -55,34 +55,37 @@ const SignupPage = props => {
   return(
     <>
     <div className='main'>
-      <div className='title-container'>
-      <h1>Lets Do Something!</h1>
+      <div className='title container-fluid'>
+        <h2>Lets Do Something!</h2>
       </div>
-      <div className='signup-container'>
-        <div className='signup-form-container'>
-
-          <h3>SignUp!</h3>
-
+      <div className='signup container-fluid'>
+          <h4>SignUp!</h4>
+        <div className='signup-form container'>
           {props.state.errorMessage !== '' ? renderErrorMessage() : null}
-          <form className='signup-form'>
 
-            <label>Username</label>
-            <input className='signup-input' type='text' placeholder='Username' onChange={e => setUsername(e.target.value)}/>
+          <div className='form-group'>
 
-            <label>Email</label>
-            <input className='signup-input' type='text' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
-
-            <label>Password</label>
-            <input className='signup-input' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
-
-            <label>Confirm Password</label>
-            <input className='signup-input' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
-
-            <div className='signup-button-container'>
-              <button onClick={createUser}>Submit</button>
-              <button onClick={sendToLoginPage}>Cancel</button>
+            <div className='row justify-content-center'>
+                <input className='form-control' type='text' placeholder='Username' onChange={e => setUsername(e.target.value)}/>
             </div>
-          </form>
+
+            <div className='row justify-content-center'>
+              <input className='form-control' type='text' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
+            </div>
+
+            <div className='row justify-content-center'>
+              <input className='form-control' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+            </div>
+
+            <div className='row justify-content-center'>
+              <input className='form-control' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
+            </div>
+
+            <div className='row justify-content-center'>
+              <button onClick={createUser}>Sign up</button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
