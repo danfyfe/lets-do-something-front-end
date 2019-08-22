@@ -58,7 +58,7 @@ const SignupPage = props => {
         <h2>Lets Do Something!</h2>
       </div>
       <div className='container d-flex'>
-        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
+        <img className='logo m-auto' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
       </div>
 
       <div className='signup container text-center'>

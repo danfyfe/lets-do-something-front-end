@@ -63,7 +63,7 @@ const LoginPage = (props) => {
 
 
       <div className='container d-flex'>
-        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
+        <img className='logo m-auto' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
       </div>
 
 

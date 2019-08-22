@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 // import '../css/SideMenu.css'
 
-const SideMenu = props => {
+const Dropdown = props => {
 
   const [ menuOpen, setMenuOpen] = useState(false)
 
@@ -31,4 +31,4 @@ const SideMenu = props => {
   )
 }
 
-export default SideMenu
+export default Dropdown

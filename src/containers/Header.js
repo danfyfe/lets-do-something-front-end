@@ -1,19 +1,20 @@
 import React from 'react'
 
-// import '../css/Header.css';
+import '../css/Header.css';
 
-import SideMenu from '../components/SideMenu.js'
+import Dropdown from '../containers/Dropdown.js'
 
 const Header = props => {
   return (<>
-    <div className='header'>
-      <div className='logo-container'>
-        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
-      </div>
-      <div className='header-title-container'>
-        <h1 className='title'>Let's Do Something!</h1>
-      </div>
-      <SideMenu history={props.history}/>
+    <div className='header d-flex justify-content-between'>
+
+        <img className='logo' src='https://i.imgur.com/vd654cN.png' alt='logo of dance party'/>
+
+
+        <h2 className=''>Let's Do Something!</h2>
+
+        <Dropdown history={props.history}/>
+
     </div>
   </>)
 }

@@ -36,14 +36,16 @@ input, textarea {
   font-size: 75%;
 }
 
+
+
 .logo {
-  width: 50%;
+  /* width: 50%; */
   margin: 1% auto;
 }
 
 @media (min-width: 500px) {
   .logo {
-    width: 25%;
+    /* width: 25%; */
   }
 
 

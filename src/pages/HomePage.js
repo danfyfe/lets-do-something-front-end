@@ -41,12 +41,12 @@ class HomePage extends React.Component {
       <Header history={this.props.history}/>
       {this.props.state.fetched && this.props.state.currentUser.id ?
         <>
-        <FixedSideMenu/>
+        {/*<FixedSideMenu/>
 
         <Calendar/>
 
-        <EventsContainer id={this.props.state.currentUser.id}/>
-
+        <EventsContainer id={this.props.state.currentUser.id}/>*/}
+<Loading/> 
         </> : <Loading/>
       }
 
