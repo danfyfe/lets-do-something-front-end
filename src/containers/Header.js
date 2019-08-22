@@ -12,7 +12,7 @@ const Header = props => {
 
         <h4 className='m-auto text-center'>Let's Do Something!</h4>
 
-        <SideModal history={props.history}/>
+        <SideModal user={props.user} history={props.history}/>
 
     </div>
   </>)

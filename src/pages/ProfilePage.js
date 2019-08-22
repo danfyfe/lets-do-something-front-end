@@ -31,7 +31,7 @@ class ProfilePage extends React.Component {
     }
     return(
       <>
-        <Header history={this.props.history}/>
+        <Header user={this.props.state.currentUser} history={this.props.history}/>
         <div className='profile-page-container'>
           <h3>Your Profile</h3>
           <UserInfoContainer user={this.props.state.currentUser}/>

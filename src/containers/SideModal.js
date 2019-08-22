@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
+import { connect } from 'react-redux'
+
 // import '../css/SideMenu.css'
 
 const SideModal = props => {
-
   const [ menuOpen, setMenuOpen] = useState(false)
 
   const handleLogOut = () => {
@@ -12,12 +13,16 @@ const SideModal = props => {
   }
 
   const renderSideModal = () => {
+    console.log(props.user)
+    const { image } = props.user
     return <>
       <div className='dropdown-background'>
-
-
       </div>
-      <div className='df-dropdown'>
+
+      <div className='df-side-modal'>
+        <div className='user-image-container'>
+          <img className='user-image' src={image} alt='user avatar'/>
+        </div>
         <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
         <button onClick={()=>props.history.push('/home')}>Home</button>
         <button onClick={()=>props.history.push('/profile')}>Profile</button>
@@ -38,7 +43,19 @@ const SideModal = props => {
   )
 }
 
-export default SideModal
+const mapStateToProps = state => {
+  return {
+    state
+   }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(SideModal)
 
 // <div className='side-menu'>
 //   <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
