@@ -26,3 +26,8 @@ input, textarea {
   margin: 1%;
   font-size: 75%;
 }
+
+.logo {
+  width: 25%;
+  margin: auto;
+}

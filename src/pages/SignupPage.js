@@ -58,38 +58,60 @@ const SignupPage = props => {
       <div className='title container-fluid'>
         <h2>Lets Do Something!</h2>
       </div>
-      <div className='signup container-fluid'>
+      <div className='container d-flex'>
+        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
+      </div>
+
+      <div className='signup container'>
           <h4>SignUp!</h4>
+
         <div className='signup-form container'>
+
           {props.state.errorMessage !== '' ? renderErrorMessage() : null}
 
-        <form>
-        
-          <div className='form-group'>
-            <input
-              className='form-control form-control-sm'
-              id='usernameInput'
-              type='text' placeholder='Username'
-              onChange={e => setUsername(e.target.value)}/>
-          </div>
+          <form className='flex-column'>
 
-          <div className='form-group'>
-            <input className='form-control form-control-sm' type='email' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
-          </div>
+            <div className='form-row'>
+              <div className='col-auto'>
+                <input
+                  className='form-control form-control-sm'
+                  id='usernameInput'
+                  type='text' placeholder='Username'
+                  onChange={e => setUsername(e.target.value)}/>
+              </div>
+            </div>
 
-          <div className='form-group'>
-            <input className='form-control form-control-sm' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
-          </div>
+            <div className='form-row'>
+              <div className='col-auto'>
+                <input className='form-control form-control-sm' type='email' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
+              </div>
+            </div>
 
-          <div className='form-group'>
-            <input className='form-control form-control-sm' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
-          </div>
+            <div className='form-row'>
+              <div className='col-auto'>
+                <input className='form-control form-control-sm' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+              </div>
+            </div>
 
-          <button onClick={createUser}>Sign up</button>
+            <div className='form-row'>
+              <div className='col-auto'>
+                <input className='form-control form-control-sm' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
+              </div>
+            </div>
 
-        </form>
+            <div className='form-row'>
+              <div className='col-auto'>
+                <button onClick={createUser}>Sign up</button>
+              </div>
+            </div>
+
+          </form>
 
         </div>
+
+
+
+
       </div>
     </div>
     </>
