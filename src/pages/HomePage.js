@@ -14,7 +14,7 @@ import Footer from '../containers/Footer.js'
 
 // import UserMessagesContainer from '../containers/UserMessagesContainer.js'
 
-// import FixedSideMenu from '../containers/FixedSideMenu.js'
+import FixedSideMenu from '../containers/FixedSideMenu.js'
 // import EventsContainer from '../containers/EventsContainer.js'
 
 class HomePage extends React.Component {
@@ -41,12 +41,12 @@ class HomePage extends React.Component {
       <Header user={this.props.state.currentUser} history={this.props.history}/>
       {this.props.state.fetched && this.props.state.currentUser.id ?
         <>
-        {/*<FixedSideMenu/>
+        <FixedSideMenu/>
+        {/*
 
         <Calendar/>
 
         <EventsContainer id={this.props.state.currentUser.id}/>*/}
-<Loading/>
         </> : <Loading/>
       }
 

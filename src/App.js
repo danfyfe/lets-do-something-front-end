@@ -1,5 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons'
+
 
 import './css/App.css';
 
@@ -14,6 +17,7 @@ import ProfilePage from './pages/ProfilePage.js'
 // import CalendarPage from './pages/CalendarPage.js'
 
 const  App = () => {
+  library.add(faAngleDoubleLeft, faAngleDoubleRight);
   return (
   <>
     <Switch>

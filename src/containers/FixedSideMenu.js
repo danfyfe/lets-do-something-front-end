@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import { Icon } from 'semantic-ui-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import UserMessagesContainer from '../containers/UserMessagesContainer.js'
 
 const FixedSideMenu = props => {
 
-  const [ open, setOpen ] = useState(true)
+  const [ open, setOpen ] = useState(false)
 
   const renderOpenCloseIcon = () => {
     if (open) {
-      return   <Icon link onClick={()=>setOpen(false)} size='large' name='angle double right'/>
+      return   <FontAwesomeIcon icon='angle-double-right' onClick={()=>setOpen(false)}/>
     } else {
-      return   <Icon link onClick={()=>setOpen(true)} size='large' name='angle double left'/>
+      return   <FontAwesomeIcon icon='angle-double-left' onClick={()=>setOpen(true)}/>
     }
   }
 
@@ -23,6 +23,7 @@ const FixedSideMenu = props => {
         <h6>Messages</h6>
         </div>
         <div className='middle'>
+          
         </div>
       </>
     }
