@@ -5,7 +5,7 @@ import UserMessagesContainer from '../containers/UserMessagesContainer.js'
 
 const FixedSideMenu = props => {
 
-  const [ open, setOpen ] = useState(false)
+  const [ open, setOpen ] = useState(true)
 
   const renderOpenCloseIcon = () => {
     if (open) {
@@ -23,11 +23,11 @@ const FixedSideMenu = props => {
         <h6>Messages</h6>
         </div>
         <div className='middle'>
-          
+
         </div>
       </>
     }
-      <div className='fixed-side-menu-bottom'>
+      <div className='fixed-side-menu-bottom container'>
         {renderOpenCloseIcon()}
       </div>
     </div>

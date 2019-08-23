@@ -131,7 +131,7 @@ input, textarea {
   top: 13vh;
   right: 0;
   min-width: 5vw;
-  max-width: 90%;
+  max-width: 100%;
   max-height: 80vh;
   border-radius: 10px 0 0 10px;
   display: flex;
@@ -140,21 +140,25 @@ input, textarea {
 }
 
 
-/* .fixed-side-menu {
-  position: fixed;
-  top: 13vh;
-  right: 0vw;
-  background-color: #FFDE07;
-  min-width: 5vw;
-  max-width: 40%;
-  border-radius: 10px 0 0 10px;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-shadow: 1px 15px 50px -8px rgba(133,133,133,0.53);
-  -moz-box-shadow: 1px 15px 50px -8px rgba(133,133,133,0.53);
-  box-shadow: 1px 15px 50px -8px rgba(133,133,133,0.53);
-} */
+.messages {
+  width: 100%;
+}
 
+.user-message-cards {
+  width: 85vw;
+}
+
+.top-left {
+  width: 50%;
+}
+
+.top-right {
+  width: 50%;
+}
+
+.user-message-card {
+  background-color: #fffff2;
+}
 
 
 
