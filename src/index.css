@@ -80,8 +80,8 @@ input, textarea {
   display: flex;
   flex-direction: column;
   z-index: 1000;
-  width: 25vw;
-  max-width: 150px;
+  width: 40vw;
+  /* max-width: 150px; */
   height: 100vh;
   /* transition: 1s;
   animation-name: side-modal-slide;
@@ -148,17 +148,22 @@ input, textarea {
   width: 85vw;
 }
 
-.top-left {
+.container-top-left {
   width: 50%;
 }
 
-.top-right {
+.container-top-right {
   width: 50%;
 }
 
 .user-message-card {
   background-color: #fffff2;
 }
+
+.message-card-top-left {
+
+}
+
 
 
 

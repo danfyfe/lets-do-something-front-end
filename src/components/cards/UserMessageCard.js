@@ -3,7 +3,19 @@ import React from 'react'
 const UserMessageCard = props => {
   return(
     <div className='user-message-card d-flex flex-column'>
-      <span>Title</span>
+      <div className='d-flex'>
+          <div className='d-flex flex-column'>
+            <span>Title</span>
+            <p>content content content content content content content content content </p>
+          </div>
+          <div className='d-flex flex-column'>
+            blasdf
+          </div>
+        </div>
+      <div className='d-flex justify-content-between'>
+        <span>Event</span>
+        <span>Time Sent</span>
+      </div>
     </div>
   )
 }

@@ -20,7 +20,7 @@ const FixedSideMenu = props => {
     {open ? <UserMessagesContainer/> :
       <>
         <div className='top'>
-        <h6>Messages</h6>
+        <span>Messages</span>
         </div>
         <div className='middle'>
 

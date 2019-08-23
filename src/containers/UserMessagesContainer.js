@@ -14,11 +14,11 @@ const UserMessagesContainer = props => {
 
       <div className='messages-top d-flex justify-content-between'>
 
-        <div className='top-left'>
+        <div className='container-top-left'>
           <span className='m-auto'>Messages</span>
         </div>
 
-        <div className='d-flex justify-content-between top-right'>
+        <div className='d-flex justify-content-between container-top-right'>
           <span className='sort-by m-auto'>Sort By</span>
           <FontAwesomeIcon className='m-auto' icon='plus' onClick={()=>setAdding(true)}/>
           {/*<h5 className='add-button' onClick={()=>setAdding(true)}>+</h5>*/}
