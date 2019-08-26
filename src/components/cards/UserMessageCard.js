@@ -2,19 +2,23 @@ import React from 'react'
 
 const UserMessageCard = props => {
   return(
-    <div className='user-message-card d-flex flex-column'>
+    <div className='message-card d-flex flex-column'>
       <div className='d-flex'>
-          <div className='d-flex flex-column'>
-            <span>Title</span>
+          <div className='d-flex flex-column message-card-title-content'>
+            <div className='d-flex flex-row'>
+              <span className='font-weight-bold'>Title</span>
+              <span className='m-auto text-muted text-nowrap tiny-font'>Event</span>
+              <span className='m-auto text-muted text-nowrap tiny-font'>Time Sent</span>
+            </div>
             <p>content content content content content content content content content </p>
           </div>
-          <div className='d-flex flex-column'>
-            blasdf
+          <div className='d-flex flex-column message-card-user-info'>
+            <img className='user-image m-auto message-card-user-image' src='https://i.imgur.com/KmHDi3Q.jpg' alt='user avatar'/>
+            <span className='m-auto'>Username</span>
           </div>
         </div>
-      <div className='d-flex justify-content-between'>
-        <span>Event</span>
-        <span>Time Sent</span>
+      <div className='d-flex message-card-bottom'>
+        <button className='mr-auto'>Reply</button>
       </div>
     </div>
   )

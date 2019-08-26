@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+.tiny-font {
+  font-size: 50%;
+}
+
+.small-font {
+  font-size: 75%;
+}
 
 .loading {
   text-align: center;
@@ -156,12 +163,28 @@ input, textarea {
   width: 50%;
 }
 
-.user-message-card {
+.message-card {
   background-color: #fffff2;
+  padding: 1%;
 }
 
-.message-card-top-left {
+.message-card-title-content {
+  padding: 2%;
+  font-size: 75%;
+}
 
+.message-card-user-info {
+  font-size: 50%;
+}
+
+.message-card-user-image {
+  /* width: 50%; */
+  height: 10vh;
+}
+
+
+.message-card-bottom {
+  font-size: 50%;
 }
 
 
