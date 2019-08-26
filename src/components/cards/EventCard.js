@@ -1,66 +1,66 @@
 import React, { useState } from 'react'
 import moment from 'moment'
-import { Icon } from 'semantic-ui-react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-// import AttendeeCard from './AttendeeCard.js'
 
 const EventCard = props => {
 
-  const [ open, setOpen ] = useState(false)
+  const [ open, setOpen ] = useState(true)
 
   const { title, description, start, end, owner_id, users} = props.event
 
   const owner = users.find(user => user.id === owner_id)
 
   const formatTime = time => {
-    return moment(time).format('MMM Do YYYY, h:mm a')
+    return moment(time).format('MMM Do, h:mm a')
   }
 
   const renderOpenCloseIcon = () => {
     if (open) {
-      return   <Icon link onClick={()=>setOpen(false)} name='angle double up'/>
+      return   <FontAwesomeIcon className='ml-auto' icon='angle-double-up' onClick={() => setOpen(false)}/>
     } else {
-      return   <Icon link onClick={()=>setOpen(true)} name='angle double down'/>
+      return   <FontAwesomeIcon className='ml-auto' icon='angle-double-down' onClick={() => setOpen(true)}/>
     }
   }
 
   return(
 
-    <div className='event-card'>
-      <div className='event-card-top'>
-        <div className='event-title-container'>
-          <h5 className='event-title'>{title}</h5>
-        </div>
-
-        <div className='event-time-container'>
-          <span className='event-time'>{formatTime(start)}</span>
-          <span className='event-time-to'>to</span>
-          <span className='event-time'>{formatTime(end)}</span>
+    <div className='d-flex flex-column white-background med-padding small-marg'>
+      <div className='d-flex half-width'>
+        <div className='text-nowrap'>
+          <span className=''>{title}</span>
         </div>
       </div>
+
+      <div className='d-flex small-font justify-content-between half-width text-nowrap'>
+        <span className='text-muted small-padding'>{formatTime(start)}</span>
+        <span className='small-padding'>to</span>
+        <span className='text-muted small-padding'>{formatTime(end)}</span>
+      </div>
+
       <>{open ?
         <>
-        <div className='event-description'>
+        <div className='med-font'>
           <p>{description}</p>
         </div>
 
-        <div className='event-card-bottom'>
+        <div className=''>
 
-          <div className='attendees-container'>
+          <div className='d-flex small-font'>
             <span>{users.length} Attendees</span>
           </div>
 
-          <div className='owner-container'>
+          <div className='d-flex tiny-font'>
             <span>Created By: {owner.username}</span>
           </div>
 
-          <div className='collapse-button-container'>
+          <div className='d-flex'>
             {renderOpenCloseIcon()}
           </div>
 
         </div>
-        </> : <div className='collapse-button-container'>
+        </> : <div className='d-flex'>
           {renderOpenCloseIcon()}
         </div>
       }</>

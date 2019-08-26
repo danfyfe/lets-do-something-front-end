@@ -46,7 +46,7 @@ class EventsContainer extends React.Component{
 
   render(){
     return(
-      <div className='d-flex flex-column yellow-background small-padding'>
+      <div className='d-flex flex-column yellow-background med-padding'>
         <div className='d-flex flex-row justify-content-between'>
           <div className=''>
             <span className=''>Events</span>
@@ -59,7 +59,7 @@ class EventsContainer extends React.Component{
 
         {this.state.adding ? <AddEventForm cancelForm={this.setAdding}/> : null}
 
-        <div className='event-cards-container'>
+        <div className='overflow-auto'>
           {this.renderEventCards()}
         </div>
 
