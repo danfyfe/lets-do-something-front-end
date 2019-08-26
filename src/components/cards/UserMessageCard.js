@@ -5,7 +5,6 @@ import MessageCardRepliesContainer from '../../containers/MessageCardRepliesCont
 
 const UserMessageCard = props => {
 
-  const [ viewingReplies, setViewingReplies ] = useState(false)
 
   return(
     <div className='message-card d-flex flex-column'>
@@ -24,14 +23,7 @@ const UserMessageCard = props => {
           </div>
         </div>
       <div className='d-flex message-card-bottom'>
-
-      {
-        viewingReplies ? <MessageCardRepliesContainer/> :
-        <>
-          <span className='text-muted tex-nowrap tiny-font' onClick={() => setViewingReplies(true)}># Replies...</span>
-
-        </>
-      }
+        <MessageCardRepliesContainer/>
       </div>
     </div>
   )

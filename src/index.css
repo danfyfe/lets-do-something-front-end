@@ -20,6 +20,10 @@ code {
   font-size: 75%;
 }
 
+.full-width {
+  width: 100%;
+}
+
 .loading {
   text-align: center;
 }
