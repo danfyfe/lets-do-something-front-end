@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import MessageCardReplyForm from '../forms/MessageCardReplyForm.js'
 
 const UserMessageCard = props => {
+
+  const [ replying, setReplying ] = useState(true)
+  console.log(replying)
   return(
     <div className='message-card d-flex flex-column'>
       <div className='d-flex'>
@@ -18,7 +23,9 @@ const UserMessageCard = props => {
           </div>
         </div>
       <div className='d-flex message-card-bottom'>
-        <button className='mr-auto'>Reply</button>
+        {
+          replying ? <MessageCardReplyForm/> : <button className='mr-auto' onClick={()=>setReplying(true)}>Reply</button>
+        }
       </div>
     </div>
   )
