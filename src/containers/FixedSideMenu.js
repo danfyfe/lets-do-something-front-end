@@ -19,11 +19,8 @@ const FixedSideMenu = props => {
     <div className='fixed-side-menu'>
     {open ? <UserMessagesContainer/> :
       <>
-        <div className='top'>
+        <div className='top med-font'>
         <span>Messages</span>
-        </div>
-        <div className='middle'>
-
         </div>
       </>
     }

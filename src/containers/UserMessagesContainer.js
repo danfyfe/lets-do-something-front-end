@@ -7,12 +7,11 @@ import AddMessageForm from '../components/forms/AddMessageForm.js'
 
 const UserMessagesContainer = props => {
 
-  const [ adding, setAdding ] = useState(false)
-
+  const [ adding, setAdding ] = useState(true)
   return(
     <div className='messages container d-flex flex-column'>
 
-      <div className='messages-top d-flex justify-content-between'>
+      <div className='messages-top d-flex justify-content-between med-font'>
 
         <div className='container-top-left'>
           <span className='m-auto'>Messages</span>
@@ -21,25 +20,16 @@ const UserMessagesContainer = props => {
         <div className='d-flex justify-content-between container-top-right'>
           <span className='sort-by m-auto'>Sort By</span>
           <FontAwesomeIcon className='m-auto' icon='plus' onClick={()=>setAdding(true)}/>
-          {/*<h5 className='add-button' onClick={()=>setAdding(true)}>+</h5>*/}
         </div>
 
       </div>
 
-      {/*<AddMessageForm cancelForm={setAdding}/>*/}
+      <AddMessageForm setAdding={setAdding}/>
 
       <div className='user-message-cards'>
         <UserMessageCard/>
-    { /* <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard /> */}
       </div>
 
-      <div className='user-messages container-bottom'>
-      </div>
     </div>
   )
 
