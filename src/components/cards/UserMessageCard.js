@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-// import MessageCardReplyForm from '../forms/MessageCardReplyForm.js'
 import MessageCardRepliesContainer from '../../containers/MessageCardRepliesContainer.js'
 
 const UserMessageCard = props => {

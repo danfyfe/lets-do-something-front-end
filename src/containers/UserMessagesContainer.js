@@ -7,7 +7,7 @@ import AddMessageForm from '../components/forms/AddMessageForm.js'
 
 const UserMessagesContainer = props => {
 
-  const [ adding, setAdding ] = useState(true)
+  const [ adding, setAdding ] = useState(false)
   return(
     <div className='messages container d-flex flex-column'>
 
@@ -23,8 +23,8 @@ const UserMessagesContainer = props => {
         </div>
 
       </div>
+      { adding ? <AddMessageForm setAdding={setAdding}/> : null}
 
-      <AddMessageForm setAdding={setAdding}/>
 
       <div className='user-message-cards'>
         <UserMessageCard/>
