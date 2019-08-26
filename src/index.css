@@ -15,6 +15,11 @@ code {
 .white-background {
   background-color: #fffff2;
 }
+
+.yellow-background {
+  background-color: #FFDE07;
+}
+
 .tiny-font {
   font-size: 50%;
 }
@@ -35,13 +40,16 @@ code {
   margin: 1% auto;
 }
 
-
 .full-width {
   width: 100%;
 }
 
 .most-width {
   width: 95%;
+}
+
+.half-width {
+  width: 50%;
 }
 
 .small-padding {

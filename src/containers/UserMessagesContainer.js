@@ -13,11 +13,11 @@ const UserMessagesContainer = props => {
 
       <div className='messages-top d-flex justify-content-between med-font'>
 
-        <div className='container-top-left'>
+        <div className='d-flex'>
           <span className='m-auto'>Messages</span>
         </div>
 
-        <div className='d-flex justify-content-between container-top-right'>
+        <div className='d-flex justify-content-between half-width'>
           <span className='sort-by m-auto'>Sort By</span>
           <FontAwesomeIcon className='m-auto' icon='plus' onClick={()=>setAdding(true)}/>
         </div>

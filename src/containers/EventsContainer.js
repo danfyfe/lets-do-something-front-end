@@ -1,4 +1,5 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { connect } from 'react-redux'
 
@@ -45,15 +46,14 @@ class EventsContainer extends React.Component{
 
   render(){
     return(
-
-      <div className='events container'>
-        <div className='events top'>
-          <div className='events top-left'>
-            <h5>Events</h5>
+      <div className='d-flex flex-column yellow-background small-padding'>
+        <div className='d-flex flex-row justify-content-between'>
+          <div className=''>
+            <span className=''>Events</span>
           </div>
-          <div className='events top-right'>
-            <h6 className='sort-by'>Sort By</h6>
-            <h5 className='add-button' onClick={this.setAdding}>+</h5>
+          <div className='d-flex flex-row justify-content-between half-width'>
+            <span className='m-auto'>Sort By</span>
+            <FontAwesomeIcon className='m-auto' icon='plus' onClick={this.setAdding}/>
           </div>
       </div>
 
