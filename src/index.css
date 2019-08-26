@@ -20,6 +20,10 @@ code {
   background-color: #FFDE07;
 }
 
+.grey-background {
+  background-color: #d3d3d3;
+}
+
 .tiny-font {
   font-size: 50%;
 }
@@ -178,7 +182,7 @@ input, textarea, select {
 } */
 
 .fixed-side-menu {
-  background-color: #FFDE07;
+  background-color: #d3d3d3;
   position: fixed;
   top: 13vh;
   right: 0;

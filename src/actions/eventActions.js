@@ -34,6 +34,6 @@ export function addEvent(eventObj, cancelForm){
   }).then(resp=>resp.json())
   .then(event => {
     cancelForm()
-    console.log(event)
+    // console.log(event)
   })
 }

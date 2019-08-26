@@ -8,6 +8,7 @@ import AddMessageForm from '../components/forms/AddMessageForm.js'
 const UserMessagesContainer = props => {
 
   const [ adding, setAdding ] = useState(false)
+  
   return(
     <div className='messages container d-flex flex-column'>
 

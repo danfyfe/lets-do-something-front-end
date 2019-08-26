@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const EventCard = props => {
 
-  const [ open, setOpen ] = useState(true)
+  const [ open, setOpen ] = useState(false)
 
   const { title, description, start, end, owner_id, users} = props.event
 

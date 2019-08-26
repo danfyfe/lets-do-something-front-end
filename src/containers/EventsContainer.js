@@ -38,6 +38,11 @@ class EventsContainer extends React.Component{
     })
   }
 
+  setEvents = event => {
+    this.setState({
+      events: [event,...this.state.events]
+    })
+  }
   renderEventCards = () => {
     return this.state.events.map( event => {
       return <EventCard key={event.id} event={event} />
@@ -57,7 +62,7 @@ class EventsContainer extends React.Component{
           </div>
       </div>
 
-        {this.state.adding ? <AddEventForm cancelForm={this.setAdding}/> : null}
+        {this.state.adding ? <AddEventForm setEvents={this.setEvents} cancelForm={this.setAdding}/> : null}
 
         <div className='overflow-auto'>
           {this.renderEventCards()}

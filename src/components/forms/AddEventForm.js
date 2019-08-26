@@ -9,8 +9,8 @@ import { addEvent } from '../../actions/eventActions.js'
 
 
 const AddEventForm = props => {
+  console.log('add event form props', props)
   const { id } = props.state.currentUser
-
 
   const [ title, setTitle ] = useState('')
   const [ description, setDescription ] = useState('')
