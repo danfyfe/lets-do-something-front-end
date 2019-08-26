@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
-import MessageCardReplyForm from '../forms/MessageCardReplyForm.js'
+// import MessageCardReplyForm from '../forms/MessageCardReplyForm.js'
+import MessageCardRepliesContainer from '../../containers/MessageCardRepliesContainer.js'
 
 const UserMessageCard = props => {
 
-  const [ replying, setReplying ] = useState(true)
-  console.log(replying)
+  const [ viewingReplies, setViewingReplies ] = useState(false)
+
   return(
     <div className='message-card d-flex flex-column'>
       <div className='d-flex'>
@@ -23,9 +24,14 @@ const UserMessageCard = props => {
           </div>
         </div>
       <div className='d-flex message-card-bottom'>
-        {
-          replying ? <MessageCardReplyForm/> : <button className='mr-auto' onClick={()=>setReplying(true)}>Reply</button>
-        }
+
+      {
+        viewingReplies ? <MessageCardRepliesContainer/> :
+        <>
+          <span className='text-muted tex-nowrap tiny-font' onClick={() => setViewingReplies(true)}># Replies...</span>
+
+        </>
+      }
       </div>
     </div>
   )

@@ -179,9 +179,11 @@ input, textarea {
 
 .message-card-user-image {
   /* width: 50%; */
-  height: 10vh;
+  height: 8vh;
 }
-
+.message-reply-form-input {
+  width: 100%;
+}
 
 .message-card-bottom {
   font-size: 50%;
