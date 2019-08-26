@@ -24,6 +24,14 @@ code {
   width: 100%;
 }
 
+.small-padding {
+  padding: 1%;
+}
+
+.small-indent {
+  text-indent: 1%;
+}
+
 .loading {
   text-align: center;
 }

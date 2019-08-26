@@ -3,9 +3,12 @@ import React from 'react'
 
 const MessageReplyCard = props => {
   return(
-    <div className='d-flex flex-row'>
-      <span>Username: </span>
-      <p>Content Content Content Content Content Content Content </p>
+    <div className='d-flex flex-column small-padding'>
+    <div className='d-flex flex-row justify-content-between'>
+      <span className='font-weight-bold'>Username</span>
+      <span className='text-muted m-auto'>Date</span>
+    </div>
+      <p className='small-indent'>Content Content Content Content Content Content Content </p>
     </div>
   )
 

@@ -7,7 +7,7 @@ import MessageCardReplyForm from '../components/forms/MessageCardReplyForm.js'
 const MessageCardRepliesContainer = props => {
 
   const [ viewingReplies, setViewingReplies ] = useState(true)
-  
+
   return(
     <div className='d-flex flex-row justify-content-center full-width'>
 
@@ -15,8 +15,16 @@ const MessageCardRepliesContainer = props => {
       viewingReplies ?
       <>
         <div className='d-flex flex-column full-width'>
+
+          <MessageReplyCard/>
+          <MessageReplyCard/>
+          <MessageReplyCard/>
+          <MessageReplyCard/>
           <MessageReplyCard/>
           <MessageCardReplyForm/>
+          <div className='d-flex flex-row'>
+            <FontAwesomeIcon className='m-auto' icon='angle-double-up' onClick={() => setViewingReplies(false)}/>
+          </div>
         </div>
       </>
        :

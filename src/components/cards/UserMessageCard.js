@@ -19,7 +19,7 @@ const UserMessageCard = props => {
           </div>
           <div className='d-flex flex-column message-card-user-info'>
             <img className='user-image m-auto message-card-user-image' src='https://i.imgur.com/KmHDi3Q.jpg' alt='user avatar'/>
-            <span className='m-auto'>Username</span>
+            <span className='m-auto font-weight-bold'>Username</span>
           </div>
         </div>
       <div className='d-flex message-card-bottom'>
