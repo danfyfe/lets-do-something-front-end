@@ -9,7 +9,7 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 const EditUserImage = props => {
   const { username, imageUrl } = props
 
-  const [ newAttribute, setNewAttribute ] = useState('')
+  const [ newAttribute ] = useState('')
 
 
 

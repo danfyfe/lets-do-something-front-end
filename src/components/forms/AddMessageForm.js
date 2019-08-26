@@ -5,10 +5,11 @@ import React, { useState } from 'react'
 const AddMessageForm = props => {
   const [ title, setTitle ] = useState('');
   const [ content, setContent ] = useState('')
+  const [ eventId, setEventId ] = useState()
 
   return(
-    <div className='add-message-form-container'>
-      <div className='add-message-form'>
+    <div className='d-flex flex-column white-background full-width med-padding med-font small-marg'>
+      <div className='d-flex flex-column'>
 
         <label>Title</label>
         <input
@@ -24,12 +25,19 @@ const AddMessageForm = props => {
           placeholder='Content'
           onChange={e => setContent(e.target.value)}/>
 
+          <label>Event</label>
+          <select onChange={e => setEventId(e.target.value)}>
+            <option value='Event 1'>Event 1</option>
+            <option value='Event 2'>Event 2</option>
+            <option value='Event 3'>Event 3</option>
+            <option value='Event 4'>Event 4</option>
+          </select>
 
       </div>
 
-      <div className='add-message-button-container'>
+      <div className='d-flex flex-row med-padding full-width justify-content-around'>
         <button>Submit</button>
-        <button onClick={()=>props.cancelForm(false)}>Cancel</button>
+        <button onClick={()=>props.setAdding(false)}>Cancel</button>
       </div>
     </div>
   )

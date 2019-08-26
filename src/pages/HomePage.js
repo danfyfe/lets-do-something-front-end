@@ -5,17 +5,17 @@ import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-import '../css/HomePage.css'
+// import '../css/HomePage.css'
 
 import Loading from '../components/Loading.js'
 import Header from '../containers/Header.js'
 import Footer from '../containers/Footer.js'
-import Calendar from '../components/Calendar.js'
+// import Calendar from '../components/Calendar.js'
 
 // import UserMessagesContainer from '../containers/UserMessagesContainer.js'
 
 import FixedSideMenu from '../containers/FixedSideMenu.js'
-import EventsContainer from '../containers/EventsContainer.js'
+// import EventsContainer from '../containers/EventsContainer.js'
 
 class HomePage extends React.Component {
 
@@ -38,15 +38,15 @@ class HomePage extends React.Component {
     }
     return(
       <>
-      <Header history={this.props.history}/>
+      <Header user={this.props.state.currentUser} history={this.props.history}/>
       {this.props.state.fetched && this.props.state.currentUser.id ?
         <>
         <FixedSideMenu/>
+        {/*
 
         <Calendar/>
 
-        <EventsContainer id={this.props.state.currentUser.id}/>
-
+        <EventsContainer id={this.props.state.currentUser.id}/>*/}
         </> : <Loading/>
       }
 

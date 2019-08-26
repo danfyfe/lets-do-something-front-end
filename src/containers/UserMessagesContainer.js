@@ -1,41 +1,35 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 import UserMessageCard from '../components/cards/UserMessageCard.js'
 import AddMessageForm from '../components/forms/AddMessageForm.js'
 
 const UserMessagesContainer = props => {
 
-  const [ adding, setAdding ] = useState(false)
-  
+  const [ adding, setAdding ] = useState(true)
   return(
-    <div className='user messages-container'>
+    <div className='messages container d-flex flex-column'>
 
-      <div className='user messages top'>
+      <div className='messages-top d-flex justify-content-between med-font'>
 
-        <div className='user messages top-left'>
-          <h5>Messages</h5>
+        <div className='container-top-left'>
+          <span className='m-auto'>Messages</span>
         </div>
 
-        <div className='user messages top-right'>
-          <h6 className='sort-by'>Sort By</h6>
-          <h5 className='add-button' onClick={()=>setAdding(true)}>+</h5>
+        <div className='d-flex justify-content-between container-top-right'>
+          <span className='sort-by m-auto'>Sort By</span>
+          <FontAwesomeIcon className='m-auto' icon='plus' onClick={()=>setAdding(true)}/>
         </div>
 
       </div>
 
-      <AddMessageForm cancelForm={setAdding}/>
+      <AddMessageForm setAdding={setAdding}/>
 
-      <div className='user message-cards-container'>
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
-      <UserMessageCard />
+      <div className='user-message-cards'>
+        <UserMessageCard/>
       </div>
 
-      <div className='user-messages container-bottom'>
-      </div>
     </div>
   )
 
