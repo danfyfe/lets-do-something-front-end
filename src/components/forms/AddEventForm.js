@@ -20,15 +20,13 @@ const AddEventForm = props => {
   const [ owner_id ] = useState(id)
 
   return(
-    <div className='add-event-form-container'>
-    <h5>Add and Event!</h5>
-      <div className='add-event-form-body'>
-        <div className='add-event-form-left'>
+    <div className='d-flex flex-column white-background med-padding med-font'>
+        <div className='d-flex flex-column'>
 
             <label>Title</label>
             <input
               type='text'
-              placeholder='Event Title'
+              placeholder='Title'
               onChange={e=>setTitle(e.target.value)}
             />
 
@@ -36,19 +34,19 @@ const AddEventForm = props => {
             <textarea
               type='textarea'
               rows='4'
-              cols='30'
-              placeholder='Event Description'
+              cols='25'
+              placeholder='Description'
               onChange={e=>setDescription(e.target.value)}/>
 
             <label>Password</label>
             <input
               type='password'
-              placeholder='Event Password'
+              placeholder='Password'
               onChange={e=>setPassword(e.target.value)}/>
 
         </div>
 
-        <div className='add-event-form-right'>
+        <div className='d-flex flex-column'>
 
           <label>Start</label>
           <DatePicker
@@ -69,14 +67,14 @@ const AddEventForm = props => {
             dateFormat="MMMM d, yyyy h:mm aa"/>
 
           </div>
-        </div>
 
 
 
-      <div className='add-event-form-buttons'>
+      <div className='d-flex med-padding justify-content-around'>
         <button onClick={()=>addEvent({ title, description, start, end, password, owner_id}, props.cancelForm)}>Submit</button>
         <button onClick={props.cancelForm}>Cancel</button>
       </div>
+
     </div>
   )
 }

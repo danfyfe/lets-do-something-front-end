@@ -93,8 +93,9 @@ input, textarea, select {
   border: 1px solid lightgrey;
   border-radius: 5px;
   padding: 1%;
-  margin: 1%;
+  /* margin: 1%; */
   font-size: 75%;
+  width: 100%;
 }
 
 
