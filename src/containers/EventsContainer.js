@@ -4,9 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { connect } from 'react-redux'
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-import { getEvents } from '../actions/eventActions.js'
-
-
 import EventCard from '../components/cards/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
 
@@ -32,7 +29,6 @@ class EventsContainer extends React.Component{
         events
       })
     })
-
   }
 
   setAdding = () => {

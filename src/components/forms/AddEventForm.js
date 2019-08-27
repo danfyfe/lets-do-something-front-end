@@ -9,7 +9,7 @@ import { addEvent } from '../../actions/eventActions.js'
 
 
 const AddEventForm = props => {
-  console.log('add event form props', props)
+  // console.log('add event form props', props.setEvents)
   const { id } = props.state.currentUser
 
   const [ title, setTitle ] = useState('')
@@ -71,7 +71,7 @@ const AddEventForm = props => {
 
 
       <div className='d-flex med-padding justify-content-around'>
-        <button onClick={()=>addEvent({ title, description, start, end, password, owner_id}, props.cancelForm)}>Submit</button>
+        <button onClick={()=>addEvent({ title, description, start, end, password, owner_id}, props.cancelForm, props.setEvents )}>Submit</button>
         <button onClick={props.cancelForm}>Cancel</button>
       </div>
 
