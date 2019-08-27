@@ -45,7 +45,7 @@ class EventsContainer extends React.Component{
 
   renderEventCards = () => {
     return this.state.events.map( event => {
-      return <EventCard key={event.id} event={event} />
+      return <EventCard key={event.id} event={event} history={this.props.history}/>
     })
   }
 

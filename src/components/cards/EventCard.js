@@ -8,7 +8,7 @@ const EventCard = props => {
 
   const [ open, setOpen ] = useState(false)
 
-  const { title, description, start, end, owner_id, users} = props.event
+  const { id, title, description, start, end, owner_id, users} = props.event
 
   const owner = users.find(user => user.id === owner_id)
 
@@ -24,12 +24,19 @@ const EventCard = props => {
     }
   }
 
+  const redirectToEventPage = eventId => {
+    props.history.push(`events/${eventId}`)
+  }
+
   return(
 
     <div className='d-flex flex-column white-background med-padding small-marg'>
-      <div className='d-flex half-width'>
-        <div className='text-nowrap'>
+      <div className='d-flex'>
+        <div className='text-nowrap half-width'>
           <span className=''>{title}</span>
+        </div>
+        <div className='d-flex half-width justify-content-end small-font'>
+          <button onClick={() => redirectToEventPage(id)}className=''>View Event</button>
         </div>
       </div>
 
