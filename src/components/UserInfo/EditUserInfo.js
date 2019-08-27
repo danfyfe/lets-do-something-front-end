@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 
-const EditUserImage = props => {
+const EditUserInfo = props => {
   const [ editing, setEditing ] = useState(false)
   const [ newAttribute, setNewAttribute ] = useState('')
 
@@ -30,17 +30,19 @@ const EditUserImage = props => {
 
   const renderEditButton = () => {
     return <>
+    <div className='m-auto'>
       <button onClick={() => setEditing(!editing)}>Edit</button>
+    </div>
     </>
   }
 
   const renderEditForm = () => {
     return <>
-      <form>
+      <div className='d-flex m-auto'>
         <input type='text' placeholder={'New ' + attributeTitle} onChange={(e) => setNewAttribute(e.target.value)}/>
         <button onClick={updateAttribute}>Submit</button>
         <button onClick={() => setEditing(!editing)}>Cancel</button>
-      </form>
+      </div>
     </>
   }
 
@@ -69,9 +71,9 @@ const EditUserImage = props => {
   }
 
   return(
-    <>
-      <label>{attributeTitle}:</label> <ul><li><span>{value}</span>{editing ? renderEditForm() : renderEditButton()}</li></ul>
-    </>
+    <div className='d-flex flex-column'>
+      <label>{attributeTitle}</label><ul><li><span>{value}</span></li></ul>{editing ? renderEditForm() : renderEditButton()}
+    </div>
   )
 }
 
@@ -86,4 +88,4 @@ const EditUserImage = props => {
     }
   }
 
-export default connect(mapStateToProps,mapDispatchToProps)(EditUserImage)
+export default connect(mapStateToProps,mapDispatchToProps)(EditUserInfo)

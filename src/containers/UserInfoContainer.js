@@ -22,7 +22,7 @@ class UserInfoContainer extends React.Component {
 
         attributeObjs.push(attributeObj)
       }
-      
+
       let usableAttributesObjs = attributeObjs.slice(0,4)
 
       return usableAttributesObjs.map(attributeObj => {
@@ -32,7 +32,7 @@ class UserInfoContainer extends React.Component {
 
 
     return (<>
-      <div className='user-info-container'>
+      <div className='d-flex flex-column'>
         {renderEditUserInfos()}
         <EditUserImage imageUrl={image}/>
       </div>
