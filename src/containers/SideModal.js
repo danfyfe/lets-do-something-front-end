@@ -13,7 +13,6 @@ const SideModal = props => {
   }
 
   const renderSideModal = () => {
-    console.log(props.user)
     const { image, username } = props.user
     return <>
       <div className='dropdown-background'>

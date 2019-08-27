@@ -24,7 +24,8 @@ function appReducer(state = defaultState, action) {
       return { ...state, currentUser: action.user}
 
 
-    case 'SET_EVENTS':
+    case 'GET_EVENTS':
+    console.log('inside get events')
       return state
 
 

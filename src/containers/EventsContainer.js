@@ -2,10 +2,10 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { connect } from 'react-redux'
-
-// import { getEvents } from '../actions/eventActions.js'
-
 import API_ENDPOINT from '../ApiEndpoint.js'
+
+import { getEvents } from '../actions/eventActions.js'
+
 
 import EventCard from '../components/cards/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
@@ -19,17 +19,20 @@ class EventsContainer extends React.Component{
   }
 
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/users/${this.props.id}/events`,{
+    fetch(`${API_ENDPOINT}/users/${this.props.id}/events`, {
       method: 'GET',
       headers: {
+        "Content-Type": "application/json",
+        Accept: 'application/json',
         Authorization:  localStorage.getItem("token")
       }
-    }).then(resp => resp.json())
+    }).then(resp=>resp.json())
     .then( events => {
       this.setState({
         events
       })
     })
+
   }
 
   setAdding = () => {
@@ -43,6 +46,7 @@ class EventsContainer extends React.Component{
       events: [event,...this.state.events]
     })
   }
+
   renderEventCards = () => {
     return this.state.events.map( event => {
       return <EventCard key={event.id} event={event} />
