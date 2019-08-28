@@ -6,12 +6,14 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 import EventCard from '../components/cards/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
+import SearchBar from '../containers/SearchBar.js'
 
 // import '../css/Events.css';
 
 class EventsContainer extends React.Component{
   state = {
     adding: false,
+    searching: false,
     events: []
   }
 
@@ -37,6 +39,12 @@ class EventsContainer extends React.Component{
     })
   }
 
+  setSearching = () => {
+    this.setState({
+      searching: !this.state.searching
+    })
+  }
+
   setEvents = event => {
     this.setState({
       events: [event,...this.state.events]
@@ -59,10 +67,13 @@ class EventsContainer extends React.Component{
           <div className='d-flex flex-row justify-content-between half-width'>
             <span className='m-auto'>Sort By</span>
             <FontAwesomeIcon className='m-auto' icon='plus' onClick={this.setAdding}/>
+            <FontAwesomeIcon className='m-auto' icon='search' onClick={this.setSearching}/>
           </div>
       </div>
 
         {this.state.adding ? <AddEventForm setEvents={this.setEvents} cancelForm={this.setAdding}/> : null}
+
+        {this.state.searching ? <SearchBar/> : null}
 
         <div className='overflow-auto'>
           {this.renderEventCards()}
