@@ -10,7 +10,7 @@ const SearchBar = props => {
     <div className='d-flex flex-column most-width m-auto'>
 
       <div className='d-flex med-padding'>
-          <input className=''type='text' placeholder='Enter Event Title...' onChange={e => setSearchTerm(e.target.value)}/>
+          <input className=''type='text' placeholder='Enter Event Title to Search...' onChange={e => setSearchTerm(e.target.value)}/>
       </div>
 
       <div className='d-flex med-padding'>
