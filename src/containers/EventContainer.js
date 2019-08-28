@@ -6,6 +6,7 @@ const EventContainer = props => {
   const { title, description, start, end, users } = props.event
 
   
+
   return(
     <div className='d-flex flex-column most-width m-auto'>
       <div className='d-flex flex-row'>

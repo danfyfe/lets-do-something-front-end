@@ -9,6 +9,7 @@ const SideModal = props => {
 
   const handleLogOut = () => {
     localStorage.clear()
+    props.setCurrentUser({})
     props.history.push('/')
   }
 
@@ -55,7 +56,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user})
   }
 }
 
