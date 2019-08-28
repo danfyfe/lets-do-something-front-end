@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import moment from 'moment'
-
+import { formatTime } from '../../actions/general.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -11,10 +11,6 @@ const EventCard = props => {
   const { id, title, description, start, end, owner_id, users} = props.event
 
   const owner = users.find(user => user.id === owner_id)
-
-  const formatTime = time => {
-    return moment(time).format('MMM Do, h:mm a')
-  }
 
   const renderOpenCloseIcon = () => {
     if (open) {

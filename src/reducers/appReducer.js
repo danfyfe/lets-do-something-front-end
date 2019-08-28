@@ -1,5 +1,6 @@
 const defaultState = {
   currentUser: {},
+  currentEvent: {},
   errorMessage: '',
   fetching: false,
   fetched: false
@@ -24,10 +25,8 @@ function appReducer(state = defaultState, action) {
       return { ...state, currentUser: action.user}
 
 
-    case 'GET_EVENTS':
-    console.log('inside get events')
-      return state
-
+    case 'SET_CURRENT_EVENT':
+      return { ...state, currentEvent: action.event}
 
     default:
       return state

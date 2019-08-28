@@ -3,12 +3,18 @@ import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
 
+import Loading from '../components/Loading.js'
+import Header from '../containers/Header.js'
+import Footer from '../containers/Footer.js'
+
+import EventContainer from '../containers/EventContainer.js'
+
 
 class EventPage extends React.Component {
 
-  state = {
-    event: {}
-  }
+  // state = {
+  //   event: {}
+  // }
 
   componentDidMount(){
     fetch(`${API_ENDPOINT}/profile`, {
@@ -27,20 +33,28 @@ class EventPage extends React.Component {
         }
       }).then(resp=>resp.json())
       .then( event => {
-        this.setState({
-          event
-        })
+        this.props.setCurrentEvent(event)
       }).then(this.props.fetched())
     )
   }
 
   render(){
-    console.log(this.state.event)
+    if (!localStorage.token || localStorage.token === "undefined") {
+      this.props.history.push("/")
+    }
+    // console.log('user',this.props.state.currentUser)
+    // console.log('event',this.props.state.currentEvent)
     return(<>
-      { }
-      <div>
-        Hi from event page
-      </div>
+      <Header
+        user={this.props.state.currentUser}     history={this.props.history}/>
+      { this.props.state.fetched && this.props.state.currentEvent.id?
+        <>
+          <EventContainer event={this.props.state.currentEvent}/>
+        </>
+        :
+        <Loading/>
+      }
+      <Footer/>
     </>)
   }
 }
@@ -55,7 +69,8 @@ const mapDispatchToProps = dispatch => {
   return {
     setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
     fetching: () => dispatch({type:'FETCHING'}),
-    fetched: () => dispatch({type:'FETCHED'})
+    fetched: () => dispatch({type:'FETCHED'}),
+    setCurrentEvent: event => dispatch({type:'SET_CURRENT_EVENT', event})
   }
 }
 
