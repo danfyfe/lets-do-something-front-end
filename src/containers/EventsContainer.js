@@ -13,7 +13,7 @@ import SearchBar from '../containers/SearchBar.js'
 class EventsContainer extends React.Component{
   state = {
     adding: false,
-    searching: false,
+    searching: true,
     events: []
   }
 
