@@ -30,13 +30,15 @@ class FriendSearchPage extends React.Component {
 
     return(<>
       <Header
-        user={this.props.state.currentUser}     history={this.props.history}/>
+        user={this.props.state.currentUser}
+        history={this.props.history}/>
 
-        <FriendSearchContainer
-          user={this.props.state.currentUser}
-        />
-
-
+        <div className='d-flex flex-column'>
+          <span className='font-weight-bold med-font med-padding m-auto'>Search for a friend!</span>
+          <FriendSearchContainer
+            user={this.props.state.currentUser}
+          />
+        </div>
       <Footer/>
       </>
     )

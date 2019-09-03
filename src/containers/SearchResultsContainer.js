@@ -22,11 +22,11 @@ const SearchResultsContainer = props => {
 
   const renderResultsCards = searchType => {
     let newResults = filteredResults(props.searchType)
-    if (searchType === 'users') {
+    if (searchType === 'users' && props.searchTerm !== '') {
       return newResults.map( user => {
         return <UserCard key={user.id} user={user}/>
       })
-    } else if (searchType === 'events') {
+    } else if (searchType === 'events' && props.searchTerm !== '') {
       return newResults.map( event => {
         return <EventCard key={event.id} event={event}/>
       })
