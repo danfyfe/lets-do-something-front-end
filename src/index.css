@@ -77,6 +77,10 @@ code {
   text-align: center;
 }
 
+.m-1v {
+  margin: 1vh 0;
+}
+
 .title {
   background-color: #FFDE07;
 }

@@ -2,24 +2,25 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import UserMessagesContainer from './UserMessagesContainer.js'
-import InvitationsContainer from './InvitationsContainer.js'
-import '../css/HomePage.css';
-
+import FollowRequestsContainer from './FollowRequestsContainer.js'
 
 const Feed = props => {
   return(
     <>
-    <div className='feed-container'>
-        <UserMessagesContainer />
-        <InvitationsContainer />
+    <div className='m-1v d-flex flex-column med-padding yellow-background'>
+      <div className='d-flex'>
+        <span>Feed</span>
+      </div>
+      <div className='d-flex flex-column justify-content-between small-padding'>
+        <FollowRequestsContainer followRequests={props.currentUser.follow_requests}/>
+      </div>
     </div>
     </>
   )
 }
 
 const mapStateToProps = state => {
-  return { state }
+  return { currentUser: state.currentUser }
 }
 
 const mapDispatchToProps = dispatch => {

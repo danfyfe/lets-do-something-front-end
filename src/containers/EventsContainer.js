@@ -62,7 +62,7 @@ class EventsContainer extends React.Component{
       <div className='d-flex flex-column yellow-background med-padding'>
         <div className='d-flex flex-row justify-content-between'>
           <div className=''>
-            <span className=''>Events</span>
+            <span>Events</span>
           </div>
           <div className='d-flex flex-row justify-content-between half-width'>
             <span className='m-auto'>Sort By</span>
