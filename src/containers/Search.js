@@ -8,7 +8,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 const Search = props => {
 
-  const [ searchTerm, setSearchTerm ] = useState('')
+  const [ searchTerm, setSearchTerm ] = useState('m')
   const [ results, setResults ] = useState(false)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Search = props => {
     })
 
   },[props.searchType])
-  
+
   return(<>
     {props.state.fetched && props.state.currentUser.id && results ?
 

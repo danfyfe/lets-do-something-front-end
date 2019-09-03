@@ -37,7 +37,7 @@ const SearchResultsContainer = props => {
   // console.log(filteredResults(props.searchType))
 
   return(
-    <div className='d-flex flex-column white-background'>
+    <div className='d-flex flex-column white-background full-width'>
       {renderResultsCards(props.searchType)}
 
 

@@ -4,9 +4,8 @@ import Search from './Search.js'
 
 const FriendSearchContainer = props => {
   return(
-    <div>
+    <div className=''>
       <Search user={props.user} searchType={'users'}/>
-
     </div>
   )
 }
