@@ -1,10 +1,11 @@
 import React from 'react'
 
-import SearchBar from './SearchBar.js'
+import Search from './Search.js'
+
 const FriendSearchContainer = props => {
   return(
     <div>
-      <SearchBar user={props.user} searchType={'users'}/>
+      <Search user={props.user} searchType={'users'}/>
 
     </div>
   )

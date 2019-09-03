@@ -20,7 +20,6 @@ class FriendSearchPage extends React.Component {
     .then(user => {
       this.props.setCurrentUser(user.user)
     }).then(this.props.fetched())
-
   }
 
 

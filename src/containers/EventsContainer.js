@@ -6,7 +6,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 import EventCard from '../components/cards/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
-import SearchBar from '../containers/SearchBar.js'
+import Search from '../containers/Search.js'
 
 // import '../css/Events.css';
 
@@ -73,7 +73,7 @@ class EventsContainer extends React.Component{
 
         {this.state.adding ? <AddEventForm setEvents={this.setEvents} cancelForm={this.setAdding}/> : null}
 
-        {this.state.searching ? <SearchBar/> : null}
+        {this.state.searching ? <Search searchType={'events'}/> : null}
 
         <div className='overflow-auto'>
           {this.renderEventCards()}
