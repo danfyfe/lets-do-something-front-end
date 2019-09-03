@@ -8,7 +8,7 @@ const FollowRequestsContainer = props => {
 
   const renderFollowRequestCards = () => {
     return pendingRequests.map( request => {
-      return <FollowRequestCard key={request.id} request={request}/>
+      return <FollowRequestCard userId={props.userId} key={request.id} request={request}/>
     })
   }
 

@@ -68,8 +68,15 @@ code {
   padding: 2%;
 }
 
+.big-padding {
+  padding: 10%;
+}
+
 .small-indent {
   text-indent: 1%;
+}
+.med-indent {
+  text-indent: 10%;
 }
 
 
@@ -80,6 +87,8 @@ code {
 .m-1v {
   margin: 1vh 0;
 }
+
+
 
 .title {
   background-color: #FFDE07;

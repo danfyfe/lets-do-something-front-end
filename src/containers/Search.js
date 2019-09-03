@@ -8,7 +8,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 const Search = props => {
 
-  const [ searchTerm, setSearchTerm ] = useState('m')
+  const [ searchTerm, setSearchTerm ] = useState('')
   const [ results, setResults ] = useState(false)
 
   useEffect(() => {

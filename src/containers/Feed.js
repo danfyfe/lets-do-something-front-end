@@ -12,7 +12,7 @@ const Feed = props => {
         <span>Feed</span>
       </div>
       <div className='d-flex flex-column justify-content-between small-padding'>
-        <FollowRequestsContainer followRequests={props.currentUser.follow_requests}/>
+        <FollowRequestsContainer userId={props.currentUser.id} followRequests={props.currentUser.follow_requests}/>
       </div>
     </div>
     </>

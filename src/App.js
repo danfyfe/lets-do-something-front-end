@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faAngleDoubleRight, faAngleDoubleLeft, faAngleDoubleUp, faAngleDoubleDown, faPlus, faSearch, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleRight, faAngleDoubleLeft, faAngleDoubleUp, faAngleDoubleDown, faPlus, faSearch, faUserPlus, faUserCheck } from '@fortawesome/free-solid-svg-icons'
 
 
 import './css/App.css';
@@ -19,7 +19,7 @@ import FriendSearchPage from './pages/FriendSearchPage.js'
 // import CalendarPage from './pages/CalendarPage.js'
 
 const  App = () => {
-  library.add(faAngleDoubleLeft, faAngleDoubleRight, faAngleDoubleUp, faAngleDoubleDown, faPlus, faSearch, faUserPlus);
+  library.add(faAngleDoubleLeft, faAngleDoubleRight, faAngleDoubleUp, faAngleDoubleDown, faPlus, faSearch, faUserPlus, faUserCheck);
   return (
   <>
     <Switch>

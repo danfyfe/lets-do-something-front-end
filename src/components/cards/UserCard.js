@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -6,9 +6,10 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const UserCard = props => {
   // console.log(props.user)
+  const [ requested, setRequested ] = useState(false)
 
   const { username, image, first_name, last_name, following_users, followered_users } = props.user
-
+  
   const createFriendRequest = username => {
     fetch(`${API_ENDPOINT}/followrequest/${props.currentUser.id}`, {
       method:'POST',
@@ -22,10 +23,15 @@ const UserCard = props => {
       })
     }).then(resp=>resp.json())
     .then( result => {
-      console.log(result)
+      // console.log(result)
+      if (result.status === 'accepted') {
+        setRequested(true)
+      }
     })
   }
-  console.log(props.currentUser)
+
+  console.log(props.user)
+
   return(
     <div className='user-card d-flex flex-row justify-content-between yellow-background med-padding'>
 
@@ -37,7 +43,10 @@ const UserCard = props => {
       </div>
 
       <div className='d-flex flex-column small-padding half-width'>
+      {requested ?
+        <FontAwesomeIcon className='m-auto link' icon='user-check'/> :
         <FontAwesomeIcon className='m-auto link' icon='user-plus' onClick={()=>createFriendRequest(username)}/>
+      }
       </div>
 
     </div>
