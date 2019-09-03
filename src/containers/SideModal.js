@@ -29,7 +29,9 @@ const SideModal = props => {
         <hr width={25}/>
         <button onClick={()=>props.history.push('/home')}>Home</button>
         <hr width={25}/>
-        <button onClick={()=>props.history.push('/profile')}>Profile</button>
+        <button onClick={()=>props.history.push('/friendsearch')}>Find Friends</button>
+        <hr width={25}/>
+        <button onClick={()=>props.history.push('/profile')}>Profile Info</button>
         <hr width={25}/>
         <button onClick={handleLogOut}>Log Out</button>
       </div>
