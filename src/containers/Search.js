@@ -23,7 +23,7 @@ const Search = props => {
     })
 
   },[props.searchType])
-
+  
   return(<>
     {props.state.fetched && props.state.currentUser.id && results ?
 
