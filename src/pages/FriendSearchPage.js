@@ -1,13 +1,58 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import API_ENDPOINT from '../ApiEndpoint.js'
+
+import Loading from '../components/Loading.js'
+import Header from '../containers/Header.js'
+import Footer from '../containers/Footer.js'
 
 class FriendSearchPage extends React.Component {
+
+  componentDidMount(){
+    fetch(`${API_ENDPOINT}/profile`, {
+      method: 'POST',
+      headers: {
+        Authorization:  localStorage.getItem("token")
+      }
+    }).then(resp => resp.json())
+    .then(user => {
+      this.props.setCurrentUser(user.user)
+    }).then(this.props.fetched())
+
+  }
+
+
   render(){
-    return(
+    if (!localStorage.token || localStorage.token === "undefined") {
+      this.props.history.push("/")
+    }
+    
+    return(<>
+      <Header
+        user={this.props.state.currentUser}     history={this.props.history}/>
       <div>
         Hi from friend search page
       </div>
+      <Footer/>
+      </>
     )
   }
 }
 
-export default FriendSearchPage
+const mapStateToProps = state => {
+  return {
+    state
+   }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
+    fetching: () => dispatch({type:'FETCHING'}),
+    fetched: () => dispatch({type:'FETCHED'}),
+    setCurrentEvent: event => dispatch({type:'SET_CURRENT_EVENT', event})
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(FriendSearchPage)
