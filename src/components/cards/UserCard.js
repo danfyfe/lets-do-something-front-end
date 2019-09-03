@@ -1,15 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const UserCard = props => {
-  // console.log(props.user)
   const [ requested, setRequested ] = useState(false)
+  const [ following, setFollowing ] = useState(false)
 
-  const { username, image, first_name, last_name, following_users, followered_users } = props.user
-  
+  const { id, username, image, first_name, last_name, followers, followees, follow_requests } = props.user
+
+  useEffect(()=>{
+    follow_requests.forEach( request => {
+      if (request.user_id === id || request.follower_id === id) {
+        setRequested(true)
+      }
+    })
+
+    followees.forEach( follow => {
+      if (follow.id === props.currentUser.id) {
+        setFollowing(true)
+      }
+    })
+  },[id, follow_requests, followees])
+
   const createFriendRequest = username => {
     fetch(`${API_ENDPOINT}/followrequest/${props.currentUser.id}`, {
       method:'POST',
@@ -23,14 +37,21 @@ const UserCard = props => {
       })
     }).then(resp=>resp.json())
     .then( result => {
-      // console.log(result)
       if (result.status === 'accepted') {
         setRequested(true)
       }
     })
   }
 
-  console.log(props.user)
+  const renderIcon = () => {
+    if (id === props.currentUser.id) {
+      return <FontAwesomeIcon className='m-auto link' icon='user-circle'/>
+    } else if (requested || following) {
+      return <FontAwesomeIcon className='m-auto link' icon='user-check'/>
+    } else {
+      return <FontAwesomeIcon className='m-auto link' icon='user-plus' onClick={()=>createFriendRequest(username)}/>
+    }
+  }
 
   return(
     <div className='user-card d-flex flex-row justify-content-between yellow-background med-padding'>
@@ -43,10 +64,8 @@ const UserCard = props => {
       </div>
 
       <div className='d-flex flex-column small-padding half-width'>
-      {requested ?
-        <FontAwesomeIcon className='m-auto link' icon='user-check'/> :
-        <FontAwesomeIcon className='m-auto link' icon='user-plus' onClick={()=>createFriendRequest(username)}/>
-      }
+
+        {renderIcon()}
       </div>
 
     </div>
