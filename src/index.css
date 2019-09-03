@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.link:hover {
+  cursor: pointer;
+}
+
 .white-background {
   background-color: #fffff2;
 }
