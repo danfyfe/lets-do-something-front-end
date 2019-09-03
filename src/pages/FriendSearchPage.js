@@ -5,6 +5,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 import Loading from '../components/Loading.js'
 import Header from '../containers/Header.js'
+import FriendSearchContainer from '../containers/FriendSearchContainer.js'
 import Footer from '../containers/Footer.js'
 
 class FriendSearchPage extends React.Component {
@@ -27,13 +28,16 @@ class FriendSearchPage extends React.Component {
     if (!localStorage.token || localStorage.token === "undefined") {
       this.props.history.push("/")
     }
-    
+
     return(<>
       <Header
         user={this.props.state.currentUser}     history={this.props.history}/>
-      <div>
-        Hi from friend search page
-      </div>
+
+        <FriendSearchContainer
+          user={this.props.state.currentUser}
+        />
+
+
       <Footer/>
       </>
     )
