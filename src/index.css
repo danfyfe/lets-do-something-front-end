@@ -25,7 +25,11 @@ code {
 }
 
 .grey-background {
-  background-color: #d3d3d3;
+  background-color: #e3e3e3;
+}
+
+.border-r {
+  border-radius: 2px;
 }
 
 .tiny-font {

@@ -25,7 +25,7 @@ const EventCard = props => {
 
   return(
 
-    <div className='d-flex flex-column white-background med-padding small-marg'>
+    <div className='d-flex flex-column white-background med-padding small-marg border-r'>
       <div className='d-flex'>
         <div className='text-nowrap half-width'>
           <span className=''>{title}</span>

@@ -54,7 +54,7 @@ const UserCard = props => {
   }
 
   return(
-    <div className='user-card d-flex flex-row justify-content-between yellow-background med-padding'>
+    <div className='user-card d-flex flex-row justify-content-between yellow-background med-padding border-r'>
 
       <div className='d-flex flex-column justify-content-between med-padding'>
         {/*<img className='user-image' src='' alt='user avatar'/>*/}

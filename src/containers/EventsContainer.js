@@ -7,6 +7,8 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 import EventCard from '../components/cards/EventCard.js'
 import AddEventForm from '../components/forms/AddEventForm.js'
 import Search from '../containers/Search.js'
+import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
+
 
 // import '../css/Events.css';
 
@@ -76,7 +78,7 @@ class EventsContainer extends React.Component{
         {this.state.searching ? <Search searchType={'events'}/> : null}
 
         <div className='overflow-auto'>
-          {this.renderEventCards()}
+          {this.state.events.length === 0 ? <NoContentMessageCard type={'events'}/> : this.renderEventCards()}
         </div>
 
         <div className='events container-bottom'>

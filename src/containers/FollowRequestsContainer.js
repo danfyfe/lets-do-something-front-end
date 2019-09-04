@@ -1,6 +1,7 @@
 import React from 'react'
 
 import FollowRequestCard from '../components/cards/FollowRequestCard.js'
+import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
 const FollowRequestsContainer = props => {
 
@@ -14,14 +15,14 @@ const FollowRequestsContainer = props => {
 
   return(
 
-    <div className='d-flex flex-column white-background med-padding'>
+    <div className='d-flex flex-column white-background med-padding border-r'>
 
       <div className='d-flex '>
         <span>Follow Requests</span>
       </div>
 
       <div className=''>
-        {renderFollowRequestCards()}
+        {props.followRequests.length === 0 ? <NoContentMessageCard type={'follow requests'}/> : renderFollowRequestCards()}
       </div>
 
     </div>

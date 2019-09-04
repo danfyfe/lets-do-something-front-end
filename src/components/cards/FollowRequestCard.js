@@ -6,7 +6,7 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const FollowRequestCard = props => {
 
-  const { follower, created_at, accepted  } = props.request
+  const { follower, created_at  } = props.request
 
   const confirmFollowRequest = () => {
     fetch(`${API_ENDPOINT}/confirmfollowrequest/${props.request.id}`,{
