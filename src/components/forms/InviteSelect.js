@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const InviteSelect = props => {
-  const { followers, addSelectValue } = props
+  const { id, followers, addSelectValue, removeSelectValue, removeSpecificSelect } = props
 
   const options = () => {
     return followers.map( follower => {
@@ -11,14 +11,19 @@ const InviteSelect = props => {
     })
   }
 
+  const removeSpecificSelectWithValue = id => {
+    removeSelectValue(id)
+    removeSpecificSelect(id)
+  }
+
   return(<>
     <div className='d-flex justify-content-between'>
-      <select className='most-width m-1v' onChange={e => addSelectValue(e.target.value)}>
+      <select className='most-width m-1v' onChange={e => addSelectValue(e.target.value, id)}>
         <option value=''>Select a Friend to Invite!</option>
         {options()}
       </select>
       <div className='m-auto'>
-        <FontAwesomeIcon icon='times' />
+        <FontAwesomeIcon icon='times' onClick={e => removeSpecificSelectWithValue(id)}/>
       </div>
     </div>
   </>)
