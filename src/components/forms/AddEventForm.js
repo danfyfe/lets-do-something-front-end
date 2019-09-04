@@ -20,7 +20,7 @@ const AddEventForm = props => {
   const [ owner_id ] = useState(id)
 
   return(
-    <div className='d-flex flex-column white-background med-padding med-font'>
+    <div className='d-flex flex-column white-background med-padding med-font border-r'>
         <div className='d-flex flex-column'>
 
             <label>Title</label>
