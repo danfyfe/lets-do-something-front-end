@@ -15,7 +15,7 @@ const FollowRequestsContainer = props => {
 
   return(
 
-    <div className='d-flex flex-column white-background med-padding border-r'>
+    <div className='d-flex flex-column white-background med-padding border-r m-1v'>
 
       <div className='d-flex '>
         <span>Follow Requests</span>

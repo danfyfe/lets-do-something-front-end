@@ -7,7 +7,7 @@ import InvitesContainer from './InvitesContainer.js'
 
 const EventContainer = props => {
   const { id, title, description, start, end, users, owner_id } = props.event
-
+  
   const owner = users.find( user => user.id === owner_id)
 
   const renderAttendeeCards = () => {
@@ -15,6 +15,7 @@ const EventContainer = props => {
       return <AttendeeCard key={user.id} user={user}/>
     })
   }
+
   return(
     <div className='d-flex flex-column most-width m-auto med-padding'>
       <div className='d-flex flex-row justify-content-between small-padding'>

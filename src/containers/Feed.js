@@ -3,8 +3,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import FollowRequestsContainer from './FollowRequestsContainer.js'
+import UserInvitesContainer from './UserInvitesContainer.js'
 
 const Feed = props => {
+  const { id, follow_requests, invites } = props.currentUser
+
   return(
     <>
     <div className='m-1v d-flex flex-column med-padding yellow-background'>
@@ -12,7 +15,8 @@ const Feed = props => {
         <span>Feed</span>
       </div>
       <div className='d-flex flex-column justify-content-between small-padding'>
-        <FollowRequestsContainer userId={props.currentUser.id} followRequests={props.currentUser.follow_requests}/>
+        <FollowRequestsContainer userId={id} followRequests={follow_requests}/>
+        <UserInvitesContainer invites={invites}/>
       </div>
     </div>
     </>

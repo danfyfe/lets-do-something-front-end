@@ -12,7 +12,7 @@ const InvitesContainer = props => {
 
   const renderAttendeeCards = () => {
     return pendingRSVPs.map( user => {
-      return <AttendeeCard user={user}/>
+      return <AttendeeCard key={user.id} user={user}/>
     })
   }
 
