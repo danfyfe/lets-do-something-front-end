@@ -16,6 +16,11 @@ code {
   cursor: pointer;
 }
 
+.link {
+  text-decoration: underline;
+  color: #2e9eff;
+}
+
 .white-background {
   background-color: #fffff2;
 }
@@ -52,6 +57,10 @@ code {
   margin: 1% auto;
 }
 
+.m-1v {
+  margin: 1vh 0;
+}
+
 .full-width {
   width: 100%;
 }
@@ -79,18 +88,15 @@ code {
 .small-indent {
   text-indent: 1%;
 }
+
 .med-indent {
   text-indent: 10%;
 }
-
 
 .loading {
   text-align: center;
 }
 
-.m-1v {
-  margin: 1vh 0;
-}
 
 
 
@@ -262,7 +268,8 @@ input, textarea, select {
 }
 
 .user-card {
-  margin: 1vh 0;
+  border-top: 1vh solid #fffff2;
+  border-bottom: 1vh solid #fffff2;
 }
 
 

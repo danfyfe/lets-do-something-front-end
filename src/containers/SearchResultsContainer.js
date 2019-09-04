@@ -4,43 +4,35 @@ import EventCard from '../components/cards/EventCard.js'
 import UserCard from '../components/cards/UserCard.js'
 
 const SearchResultsContainer = props => {
+  const { searchTerm, searchType } = props
 
-  // const renderEventCards = () => {
-  //   return this.state.events.map( event => {
-  //     return <EventCard key={event.id} event={event} history={this.props.history}/>
-  //   })
-  // }
   const filteredResults = searchType => {
     let newResults
     if (searchType === 'users') {
-      newResults = props.results.filter( user => user.username.toLowerCase().includes(props.searchTerm))
+      newResults = props.results.filter( user => user.username.toLowerCase().includes(searchTerm))
     } else if (searchType === 'events') {
-      newResults = props.results.filter( event => event.title.toLowerCase().includes(props.searchTerm))
+      newResults = props.results.filter( event => event.title.toLowerCase().includes(searchTerm))
     }
     return newResults
   }
 
   const renderResultsCards = searchType => {
-    let newResults = filteredResults(props.searchType)
-    if (searchType === 'users' && props.searchTerm !== '') {
+    let newResults = filteredResults(searchType)
+    if (searchType === 'users' && searchTerm !== '') {
       return newResults.map( user => {
         return <UserCard key={user.id} user={user}/>
       })
-    } else if (searchType === 'events' && props.searchTerm !== '') {
+    } else if (searchType === 'events' && searchTerm !== '') {
       return newResults.map( event => {
-        return <EventCard key={event.id} event={event}/>
+        return <EventCard history={props.history}
+        key={event.id} event={event}/>
       })
     }
   }
 
-  // console.log('search results cont', props.searchTerm)
-  // console.log(filteredResults(props.searchType))
-
   return(
-    <div className='d-flex flex-column white-background full-width'>
-      {renderResultsCards(props.searchType)}
-
-
+    <div className='d-flex flex-column yellow-background full-width'>
+      {renderResultsCards(searchType)}
     </div>
   )
 }

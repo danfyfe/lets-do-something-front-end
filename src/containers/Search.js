@@ -12,7 +12,7 @@ const Search = props => {
   const [ results, setResults ] = useState(false)
 
   useEffect(() => {
-    fetch(`${API_ENDPOINT}/${props.searchType}`, {
+    fetch(`${API_ENDPOINT}/search/${props.searchType}/${props.state.currentUser.id}`, {
       method: 'GET',
       headers: {
         Authorization:  localStorage.getItem("token")
@@ -22,7 +22,8 @@ const Search = props => {
       setResults(results)
     })
 
-  },[props.searchType])
+  },[props.searchType, props.state.currentUser.id])
+
 
   return(<>
     {props.state.fetched && props.state.currentUser.id && results ?
@@ -35,6 +36,7 @@ const Search = props => {
 
         <div className='d-flex med-padding'>
           <SearchResultsContainer
+            history={props.history}
             searchTerm={searchTerm}
             searchType={props.searchType}
             results={results}/>
