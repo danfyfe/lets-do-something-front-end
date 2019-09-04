@@ -73,6 +73,10 @@ code {
   width: 50%;
 }
 
+.quart-width {
+  width: 25%;
+}
+
 .small-padding {
   padding: 1%;
 }
@@ -113,7 +117,8 @@ code {
 button {
   background-color: #FFDE07;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  margin: 1vh 0;
 }
 
 input, textarea, select {

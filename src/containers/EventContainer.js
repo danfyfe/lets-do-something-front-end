@@ -3,10 +3,10 @@ import React from 'react'
 import { formatTime } from '../actions/general.js'
 
 import AttendeeCard from '../components/cards/AttendeeCard.js'
-import AddInvitesContainer from './AddInvitesContainer.js'
+import InvitesContainer from './InvitesContainer.js'
 
 const EventContainer = props => {
-  const { title, description, start, end, users, owner_id } = props.event
+  const { id, title, description, start, end, users, owner_id } = props.event
 
   const owner = users.find( user => user.id === owner_id)
 
@@ -15,7 +15,6 @@ const EventContainer = props => {
       return <AttendeeCard key={user.id} user={user}/>
     })
   }
-
   return(
     <div className='d-flex flex-column most-width m-auto med-padding'>
       <div className='d-flex flex-row justify-content-between small-padding'>
@@ -31,7 +30,7 @@ const EventContainer = props => {
       <div className='d-flex flex-column med-padding'>
         <p className='m-auto small-indent med-norm-font'>{description}</p>
         <div className='d-flex flex-column small-padding'>
-          <span className='small-font text-muted'>Owner:</span>
+          <span className='font-weight-bold small-font text-muted'>Owner:</span>
           <span className='med-font small-indent small-padding'>{owner.username}</span>
         </div>
       </div>
@@ -44,7 +43,7 @@ const EventContainer = props => {
       </div>
 
       <div className='d-flex flex-column m-1v'>
-        <AddInvitesContainer/>
+        <InvitesContainer eventId={id}/>
       </div>
 
 
