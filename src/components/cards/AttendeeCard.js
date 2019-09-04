@@ -5,7 +5,7 @@ const AttendeeCard = props => {
   const { username } = props.user
 
   return(
-    <div className='d-flex yellow-background small-padding border-r'>
+    <div className='d-flex yellow-background small-padding m-1v border-r'>
       <span className='font-weight-bold small-font small-padding'>{username}</span>
     </div>
   )

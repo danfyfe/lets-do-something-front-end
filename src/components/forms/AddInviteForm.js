@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-// import InviteSelect from './InviteSelect.js'
+
+import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const AddInviteForm = props => {
-  const [ invitees, setInvitees ] = useState([])
 
-  const { followers } = props
+  const [ inviteeIds, setInviteeIds ] = useState([])
 
+  const { followers, eventId, setAdding, setPendingRSVPs } = props
 
   const handleChange = e => {
     if (e.target.checked) {
-      setInvitees([...invitees, e.target.value])
+      setInviteeIds([...inviteeIds, e.target.value])
     } else {
-      let index = invitees.indexOf(e.target.value)
-      invitees.splice(index, 1)
+      let index = setInviteeIds.indexOf(e.target.value)
+      inviteeIds.splice(index, 1)
     }
   }
 
@@ -26,15 +27,30 @@ const AddInviteForm = props => {
           </div>
 
           <div className='col-sm'>
-            <input className='' type='checkbox' value={follower.username} onChange={handleChange}/>
+            <input className='' type='checkbox' value={follower.id} onChange={handleChange}/>
           </div>
 
       </div>
     })
   }
 
-
-  console.log('invitees',invitees)
+  const createInvites = () => {
+    fetch(`${API_ENDPOINT}/events/${eventId}/invites`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: 'application/json',
+        Authorization:  localStorage.getItem("token")
+      },
+      body: JSON.stringify({
+        inviteeIds
+      })
+    }).then(resp=>resp.json())
+    .then( results => {
+      setAdding(false)
+      setPendingRSVPs(results)
+    })
+  }
 
   return(
     <div className='d-flex flex-column m-1v med-padding'>
@@ -45,7 +61,7 @@ const AddInviteForm = props => {
         {followerInputs()}
       </div>
 
-      <button className='small-font full-width' value='submit'>Send Invites!</button>
+      <button className='small-font full-width' onClick={createInvites}>Send Invites!</button>
 
     </div>
   )
