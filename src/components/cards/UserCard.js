@@ -8,7 +8,7 @@ const UserCard = props => {
   const [ requested, setRequested ] = useState(false)
   const [ following, setFollowing ] = useState(false)
 
-  const { id, username, image, first_name, last_name, followers, followees, follow_requests } = props.user
+  const { id, username, followees, follow_requests } = props.user
 
   useEffect(()=>{
     follow_requests.forEach( request => {
@@ -22,7 +22,7 @@ const UserCard = props => {
         setFollowing(true)
       }
     })
-  },[id, follow_requests, followees])
+  },[id, follow_requests, followees, props.currentUser.id])
 
   const createFriendRequest = username => {
     fetch(`${API_ENDPOINT}/followrequest/${props.currentUser.id}`, {

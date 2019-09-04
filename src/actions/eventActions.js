@@ -19,7 +19,6 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 
 export function addEvent(eventObj, cancelForm, setEvents){
-  // console.log(cancelForm)
   fetch(`${API_ENDPOINT}/events`, {
     method: 'POST',
     headers: {
@@ -34,6 +33,9 @@ export function addEvent(eventObj, cancelForm, setEvents){
   .then(event => {
     setEvents(event)
     cancelForm()
-    // console.log(event)
   })
+}
+
+export function editEvent(){
+
 }

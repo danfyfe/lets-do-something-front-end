@@ -5,7 +5,7 @@ import { formatTime } from '../actions/general.js'
 const EventContainer = props => {
   const { title, description, start, end, users } = props.event
 
-  
+
 
   return(
     <div className='d-flex flex-column most-width m-auto'>
@@ -21,6 +21,10 @@ const EventContainer = props => {
 
       <div className='d-flex med-padding'>
         <p className='m-auto'>{description}</p>
+      </div>
+
+      <div className='d-flex'>
+        
       </div>
     </div>
   )

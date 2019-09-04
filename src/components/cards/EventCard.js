@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import moment from 'moment'
 import { formatTime } from '../../actions/general.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
