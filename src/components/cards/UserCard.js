@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const UserCard = props => {
+  console.log(props)
   const [ requested, setRequested ] = useState(false)
   const [ following, setFollowing ] = useState(false)
 
@@ -43,10 +44,22 @@ const UserCard = props => {
     })
   }
 
+  const hasRequested = () => {
+    let requested
+    for (var i = 0; i < props.currentUser.follow_requests.length; i++) {
+        if (props.currentUser.follow_requests[i].follower_id === id) {
+          requested = true
+        } else {
+          requested = false
+        }
+    }
+    return requested
+  }
+
   const renderIcon = () => {
     if (id === props.currentUser.id) {
       return <FontAwesomeIcon className='m-auto link' icon='user-circle'/>
-    } else if (requested || following) {
+    } else if (requested || following || hasRequested()) {
       return <FontAwesomeIcon className='m-auto link' icon='user-check'/>
     } else {
       return <FontAwesomeIcon className='m-auto link' icon='user-plus' onClick={()=>createFriendRequest(username)}/>

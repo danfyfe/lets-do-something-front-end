@@ -10,13 +10,10 @@ const FollowRequestsContainer = props => {
   const [ pendingRequests, setPendingRequests ] = useState(followRequests)
 
   const removeRequest = id => {
-    console.log('remove request id', id)
     setPendingRequests(prevPendingRequests => pendingRequests.filter( request => {
       return request.id !== id
     }))
   }
-
-  console.log('pending', pendingRequests)
 
   const renderFollowRequestCards = () => {
     return pendingRequests.map( request => {
