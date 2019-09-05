@@ -12,6 +12,23 @@ code {
     monospace;
 }
 
+.loading {
+  text-align: center;
+}
+
+.loading-animated {
+  animation-name: loading;
+  animation-duration: 1s;
+}
+
+@keyframes loading {
+  from {
+    opacity: 0
+  } to {
+    opacity: 1
+  }
+}
+
 .link:hover {
   cursor: pointer;
 }
@@ -102,9 +119,6 @@ code {
   text-indent: 10%;
 }
 
-.loading {
-  text-align: center;
-}
 
 
 
