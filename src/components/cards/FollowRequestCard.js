@@ -1,12 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { formatTime } from '../../actions/general.js'
+// import { formatTime } from '../../actions/general.js'
 
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const FollowRequestCard = props => {
 
-  const { follower, created_at  } = props.request
+  const { follower } = props.request
+  const { removeRequest } = props
 
   const confirmFollowRequest = () => {
     fetch(`${API_ENDPOINT}/confirmfollowrequest/${props.request.id}`,{
@@ -20,21 +21,24 @@ const FollowRequestCard = props => {
         currentUserId: props.userid
       })
     }).then(resp=>resp.json())
-    .then( result => {
-      console.log(result)
+    .then( data => {
+
+      removeRequest(data.id)
+      // console.log(data.id)
+
     })
   }
 
   return(
-    <div className='d-flex flex-row yellow-background m-auto justify-content-between med-padding'>
+    <div className='d-flex flex-row yellow-background justify-content-between small-padding m-1v'>
 
-      <div className='d-flex flex-column justify-content-between half-width m-auto'>
-        <span className='med-norm-font'>{follower.username}</span>
-        <span className='text-muted tiny-font med-indent text-nowrap'>{formatTime(created_at)}</span>
+      <div className='d-flex flex-row justify-content-between half-width m-auto'>
+        <span className='med-font font-weight-bold text-nowrap'>{follower.username}</span>
+        {/*<span className='text-muted tiny-font text-nowrap m-auto'>{formatTime(created_at)}</span>*/}
       </div>
 
-      <div className='m-auto'>
-        <FontAwesomeIcon className='padding' icon='user-check' onClick={confirmFollowRequest}/>
+      <div className='quart-width'>
+        <FontAwesomeIcon className='m-auto' icon='user-check' onClick={confirmFollowRequest}/>
       </div>
 
     </div>

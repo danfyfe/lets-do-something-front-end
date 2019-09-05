@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import FollowRequestCard from '../components/cards/FollowRequestCard.js'
 import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
 const FollowRequestsContainer = props => {
 
-  const pendingRequests = props.followRequests.filter( request => request.accepted === false)
+  const { followRequests } = props
+
+  const [ pendingRequests, setPendingRequests ] = useState(followRequests)
+
+  const removeRequest = id => {
+    console.log('remove request id', id)
+    setPendingRequests(prevPendingRequests => pendingRequests.filter( request => {
+      return request.id !== id
+    }))
+  }
+
+  console.log('pending', pendingRequests)
 
   const renderFollowRequestCards = () => {
     return pendingRequests.map( request => {
-      return <FollowRequestCard userId={props.userId} key={request.id} request={request}/>
+      return <FollowRequestCard userId={props.userId} key={request.id} request={request} removeRequest={removeRequest}/>
     })
   }
 
@@ -22,7 +33,7 @@ const FollowRequestsContainer = props => {
       </div>
 
       <div className=''>
-        {props.followRequests.length === 0 ? <NoContentMessageCard type={'follow requests'}/> : renderFollowRequestCards()}
+        {pendingRequests.length === 0 ? <NoContentMessageCard type={'follow requests'}/> : renderFollowRequestCards()}
       </div>
 
     </div>

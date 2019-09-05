@@ -5,7 +5,6 @@ import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
 
 const UserInvitesContainer = props => {
-  console.log(props)
 
   const { invites, history } = props
 
