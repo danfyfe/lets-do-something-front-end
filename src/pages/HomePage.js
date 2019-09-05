@@ -37,18 +37,25 @@ class HomePage extends React.Component {
     if (!localStorage.token || localStorage.token === "undefined") {
       this.props.history.push("/")
     }
+
+    const { history } = this.props
+    const { currentUser } = this.props.state
+    const { fetched } = this.props.state
+
     return(
       <>
       <Header
-        user={this.props.state.currentUser}     history={this.props.history}/>
-      {this.props.state.fetched && this.props.state.currentUser.id ?
+        user={currentUser}
+        history={history}/>
+      { fetched && currentUser.id ?
 
 
         <>
         {/*<FixedSideMenu/>*/}
-        <Feed/>
+        <Feed history={history}/>
         <EventsContainer
-          history={this.props.history} id={this.props.state.currentUser.id}/>
+          history={history}
+          id={currentUser.id}/>
         </> : <Loading/>
         }
 

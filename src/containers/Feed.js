@@ -7,6 +7,7 @@ import UserInvitesContainer from './UserInvitesContainer.js'
 
 const Feed = props => {
   const { id, follow_requests, invites } = props.currentUser
+  const { history } = props
 
   return(
     <>
@@ -16,7 +17,7 @@ const Feed = props => {
       </div>
       <div className='d-flex flex-column justify-content-between small-padding'>
         <FollowRequestsContainer userId={id} followRequests={follow_requests}/>
-        <UserInvitesContainer invites={invites}/>
+        <UserInvitesContainer history={history} invites={invites}/>
       </div>
     </div>
     </>

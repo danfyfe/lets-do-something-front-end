@@ -7,11 +7,11 @@ import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 const UserInvitesContainer = props => {
   console.log(props)
 
-  const { invites } = props
+  const { invites, history } = props
 
   const renderInviteCard = () => {
     return invites.map( invite => {
-      return <InviteCard invite={invite}/>
+      return <InviteCard history={history} key={invite.id} invite={invite}/>
     })
   }
 
