@@ -7,7 +7,7 @@ import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
 
 const UserInvitesContainer = props => {
-
+// might have to move invite logic up a level to simplify rendering NoContentMessageCard
   const { invites, history, setEvents, events } = props
   const [ userInvites, setUserInvites ] = useState(invites)
 
@@ -41,7 +41,7 @@ const UserInvitesContainer = props => {
       </div>
 
       <div className=''>
-        {props.invites.length === 0 ? <NoContentMessageCard type={'follow requests'}/> : renderInviteCard()}
+        {userInvites.length === 0 ? <NoContentMessageCard type={'pending invites'}/> : renderInviteCard()}
       </div>
 
     </div>

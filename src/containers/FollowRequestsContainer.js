@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import FollowRequestCard from '../components/cards/FollowRequestCard.js'
 import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'

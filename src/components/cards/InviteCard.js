@@ -23,10 +23,15 @@ const InviteCard = props => {
         rsvp
       })
     }).then(resp=>resp.json())
-    .then( inviteWithEvent => {
-      const { invite, event } = inviteWithEvent
-      removeInviteCard(invite.id)
-      addEventFromInvite(event)
+    .then( result => {
+      if (!result.status) {
+        const { invite, event } = result
+        removeInviteCard(invite.id)
+        addEventFromInvite(event)
+      } else {
+        const { invite } = result
+        removeInviteCard(invite.id)
+      }
     })
   }
 

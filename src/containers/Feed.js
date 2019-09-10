@@ -7,7 +7,7 @@ import UserInvitesContainer from './UserInvitesContainer.js'
 
 const Feed = props => {
   const { id, follow_requests, invites } = props.currentUser
-  const { history, addEventFromInvite } = props
+  const { history } = props
 
   return(
     <>
