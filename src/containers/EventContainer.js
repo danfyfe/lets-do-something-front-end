@@ -6,8 +6,23 @@ import AttendeeCard from '../components/cards/AttendeeCard.js'
 import InvitesContainer from './InvitesContainer.js'
 
 const EventContainer = props => {
-  const { id, title, description, start, end, users, owner_id } = props.event
+  const { id, title, description, start, end, users, owner_id, invites } = props.event
 
+  const { followers } = props.currentUser
+
+  const pendingInvites = () => {
+    return invites.filter( invite => {
+      return invite.rsvp !== true
+    })
+  }
+
+  const pendingInviteUsers = () => {
+    return pendingInvites().map( invite => {
+      return followers.find( follower => {
+        return follower.id === invite.user_id
+      })
+    })
+  }
 
   const owner = users.find( user => user.id === owner_id)
 
@@ -53,7 +68,7 @@ const EventContainer = props => {
       </div>
 
       <div className='d-flex flex-column m-1v'>
-        <InvitesContainer eventId={id} isOwner={isOwner}/>
+        <InvitesContainer eventId={id} isOwner={isOwner} pendingInviteUsers={pendingInviteUsers()}/>
       </div>
 
 

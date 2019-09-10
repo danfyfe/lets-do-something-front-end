@@ -6,10 +6,9 @@ import AttendeeCard from '../components/cards/AttendeeCard.js'
 
 const InvitesContainer = props => {
 
+  const { eventId, isOwner, pendingInviteUsers } = props
   const [ adding, setAdding ] = useState(false)
-  const [ pendingRSVPs, setPendingRSVPs] = useState([])
-
-  const { eventId, isOwner } = props
+  const [ pendingRSVPs, setPendingRSVPs] = useState(pendingInviteUsers)
 
   const renderAttendeeCards = () => {
     return pendingRSVPs.map( user => {

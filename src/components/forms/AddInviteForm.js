@@ -18,16 +18,16 @@ const AddInviteForm = props => {
     }
   }
 
-  const followerInputs = () => {
+  const renderFollowerInputs = () => {
     return followers.map( follower => {
       return <div key={follower.id} className='d-flex'>
 
           <div className='col-sm'>
-            <label className='small-font'>{follower.username}</label>
+            <label className='small-font m-auto'>{follower.username}</label>
           </div>
 
           <div className='col-sm'>
-            <input className='' type='checkbox' value={follower.id} onChange={handleChange}/>
+            <input className='m-auto' type='checkbox' value={follower.id} onChange={handleChange}/>
           </div>
 
       </div>
@@ -58,7 +58,7 @@ const AddInviteForm = props => {
       <span className='small-font m-auto'>Select Friends to Invite!</span>
 
       <div className='d-flex flex-column b-thin med-padding'>
-        {followerInputs()}
+        {renderFollowerInputs()}
       </div>
 
       <button className='small-font full-width' onClick={createInvites}>Send Invites!</button>
