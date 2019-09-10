@@ -13,8 +13,8 @@ const AddInviteForm = props => {
     if (e.target.checked) {
       setInviteeIds([...inviteeIds, e.target.value])
     } else {
-      let index = setInviteeIds.indexOf(e.target.value)
-      inviteeIds.splice(index, 1)
+        let index = inviteeIds.indexOf(e.target.value)
+        inviteeIds.splice(index, 1)
     }
   }
 

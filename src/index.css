@@ -38,12 +38,16 @@ code {
   color: #2e9eff;
 }
 
+:root {
+  --main-color: #FFDE07;
+}
+
 .white-background {
   background-color: #fffff2;
 }
 
 .yellow-background {
-  background-color: #FFDE07;
+  background-color: var(--main-color);
 }
 
 .grey-background {

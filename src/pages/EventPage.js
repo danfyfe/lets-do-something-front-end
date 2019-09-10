@@ -49,7 +49,9 @@ class EventPage extends React.Component {
         user={this.props.state.currentUser}     history={this.props.history}/>
       { this.props.state.fetched && this.props.state.currentEvent.id?
         <>
-          <EventContainer event={this.props.state.currentEvent}/>
+          <EventContainer
+            currentUser={this.props.state.currentUser}
+            event={this.props.state.currentEvent}/>
         </>
         :
         <Loading/>

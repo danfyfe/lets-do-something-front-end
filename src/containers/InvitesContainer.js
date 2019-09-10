@@ -8,12 +8,17 @@ const InvitesContainer = props => {
 
   const [ adding, setAdding ] = useState(false)
   const [ pendingRSVPs, setPendingRSVPs] = useState([])
-  const { eventId } = props
+
+  const { eventId, isOwner } = props
 
   const renderAttendeeCards = () => {
     return pendingRSVPs.map( user => {
       return <AttendeeCard key={user.id} user={user}/>
     })
+  }
+
+  const renderAddInviteIcon = () => {
+    return isOwner() ?  <FontAwesomeIcon className='' icon='plus' onClick={()=>setAdding(true)}/> : null
   }
 
   return(<>
@@ -22,7 +27,7 @@ const InvitesContainer = props => {
 
         <span className='font-weight-bold small-font'>Invites</span>
         <div className='d-flex'>
-          <FontAwesomeIcon className='' icon='plus' onClick={()=>setAdding(true)}/>
+          {renderAddInviteIcon()}
         </div>
       </div>
 

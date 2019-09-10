@@ -7,8 +7,17 @@ import InvitesContainer from './InvitesContainer.js'
 
 const EventContainer = props => {
   const { id, title, description, start, end, users, owner_id } = props.event
-  
+
+
   const owner = users.find( user => user.id === owner_id)
+
+  const isOwner = () => {
+    if (props.currentUser.id === owner.id) {
+      return true
+    } else {
+      return false
+    }
+  }
 
   const renderAttendeeCards = () => {
     return users.map( user => {
@@ -44,7 +53,7 @@ const EventContainer = props => {
       </div>
 
       <div className='d-flex flex-column m-1v'>
-        <InvitesContainer eventId={id}/>
+        <InvitesContainer eventId={id} isOwner={isOwner}/>
       </div>
 
 

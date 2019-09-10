@@ -4,14 +4,15 @@ import EventCard from '../components/cards/EventCard.js'
 import UserCard from '../components/cards/UserCard.js'
 
 const SearchResultsContainer = props => {
+
   const { searchTerm, searchType } = props
 
   const filteredResults = searchType => {
     let newResults
     if (searchType === 'users') {
-      newResults = props.results.filter( user => user.username.toLowerCase().includes(searchTerm))
+      newResults = props.results.filter( user => user.username.toLowerCase().includes(searchTerm.toLowerCase()))
     } else if (searchType === 'events') {
-      newResults = props.results.filter( event => event.title.toLowerCase().includes(searchTerm))
+      newResults = props.results.filter( event => event.title.toLowerCase().includes(searchTerm.toLowerCase()))
     }
     return newResults
   }

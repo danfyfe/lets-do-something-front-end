@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const UserCard = props => {
-  console.log(props)
   const [ requested, setRequested ] = useState(false)
   const [ following, setFollowing ] = useState(false)
 
