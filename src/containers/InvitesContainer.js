@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import AddInviteForm from '../components/forms/AddInviteForm.js'
 import AttendeeCard from '../components/cards/AttendeeCard.js'
-
+import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 const InvitesContainer = props => {
 
   const { eventId, isOwner, pendingInviteUsers } = props
@@ -11,9 +11,13 @@ const InvitesContainer = props => {
   const [ pendingRSVPs, setPendingRSVPs] = useState(pendingInviteUsers)
 
   const renderAttendeeCards = () => {
-    return pendingRSVPs.map( user => {
-      return <AttendeeCard key={user.id} user={user}/>
-    })
+    if (pendingRSVPs.length > 0) {
+      return pendingRSVPs.map( user => {
+        return <AttendeeCard key={user.id} user={user}/>
+      })
+    } else {
+      return <NoContentMessageCard type={'pending invites'} />
+    }
   }
 
   const renderAddInviteIcon = () => {

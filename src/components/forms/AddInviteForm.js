@@ -62,7 +62,8 @@ const AddInviteForm = props => {
       </div>
 
       <button className='small-font full-width' onClick={createInvites}>Send Invites!</button>
-
+      <button className='small-font full-width'
+      onClick={() => setAdding(false)}>Cancel</button>
     </div>
   )
 }
