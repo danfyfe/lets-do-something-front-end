@@ -7,16 +7,16 @@ import InvitesContainer from './InvitesContainer.js'
 
 const EventContainer = props => {
   const { id, title, description, start, end, users, owner_id, invites } = props.event
-
+  const { currentUser } = props
   const { followers } = props.currentUser
-
 
   const pendingInviteUsers = () => {
     let users = []
-
+    let followersWithUser = [ ...followers, currentUser]
     invites.forEach( invite => {
       if (invite.rsvp === null) {
-        let user = followers.find( follower => {
+        console.log('invite', invite)
+        let user = followersWithUser.find( follower => {
           return follower.id === invite.user_id
         })
         if (user) {

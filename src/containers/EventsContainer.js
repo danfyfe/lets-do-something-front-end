@@ -77,7 +77,7 @@ class EventsContainer extends React.Component{
 
         {this.state.searching ? <Search history={this.props.history} searchType={'events'}/> : null}
 
-        <div className='overflow-auto'>
+        <div className='overflow-auto white-background small-padding'>
           {this.state.events.length === 0 ? <NoContentMessageCard type={'events'}/> : this.renderEventCards()}
         </div>
 

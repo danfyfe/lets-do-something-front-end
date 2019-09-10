@@ -12,7 +12,6 @@ const InvitesContainer = props => {
 
   const renderAttendeeCards = () => {
     if (pendingRSVPs.length > 0) {
-      console.log(pendingRSVPs)
       return pendingRSVPs.map( user => {
         return <AttendeeCard key={user.id} user={user}/>
       })
