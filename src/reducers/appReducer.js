@@ -1,6 +1,7 @@
 const defaultState = {
   currentUser: {},
   currentEvent: {},
+  events: [],
   errorMessage: '',
   fetching: false,
   fetched: false
@@ -9,6 +10,9 @@ const defaultState = {
 
 function appReducer(state = defaultState, action) {
   switch (action.type) {
+    case 'SET_EVENTS':
+    
+      return { ...state, events: action.events}
     case 'SET_ERROR_MESSAGE':
 
       return { ...state, errorMessage: action.errorMessage}

@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import { connect } from 'react-redux'
 
 import InviteCard from '../components/cards/InviteCard.js'
 import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
@@ -6,11 +8,24 @@ import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
 const UserInvitesContainer = props => {
 
-  const { invites, history } = props
+  const { invites, history, setEvents, events } = props
+  const [ userInvites, setUserInvites ] = useState(invites)
+
+  const removeInviteCard = inviteId => {
+    setUserInvites( prevUserInvites => {
+      return userInvites.filter( invite => {
+        return invite.id !== inviteId
+      })
+    })
+  }
+
+  const addEventFromInvite = event => {
+    setEvents([...events, event])
+  }
 
   const renderInviteCard = () => {
-    return invites.map( invite => {
-      return <InviteCard history={history} key={invite.id} invite={invite}/>
+    return userInvites.map( invite => {
+      return <InviteCard history={history} key={invite.id} invite={invite} removeInviteCard={removeInviteCard} addEventFromInvite={addEventFromInvite}/>
     })
   }
 
@@ -29,4 +44,18 @@ const UserInvitesContainer = props => {
   )
 }
 
-export default UserInvitesContainer
+const mapStateToProps = state => {
+  return {
+    events: state.events
+   }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setEvents: events => dispatch({type:'SET_EVENTS', events}),
+    fetching: () => dispatch({type:'FETCHING'}),
+    fetched: () => dispatch({type:'FETCHED'})
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(UserInvitesContainer)

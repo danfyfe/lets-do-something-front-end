@@ -16,11 +16,11 @@ class EventsContainer extends React.Component{
   state = {
     adding: false,
     searching: false,
-    events: []
+    // events: []
   }
 
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/users/${this.props.id}/events`, {
+    fetch(`${API_ENDPOINT}/users/${this.props.currentUserId}/events`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
@@ -29,9 +29,11 @@ class EventsContainer extends React.Component{
       }
     }).then(resp=>resp.json())
     .then( events => {
-      this.setState({
-        events
-      })
+      // this.setState({
+      //   events
+      // })
+      this.props.setEvents(events)
+
     })
   }
 
@@ -48,19 +50,26 @@ class EventsContainer extends React.Component{
   }
 
   setEvents = event => {
-    this.setState({
-      events: [event,...this.state.events]
-    })
+    // this.setState({
+    //   events: [event,...this.state.events]
+    // })
+    this.props.setEvents([...this.props.events, event])
   }
 
   renderEventCards = () => {
-    return this.state.events.map( event => {
+    return this.props.events.map( event => {
       return <EventCard key={event.id} event={event} history={this.props.history}/>
     })
   }
 
+  addEventFromInvite = event => {
+    this.setState({
+      events: [...this.state.events, event]
+    })
+  }
+
   render(){
-    return(
+    return(<>
       <div className='d-flex flex-column yellow-background med-padding'>
         <div className='d-flex flex-row justify-content-between'>
           <div className=''>
@@ -77,8 +86,8 @@ class EventsContainer extends React.Component{
 
         {this.state.searching ? <Search history={this.props.history} searchType={'events'}/> : null}
 
-        <div className='overflow-auto white-background small-padding'>
-          {this.state.events.length === 0 ? <NoContentMessageCard type={'events'}/> : this.renderEventCards()}
+        <div className='overflow-auto'>
+          {this.props.events.length === 0 ? <NoContentMessageCard type={'events'}/> : this.renderEventCards()}
         </div>
 
         <div className='events container-bottom'>
@@ -87,17 +96,19 @@ class EventsContainer extends React.Component{
 
       </div>
 
-    )
+    </>)
   }
 }
 
 const mapStateToProps = state => {
-  return { state }
+  return {
+    events: state.events
+   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
+    setEvents: events => dispatch({type:'SET_EVENTS', events}),
     fetching: () => dispatch({type:'FETCHING'}),
     fetched: () => dispatch({type:'FETCHED'})
   }

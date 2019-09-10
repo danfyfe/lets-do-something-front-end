@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import axios from 'axios'
 // import { fetchUser } from '../actions/userActions.js'
 import { connect } from 'react-redux'
@@ -19,7 +19,6 @@ import EventsContainer from '../containers/EventsContainer.js'
 import Feed from '../containers/Feed.js'
 
 class HomePage extends React.Component {
-
   componentDidMount(){
     fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
@@ -29,6 +28,7 @@ class HomePage extends React.Component {
     }).then(resp => resp.json())
     .then(user => {
       this.props.setCurrentUser(user.user)
+
     }).then(this.props.fetched())
   };
 
@@ -52,10 +52,12 @@ class HomePage extends React.Component {
 
         <>
         {/*<FixedSideMenu/>*/}
-        <Feed history={history}/>
+        <Feed
+          history={history}/>
         <EventsContainer
           history={history}
-          id={currentUser.id}/>
+          currentUserId={currentUser.id}
+          />
         </> : <Loading/>
         }
 

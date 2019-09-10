@@ -15,7 +15,6 @@ const EventContainer = props => {
     let followersWithUser = [ ...followers, currentUser]
     invites.forEach( invite => {
       if (invite.rsvp === null) {
-        console.log('invite', invite)
         let user = followersWithUser.find( follower => {
           return follower.id === invite.user_id
         })
