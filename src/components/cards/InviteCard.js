@@ -10,6 +10,14 @@ const InviteCard = props => {
     props.history.push(`events/${eventId}`)
   }
 
+  const acceptInvite = () => {
+
+  }
+
+  const rejectInvite = () => {
+    
+  }
+
   return(
     <div className='d-flex flex-row yellow-background border-r med-padding'>
 

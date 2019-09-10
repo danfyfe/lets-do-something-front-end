@@ -10,18 +10,21 @@ const EventContainer = props => {
 
   const { followers } = props.currentUser
 
-  const pendingInvites = () => {
-    return invites.filter( invite => {
-      return invite.rsvp !== true
-    })
-  }
 
   const pendingInviteUsers = () => {
-    return pendingInvites().map( invite => {
-      return followers.find( follower => {
-        return follower.id === invite.user_id
-      })
+    let users = []
+
+    invites.forEach( invite => {
+      if (invite.rsvp === null) {
+        let user = followers.find( follower => {
+          return follower.id === invite.user_id
+        })
+        if (user) {
+          users.push(user)
+        }
+      }
     })
+    return users
   }
 
   const owner = users.find( user => user.id === owner_id)

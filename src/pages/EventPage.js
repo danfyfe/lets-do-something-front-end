@@ -12,10 +12,6 @@ import EventContainer from '../containers/EventContainer.js'
 
 class EventPage extends React.Component {
 
-  // state = {
-  //   event: {}
-  // }
-
   componentDidMount(){
     fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
@@ -42,8 +38,7 @@ class EventPage extends React.Component {
     if (!localStorage.token || localStorage.token === "undefined") {
       this.props.history.push("/")
     }
-    // console.log('user',this.props.state.currentUser)
-    // console.log('event',this.props.state.currentEvent)
+
     return(<>
       <Header
         user={this.props.state.currentUser}     history={this.props.history}/>
