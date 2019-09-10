@@ -27,6 +27,8 @@ const UserInvitesContainer = props => {
     return userInvites.map( invite => {
       if (invite.rsvp === null) {
         return <InviteCard history={history} key={invite.id} invite={invite} removeInviteCard={removeInviteCard} addEventFromInvite={addEventFromInvite}/>
+      } else {
+        return null
       }
     })
   }
