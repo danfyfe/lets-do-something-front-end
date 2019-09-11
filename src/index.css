@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+
 .loading {
   text-align: center;
 }
@@ -27,6 +28,10 @@ code {
   } to {
     opacity: 1
   }
+}
+
+.main-wrapper {
+  min-height: 100vh;
 }
 
 .link:hover {

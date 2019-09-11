@@ -89,6 +89,7 @@ const EventContainer = props => {
           users={users}
           currentUserId={currentUser.id}
           eventId={id}
+          isOwner={isOwner()}
         />
       </div>
 

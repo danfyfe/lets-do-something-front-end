@@ -28,7 +28,6 @@ class HomePage extends React.Component {
     }).then(resp => resp.json())
     .then(user => {
       this.props.setCurrentUser(user.user)
-
     }).then(this.props.fetched())
   };
 
@@ -44,24 +43,24 @@ class HomePage extends React.Component {
 
     return(
       <>
-      <Header
-        user={currentUser}
-        history={history}/>
-      { fetched && currentUser.id ?
-
-
-        <>
-        {/*<FixedSideMenu/>*/}
-        <Feed
+        <Header
+          user={currentUser}
           history={history}/>
-        <EventsContainer
-          history={history}
-          currentUserId={currentUser.id}
-          />
-        </> : <Loading/>
-        }
+        { fetched && currentUser.id ?
 
-      <Footer/>
+
+          <>
+          {/*<FixedSideMenu/>*/}
+          <Feed
+            history={history}/>
+          <EventsContainer
+            history={history}
+            currentUserId={currentUser.id}
+            />
+          </> : <Loading/>
+          }
+
+        <Footer/>
       </>
     )
   }

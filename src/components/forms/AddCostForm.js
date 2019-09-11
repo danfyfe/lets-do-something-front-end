@@ -1,30 +1,51 @@
 import React, { useState } from 'react'
 
+import API_ENDPOINT from '../../ApiEndpoint.js'
+
 const AddCostForm = props => {
-  const { setAdding, currentUserId } = props
+  const { setAdding, currentUserId, budgetId, addEventCost } = props
+  
+  const [ name, setName ] = useState('')
+  const [ price, setPrice ] = useState('')
 
-  const [ inputs, setInputs ] = useState({ name:'', price:''})
+  // const [ inputs, setInputs ] = useState({})
+  //
+  // const handleInput = e => {
+  //   setInputs({
+  //     [e.target.name]: e.target.value
+  //   })
+  // }
 
-  const handleInput = e => {
-    setInputs({
-      [e.target.name]: e.target.value
+  const addCost = (name, price, currentUserId, budgetId) => {
+    fetch(`${API_ENDPOINT}/users/${currentUserId}/budgets/${budgetId}/costs`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        cost: {
+          name,
+          price,
+          budget_id: budgetId,
+          user_id: currentUserId
+        }
+      })
+    }).then(resp=>resp.json())
+    .then( result => {
+      addEventCost(result.cost)
+      setAdding(false)
     })
   }
-
-  const addCost = (name, price, userId, budgetId) => {
-    
-  }
-
-
 
   return(<>
     <div className='d-flex flex-column med-padding m-1v'>
       <span className='small-font m-auto'>Add Cost</span>
 
-      <input className='m-1v' type='text' name='name' placeholder='Name' onChange={handleInput}/>
-      <input className='m-1v' type='number' name='price' placeholder='Price' onChange={handleInput}/>
+      <input className='m-1v' type='text' name='name' placeholder='Name' onChange={e => setName(e.target.value)}/>
+      <input className='m-1v' type='number' name='price' placeholder='Price' onChange={e => setPrice(parseInt(e.target.value))}/>
 
-      <button className='small-font'>Submit</button>
+      <button className='small-font' onClick={() => addCost(name, price, currentUserId, budgetId)}>Submit</button>
       <button className='small-font' onClick={() => setAdding(false)}>Cancel</button>
     </div>
   </>)

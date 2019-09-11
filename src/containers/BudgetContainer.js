@@ -6,15 +6,22 @@ import AddCostForm from '../components/forms/AddCostForm.js'
 
 const BudgetContainer = props => {
 
-  const [ adding, setAdding ] = useState(true)
+  const { costs, users, budget, currentUserId, eventId, isOwner } = props
 
-  const { costs, users, budget, currentUserId, eventId } = props
+  const [ adding, setAdding ] = useState(false)
+  const [ eventCosts, setEventCosts ] = useState(costs)
+
+  const addEventCost = cost => {
+    // console.log(cost)
+    setEventCosts([...eventCosts, cost])
+  }
 
   const renderCostCards = costs => {
-    return costs.map( cost => {
-      return <CostCard key={cost.id} cost={cost} />
+    return eventCosts.map( cost => {
+      return <CostCard key={cost.id} cost={cost} isOwner={isOwner} currentUserId={currentUserId}/>
     })
   }
+
 
   const totalPrice = costs => {
     let total = 0
@@ -26,7 +33,14 @@ const BudgetContainer = props => {
   }
 
   const pricePerPerson = total => {
-    return total/users.length
+    return Math.round(total/users.length * 100) / 100
+  }
+  const renderAddCostForm = () => {
+    if (adding) {
+      return <AddCostForm setAdding={setAdding} currentUserId={currentUserId} budgetId={budget.id} addEventCost={addEventCost}/>
+    } else {
+      return null
+    }
   }
 
   return(<>
@@ -44,7 +58,7 @@ const BudgetContainer = props => {
       </div>
 
       <div className='d-flex flex-column small-padding'>
-        { adding ? <AddCostForm setAdding={setAdding} currentUserId={currentUserId} budgetId={budget.id}/> : null}
+        {renderAddCostForm()}
         {renderCostCards(costs)}
       </div>
 
