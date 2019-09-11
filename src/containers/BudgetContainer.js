@@ -5,7 +5,6 @@ import CostCard from '../components/cards/CostCard.js'
 
 const BudgetContainer = props => {
   const { costs, budget } = props
-  console.log(props)
 
   const renderCostCards = costs => {
     return costs.map( cost => {
@@ -13,15 +12,34 @@ const BudgetContainer = props => {
     })
   }
 
+  const totalCosts = costs => {
+    let total = 0
 
-  return(
+    for (var i = 0; i < costs.length; i++) {
+      total += costs[i].price
+    }
+    return total
+  }
+
+  return(<>
     <div>
       <div className='d-flex justify-content-between'>
-        <span className='font-weight-bold small-font'>Costs</span>
+        <div>
+          <span className='font-weight-bold small-font'>Costs</span>
+        </div>
         <FontAwesomeIcon className='' icon='plus'/>
       </div>
+
+      <div>
+        <span className='med-font med-padding'>Total: ${totalCosts(costs)}</span>
+      </div>
+
+      <div className='d-flex flex-column small-padding'>
+        {renderCostCards(costs)}
+      </div>
+
     </div>
-  )
+  </>)
 }
 
 export default BudgetContainer
