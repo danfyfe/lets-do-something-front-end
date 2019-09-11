@@ -4,9 +4,10 @@ import { formatTime } from '../actions/general.js'
 
 import AttendeeCard from '../components/cards/AttendeeCard.js'
 import InvitesContainer from './InvitesContainer.js'
+import BudgetContainer from './BudgetContainer.js'
 
 const EventContainer = props => {
-  const { id, title, description, start, end, users, owner_id, invites } = props.event
+  const { id, title, description, start, end, users, owner_id, invites, budget, costs } = props.event
   const { currentUser } = props
   const { followers } = props.currentUser
 
@@ -77,6 +78,15 @@ const EventContainer = props => {
           eventId={id}
           isOwner={isOwner} pendingInviteUsers={pendingInviteUsers()}
           users={users}/>
+      </div>
+
+
+
+      <div className='d-flex flex-column m-1v'>
+        <BudgetContainer
+          budget={budget}
+          costs={costs}
+        />
       </div>
 
 

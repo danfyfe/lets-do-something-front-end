@@ -24,6 +24,7 @@ const InvitesContainer = props => {
     return isOwner() ?  <FontAwesomeIcon className='' icon='plus' onClick={()=>setAdding(true)}/> : null
   }
 
+
   return(<>
     <div>
       <div className='d-flex justify-content-between'>
@@ -38,6 +39,7 @@ const InvitesContainer = props => {
           setAdding={setAdding}
           eventId={eventId}
           setPendingRSVPs={setPendingRSVPs}
+          pendingInviteUsers={pendingInviteUsers}
           users={users}/> : null}
 
 

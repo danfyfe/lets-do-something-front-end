@@ -29,7 +29,7 @@ class EventPage extends React.Component {
         }
       }).then(resp=>resp.json())
       .then( event => {
-        this.props.setCurrentEvent(event)
+        this.props.setCurrentEvent(event.event)
       }).then(this.props.fetched())
     )
   }

@@ -7,23 +7,22 @@ const AddInviteForm = props => {
 
   const [ inviteeIds, setInviteeIds ] = useState([])
 
-  const { followers, eventId, setAdding, setPendingRSVPs, users } = props
+  const { followers, eventId, setAdding, setPendingRSVPs, pendingInviteUsers } = props
 
   const handleChange = e => {
     if (e.target.checked) {
       setInviteeIds([...inviteeIds, e.target.value])
     } else {
-        let index = inviteeIds.indexOf(e.target.value)
-        inviteeIds.splice(index, 1)
+      let index = inviteeIds.indexOf(e.target.value)
+      inviteeIds.splice(index, 1)
     }
   }
+
 
   const renderFollowerInputs = () => {
 // filter out followers that are already users of event
 
-
     return followers.map( follower => {
-
       return <div key={follower.id} className='d-flex'>
 
           <div className='col-sm'>
@@ -51,6 +50,7 @@ const AddInviteForm = props => {
       })
     }).then(resp=>resp.json())
     .then( results => {
+      console.log(results)
       setAdding(false)
       setPendingRSVPs(results)
     })
