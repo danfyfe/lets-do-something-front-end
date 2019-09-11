@@ -86,6 +86,9 @@ const EventContainer = props => {
         <BudgetContainer
           budget={budget}
           costs={costs}
+          users={users}
+          currentUserId={currentUser.id}
+          eventId={id}
         />
       </div>
 

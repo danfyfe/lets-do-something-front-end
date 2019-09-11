@@ -1,7 +1,6 @@
 import React from 'react'
 
 const CostCard = props => {
-  console.log('cost card', props)
 
   const { name, description, user, price} = props.cost
 
