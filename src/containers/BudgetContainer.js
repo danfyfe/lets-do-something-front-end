@@ -33,8 +33,8 @@ const BudgetContainer = props => {
   const totalPrice = costs => {
     let total = 0
 
-    for (var i = 0; i < costs.length; i++) {
-      total += costs[i].price
+    for (var i = 0; i < eventCosts.length; i++) {
+      total += eventCosts[i].price
     }
     return total
   }
