@@ -16,12 +16,19 @@ const BudgetContainer = props => {
     setEventCosts([...eventCosts, cost])
   }
 
-  const renderCostCards = costs => {
-    return eventCosts.map( cost => {
-      return <CostCard key={cost.id} cost={cost} isOwner={isOwner} currentUserId={currentUserId}/>
+  const removeEventCost = costId => {
+    setEventCosts( prevEventCosts => {
+      return eventCosts.filter( cost => {
+        return cost.id !== costId
+      })
     })
   }
 
+  const renderCostCards = costs => {
+    return eventCosts.map( cost => {
+      return <CostCard key={cost.id} cost={cost} isOwner={isOwner} currentUserId={currentUserId} removeEventCost={removeEventCost}/>
+    })
+  }
 
   const totalPrice = costs => {
     let total = 0
@@ -35,6 +42,7 @@ const BudgetContainer = props => {
   const pricePerPerson = total => {
     return Math.round(total/users.length * 100) / 100
   }
+
   const renderAddCostForm = () => {
     if (adding) {
       return <AddCostForm setAdding={setAdding} currentUserId={currentUserId} budgetId={budget.id} addEventCost={addEventCost}/>
