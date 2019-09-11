@@ -7,7 +7,7 @@ const AddInviteForm = props => {
 
   const [ inviteeIds, setInviteeIds ] = useState([])
 
-  const { followers, eventId, setAdding, setPendingRSVPs } = props
+  const { followers, eventId, setAdding, setPendingRSVPs, users } = props
 
   const handleChange = e => {
     if (e.target.checked) {
@@ -19,7 +19,10 @@ const AddInviteForm = props => {
   }
 
   const renderFollowerInputs = () => {
+
+  
     return followers.map( follower => {
+
       return <div key={follower.id} className='d-flex'>
 
           <div className='col-sm'>

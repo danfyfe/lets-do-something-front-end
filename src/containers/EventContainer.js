@@ -23,7 +23,7 @@ const EventContainer = props => {
   const pendingInviteUsers = () => {
 
     let users = []
-    
+
     let followersWithUser = [ ...followers, currentUser]
     invites.forEach( invite => {
       if (invite.rsvp === null) {
@@ -73,7 +73,10 @@ const EventContainer = props => {
       </div>
 
       <div className='d-flex flex-column m-1v'>
-        <InvitesContainer eventId={id} isOwner={isOwner} pendingInviteUsers={pendingInviteUsers()}/>
+        <InvitesContainer
+          eventId={id}
+          isOwner={isOwner} pendingInviteUsers={pendingInviteUsers()}
+          users={users}/>
       </div>
 
 

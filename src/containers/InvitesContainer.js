@@ -6,7 +6,7 @@ import AttendeeCard from '../components/cards/AttendeeCard.js'
 import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 const InvitesContainer = props => {
 
-  const { eventId, isOwner, pendingInviteUsers } = props
+  const { eventId, isOwner, pendingInviteUsers, users } = props
   const [ adding, setAdding ] = useState(false)
   const [ pendingRSVPs, setPendingRSVPs] = useState(pendingInviteUsers)
 
@@ -34,7 +34,11 @@ const InvitesContainer = props => {
         </div>
       </div>
 
-      {adding ? <AddInviteForm setAdding={setAdding} eventId={eventId} setPendingRSVPs={setPendingRSVPs}/> : null}
+      {adding ? <AddInviteForm
+          setAdding={setAdding}
+          eventId={eventId}
+          setPendingRSVPs={setPendingRSVPs}
+          users={users}/> : null}
 
 
       <div>
