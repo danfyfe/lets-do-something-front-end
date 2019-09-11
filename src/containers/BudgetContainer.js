@@ -51,13 +51,27 @@ const BudgetContainer = props => {
     }
   }
 
+  const isAttendee = currentUserId => {
+    return users.find( user => {
+      return user.id === currentUserId
+    })
+  }
+
+  const renderAddCostIcon = currentUserId => {
+    if (isAttendee(currentUserId)) {
+      return <FontAwesomeIcon className='' icon='plus' onClick={() => setAdding(true)}/>
+    } else {
+      return null
+    }
+  }
+
   return(<>
     <div>
       <div className='d-flex justify-content-between'>
         <div>
           <span className='font-weight-bold small-font'>Costs</span>
         </div>
-        <FontAwesomeIcon className='' icon='plus' onClick={() => setAdding(true)}/>
+        { renderAddCostIcon(currentUserId) }
       </div>
 
       <div className='d-flex justify-content-between med-padding'>
