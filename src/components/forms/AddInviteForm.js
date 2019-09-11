@@ -19,8 +19,9 @@ const AddInviteForm = props => {
   }
 
   const renderFollowerInputs = () => {
+// filter out followers that are already users of event
 
-  
+
     return followers.map( follower => {
 
       return <div key={follower.id} className='d-flex'>
