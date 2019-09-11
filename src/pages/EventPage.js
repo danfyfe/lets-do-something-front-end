@@ -25,7 +25,7 @@ class EventPage extends React.Component {
       fetch(`${API_ENDPOINT}/events/${this.props.match.params.id}`, {
         method: 'GET',
         headers: {
-          Authorization:  localStorage.getItem("token")
+          Authorization: localStorage.getItem("token")
         }
       }).then(resp=>resp.json())
       .then( event => {

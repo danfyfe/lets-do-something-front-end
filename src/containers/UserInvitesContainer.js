@@ -7,8 +7,9 @@ import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
 
 const UserInvitesContainer = props => {
-// might have to move invite logic up a level to simplify rendering NoContentMessageCard
+
   const { invites, history, setEvents, events } = props
+
   const [ userInvites, setUserInvites ] = useState(invites)
 
   const removeInviteCard = inviteId => {

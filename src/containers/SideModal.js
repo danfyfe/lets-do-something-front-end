@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 
 import { connect } from 'react-redux'
 
-// import '../css/SideMenu.css'
-
 const SideModal = props => {
   const [ menuOpen, setMenuOpen] = useState(false)
 
@@ -11,6 +9,11 @@ const SideModal = props => {
     localStorage.clear()
     props.setCurrentUser({})
     props.history.push('/')
+  }
+
+  const handleReturn = () => {
+    props.history.push('/home')
+    props.setCurrentEvent({})
   }
 
   const renderSideModal = () => {
@@ -27,7 +30,7 @@ const SideModal = props => {
         <hr width={75}/>
         <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
         <hr width={25}/>
-        <button onClick={()=>props.history.push('/home')}>Home</button>
+        <button onClick={handleReturn}>Home</button>
         <hr width={25}/>
         <button onClick={()=>props.history.push('/friendsearch')}>Find Friends</button>
         <hr width={25}/>
@@ -58,7 +61,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user})
+    setCurrentUser: user => dispatch({type:'SET_CURRENT_USER', user}),
+    setCurrentEvent: event => dispatch({type:'SET_CURRENT_EVENT', event})
   }
 }
 

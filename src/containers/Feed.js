@@ -9,6 +9,14 @@ const Feed = props => {
   const { id, follow_requests, invites } = props.currentUser
   const { history } = props
 
+
+  const pendingInvites = invites => {
+    return invites.filter( invite => {
+      return invite.rsvp === null
+    })
+  }
+
+
   return(
     <>
     <div className='m-1v d-flex flex-column med-padding yellow-background'>
@@ -21,7 +29,7 @@ const Feed = props => {
           followRequests={follow_requests}/>
         <UserInvitesContainer
           history={history}
-          invites={invites}/>
+          invites={pendingInvites(invites)}/>
       </div>
     </div>
     </>

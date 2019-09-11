@@ -10,22 +10,6 @@ const EventContainer = props => {
   const { currentUser } = props
   const { followers } = props.currentUser
 
-  const pendingInviteUsers = () => {
-    let users = []
-    let followersWithUser = [ ...followers, currentUser]
-    invites.forEach( invite => {
-      if (invite.rsvp === null) {
-        let user = followersWithUser.find( follower => {
-          return follower.id === invite.user_id
-        })
-        if (user) {
-          users.push(user)
-        }
-      }
-    })
-    return users
-  }
-
   const owner = users.find( user => user.id === owner_id)
 
   const isOwner = () => {
@@ -35,6 +19,25 @@ const EventContainer = props => {
       return false
     }
   }
+
+  const pendingInviteUsers = () => {
+
+    let users = []
+    
+    let followersWithUser = [ ...followers, currentUser]
+    invites.forEach( invite => {
+      if (invite.rsvp === null) {
+        let user = followersWithUser.find( follower => {
+          return follower.id === invite.user.id
+        })
+        if (user) {
+          users.push(user)
+        }
+      }
+    })
+    return users
+  }
+
 
   const renderAttendeeCards = () => {
     return users.map( user => {
