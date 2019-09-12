@@ -19,6 +19,7 @@ const DeleteCostCard = props => {
     }).then(resp=>resp.json())
     .then( result => {
       removeEventCost(result.costId)
+      // setDeletable(false)
     })
   }
 
