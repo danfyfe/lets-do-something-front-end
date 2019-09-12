@@ -37,10 +37,11 @@ const EditUserImage = props => {
       }
     })
   }
-
   return(
     <>
-      <label>Image:</label> <ul><li><span><img href={imageUrl} alt='user avatar'/></span><button onClick={updateAttribute} id='upload_widget'>Upload</button></li></ul>
+      <div className='d-flex flex-column'>
+        <span className='med-norm-font med-padding text-nowrap'>Image:</span> <img className='big-padding' href={imageUrl} alt='user avatar'/><button onClick={updateAttribute} id='upload_widget'>Upload</button>
+      </div>
     </>
   )
 }
