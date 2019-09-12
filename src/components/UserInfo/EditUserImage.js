@@ -8,11 +8,7 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const EditUserImage = props => {
   const { username, imageUrl } = props
-
   const [ newAttribute ] = useState('')
-
-
-
 
   const updateAttribute = (e) => {
     e.preventDefault()
@@ -40,7 +36,7 @@ const EditUserImage = props => {
   return(
     <>
       <div className='d-flex flex-column'>
-        <span className='med-norm-font med-padding text-nowrap'>Image:</span> <img className='big-padding' href={imageUrl} alt='user avatar'/><button onClick={updateAttribute} id='upload_widget'>Upload</button>
+        <span className='med-norm-font med-padding text-nowrap'>Image:</span> <img className='big-padding' src={imageUrl} alt='user avatar'/><button onClick={updateAttribute} id='upload_widget'>Upload</button>
       </div>
     </>
   )

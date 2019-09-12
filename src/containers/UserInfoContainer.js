@@ -7,18 +7,16 @@ import { connect } from 'react-redux'
 import EditUserInfo from '../components/UserInfo/EditUserInfo.js'
 import EditUserImage from '../components/UserInfo/EditUserImage.js'
 
-class UserInfoContainer extends React.Component {
-  render(){
-
-    const { username, image } = this.props.user
+const UserInfoContainer = props => {
+    const { username, image } = props.user
 
     const renderEditUserInfos = () => {
       let attributeObjs = []
 
-      for(let attribute in this.props.user) {
+      for(let attribute in props.user) {
         let attributeObj = {}
 
-        attributeObj[attribute] = this.props.user[attribute]
+        attributeObj[attribute] = props.user[attribute]
 
         attributeObjs.push(attributeObj)
       }
@@ -30,7 +28,6 @@ class UserInfoContainer extends React.Component {
       })
     }
 
-    
     return (<>
       <div className='d-flex flex-column med-padding'>
         {renderEditUserInfos()}
@@ -38,16 +35,11 @@ class UserInfoContainer extends React.Component {
       </div>
       </>)
   }
-}
+
 
 const mapStateToProps = state => {
   return { state }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
 
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(UserInfoContainer)
+export default connect(mapStateToProps, null)(UserInfoContainer)
