@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-// import '../css/ProfilePage.css';
 
 import Header from '../containers/Header.js'
 import UserInfoContainer from '../containers/UserInfoContainer.js'
@@ -29,12 +28,15 @@ class ProfilePage extends React.Component {
     if (!localStorage.token || localStorage.token === "undefined") {
       this.props.history.push("/")
     }
+
+    const { currentUser, history } = this.props
+
     return(
       <>
-        <Header user={this.props.state.currentUser} history={this.props.history}/>
-        <div className='profile-page-container'>
-          <h3>Your Profile</h3>
-          <UserInfoContainer user={this.props.state.currentUser}/>
+        <Header user={currentUser} history={history}/>
+        <div className='med-padding d-flex flex-column'>
+          <h3 className=''>Your Profile</h3>
+          <UserInfoContainer user={currentUser}/>
         </div>
         <Footer/>
       </>
@@ -44,7 +46,9 @@ class ProfilePage extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return { state }
+  return {
+    currentUser: state.currentUser
+  }
 }
 
 const mapDispatchToProps = dispatch => {

@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 import { connect } from 'react-redux'
 
@@ -25,23 +27,25 @@ const EditUserInfo = props => {
     let firstLetter = attributeWords[i].charAt(0).toUpperCase()
     let restOfWord = attributeWords[i].slice(1)
     let capitalziedWord = firstLetter + restOfWord
-    attributeTitle += capitalziedWord + ' '
+    attributeTitle += capitalziedWord
   }
 
   const renderEditButton = () => {
     return <>
-    <div className='m-auto'>
-      <button onClick={() => setEditing(!editing)}>Edit</button>
+    <div className='m-auto small-font'>
+      <FontAwesomeIcon icon='edit' onClick={() => setEditing(!editing)}/>
     </div>
     </>
   }
 
   const renderEditForm = () => {
     return <>
-      <div className='d-flex m-auto'>
-        <input type='text' placeholder={'New ' + attributeTitle} onChange={(e) => setNewAttribute(e.target.value)}/>
-        <button onClick={updateAttribute}>Submit</button>
-        <button onClick={() => setEditing(!editing)}>Cancel</button>
+      <div className='d-flex flex-row mr-auto my-auto'>
+        <input className='' type='text' placeholder={'New ' + attributeTitle} onChange={(e) => setNewAttribute(e.target.value)}/>
+        <div className='d-flex flex-row justify-content-around half-width m-auto'>
+            <FontAwesomeIcon className='small-padding ' icon='thumbs-up' onClick={updateAttribute}/>
+            <FontAwesomeIcon className='small-padding ' icon='times' onClick={() => setEditing(!editing)}/>
+        </div>
       </div>
     </>
   }
@@ -70,9 +74,17 @@ const EditUserInfo = props => {
     })
   }
 
+
+
   return(
     <div className='d-flex flex-column'>
-      <label>{attributeTitle}</label><ul><li><span>{value}</span></li></ul>{editing ? renderEditForm() : renderEditButton()}
+    <div className='d-flex'>
+      <span className='med-norm-font med-padding text-nowrap'>{attributeTitle}:</span>
+      {editing ? renderEditForm() : <span className='med-norm-font font-weight-bold med-padding text-nowrap'>{value}</span>}
+      <div className='ml-auto my-auto'>
+        {editing ? null : renderEditButton()}
+      </div>
+    </div>
     </div>
   )
 }

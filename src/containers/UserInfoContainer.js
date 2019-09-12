@@ -32,7 +32,7 @@ class UserInfoContainer extends React.Component {
 
 
     return (<>
-      <div className='d-flex flex-column'>
+      <div className='d-flex flex-column med-padding'>
         {renderEditUserInfos()}
         <EditUserImage imageUrl={image}/>
       </div>
