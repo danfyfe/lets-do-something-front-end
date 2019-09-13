@@ -14,7 +14,7 @@ import Footer from '../containers/Footer.js'
 
 // import UserMessagesContainer from '../containers/UserMessagesContainer.js'
 
-// import FixedSideMenu from '../containers/FixedSideMenu.js'
+import FixedSideMenu from '../containers/FixedSideMenu.js'
 import EventsContainer from '../containers/EventsContainer.js'
 import Feed from '../containers/Feed.js'
 
@@ -50,7 +50,7 @@ class HomePage extends React.Component {
 
 
           <div className='main-wrapper'>
-          {/*<FixedSideMenu/>*/}
+          <FixedSideMenu/>
           <Feed
             history={history}/>
           <EventsContainer
