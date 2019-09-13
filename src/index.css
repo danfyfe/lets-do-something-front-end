@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+@media only screen and (min-width: 550px) {
+  .main-wrapper {
+    width: 550px;
+    margin: auto;
+  }
+
+  .df-side-modal {
+    width: 200px !important;
+  }
+
+}
+
 
 .loading {
   text-align: center;
@@ -166,14 +178,7 @@ input, textarea, select {
   margin: 1% auto;
 }
 
-@media (min-width: 500px) {
-  .logo {
-    /* width: 25%; */
-  }
 
-
-
-}
 
 .dropdown-button {
   font-size: 200%;

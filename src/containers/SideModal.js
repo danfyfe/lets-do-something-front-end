@@ -18,7 +18,7 @@ const SideModal = props => {
 
   const renderSideModal = () => {
     const { image, username } = props.user
-    return <>
+    return <div>
       <div className='dropdown-background'>
       </div>
 
@@ -40,7 +40,7 @@ const SideModal = props => {
       </div>
 
 
-    </>
+    </div>
   }
 
   return(
