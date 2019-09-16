@@ -41,6 +41,7 @@ export class HomePage extends React.Component {
     const { history } = this.props
     const { currentUser } = this.props.state
     const { fetched } = this.props.state
+    
     return(
       <>
         <Header

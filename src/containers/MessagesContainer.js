@@ -8,7 +8,7 @@ import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 const MessagesContainer = props => {
 
   const { messages } = props
-
+  
   const [ adding, setAdding ] = useState(false)
   const [ searching, setSearching ] = useState(false)
 

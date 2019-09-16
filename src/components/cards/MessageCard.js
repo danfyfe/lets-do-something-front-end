@@ -5,6 +5,8 @@ import { formatTime } from '../../actions/general.js'
 
 const MessageCard = props => {
 
+  const { message } = props
+
   const { id, content, title, event, user, created_at} = props.message
 
   return(
@@ -20,16 +22,17 @@ const MessageCard = props => {
         </div>
       </div>
 
-      <div className=''>
-        <p className='med-font small-indent my-auto'>{content}</p>
-      </div>
-
       <div className='d-flex justify-content-around'>
         <span className='small-font text-muted m-auto'>{event.title}</span>
         <span className='text-muted small-font m-auto'>{formatTime(created_at)}</span>
       </div>
 
-      <MessageReplyContainer messageId={id}/>
+      <div className=''>
+        <p className='med-font small-padding small-indent my-auto'>{content}</p>
+      </div>
+
+
+      <MessageReplyContainer messageId={message.id} replies={message.replies}/>
 
 
     </div>
