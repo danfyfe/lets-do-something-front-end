@@ -17,8 +17,9 @@ import Footer from '../containers/Footer.js'
 import FixedSideMenu from '../containers/FixedSideMenu.js'
 import EventsContainer from '../containers/EventsContainer.js'
 import Feed from '../containers/Feed.js'
+import MessagesContainer from '../containers/MessagesContainer.js'
 
-class HomePage extends React.Component {
+export class HomePage extends React.Component {
   componentDidMount(){
     fetch(`${API_ENDPOINT}/profile`, {
       method: 'POST',
@@ -48,12 +49,16 @@ class HomePage extends React.Component {
           history={history}/>
         { fetched && currentUser.id ?
           <div className='main-wrapper'>
-          <FixedSideMenu/>
+          <FixedSideMenu
+            />
           <Feed
             history={history}/>
           <EventsContainer
             history={history}
             currentUserId={currentUser.id}
+            />
+          <MessagesContainer
+
             />
           </div> : <Loading/>
           }

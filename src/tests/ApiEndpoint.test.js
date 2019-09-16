@@ -1,4 +1,4 @@
-import API_ENDPOINT from './ApiEndpoint.js'
+import API_ENDPOINT from '../ApiEndpoint.js'
 
 test('returns correct endpoint', () => {
   if (process.env.NODE_ENV === 'production') {
