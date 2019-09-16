@@ -27,12 +27,15 @@ const EventCard = props => {
 
     <div className='d-flex flex-column white-background med-padding border-r m-1v'>
       <div className='d-flex'>
+
         <div className='text-nowrap half-width'>
           <span className=''>{title}</span>
         </div>
+
         <div className='d-flex half-width justify-content-end small-font'>
           <span className='link' onClick={() => redirectToEventPage(id)}>View Event</span>
         </div>
+
       </div>
 
       <div className='d-flex small-font justify-content-between half-width text-nowrap'>
