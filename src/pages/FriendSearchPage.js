@@ -28,22 +28,24 @@ class FriendSearchPage extends React.Component {
       this.props.history.push("/")
     }
 
-    return(<>
+    return(<div>
       <Header
         user={this.props.state.currentUser}
         history={this.props.history}/>
 
-        {this.props.state.fetched ? 
+        {this.props.state.fetched ?
+          <div className='main-wrapper'>
           <div className='d-flex flex-column'>
           <span className='font-weight-bold med-font med-padding m-auto'>Search for a friend!</span>
           <FriendSearchContainer
           user={this.props.state.currentUser}
           />
-          </div> : <Loading/>
+          </div>
+          </div>: <Loading/>
         }
 
       <Footer/>
-      </>
+      </div>
     )
   }
 }

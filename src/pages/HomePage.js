@@ -47,8 +47,6 @@ class HomePage extends React.Component {
           user={currentUser}
           history={history}/>
         { fetched && currentUser.id ?
-
-
           <div className='main-wrapper'>
           <FixedSideMenu/>
           <Feed

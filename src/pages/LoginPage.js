@@ -13,7 +13,6 @@ import ErrorMessage from '../status-messages/ErrorMessage.js'
 
 
 const LoginPage = (props) => {
-
   const [ username, setUsername ] = useState('')
   const [ password, setPassword ] = useState('')
 
