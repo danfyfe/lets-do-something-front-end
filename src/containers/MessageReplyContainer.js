@@ -4,25 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MessageReplyForm from '../components/forms/MessageReplyForm.js'
 import ReplyCard from '../components/cards/ReplyCard.js'
 
+import { renderReplyOrReplies } from '../actions/general.js'
+
 const MessageReplyContainer = props => {
 
   const [ open, setOpen ] = useState(false)
 
   const { replies } = props
 
-  const renderReplyOrReplies = length => {
-    if (length === 1) {
-      return ' Reply'
-    } else {
-      return ' Replies'
-    }
-  }
-
   const renderReplyCards = replies => {
     return replies.map( reply => {
       return <ReplyCard key={reply.id} reply={reply}/>
     })
   }
+
 
   const renderOpenIcon = open => {
     if (open) {

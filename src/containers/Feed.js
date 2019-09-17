@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import FollowRequestsContainer from './FollowRequestsContainer.js'
 import UserInvitesContainer from './UserInvitesContainer.js'
+import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
 const Feed = props => {
   const { id, follow_requests, invites } = props.currentUser
@@ -16,6 +17,22 @@ const Feed = props => {
     })
   }
 
+  console.log(pendingInvites(invites), follow_requests)
+
+  const renderContainers = (pendingInvites, follow_requests) => {
+    if (pendingInvites.length > 0 || follow_requests.length > 0) {
+      return <>
+        <FollowRequestsContainer
+          userId={id}
+          followRequests={follow_requests}/>
+        <UserInvitesContainer
+          history={history}
+          invites={pendingInvites(invites)}/>
+      </>
+    } else {
+      return <NoContentMessageCard type={"pending requests or invites"}/>
+    }
+  }
 
   return(
     <>
@@ -24,12 +41,7 @@ const Feed = props => {
         <span>Feed</span>
       </div>
       <div className='d-flex flex-column justify-content-between small-padding'>
-        <FollowRequestsContainer
-          userId={id}
-          followRequests={follow_requests}/>
-        <UserInvitesContainer
-          history={history}
-          invites={pendingInvites(invites)}/>
+      {renderContainers(pendingInvites(invites),follow_requests)}
       </div>
     </div>
     </>
