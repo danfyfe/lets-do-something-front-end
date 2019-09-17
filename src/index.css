@@ -71,6 +71,14 @@ code {
   background-color: var(--main-color);
 }
 
+.yellow-font {
+  color: var(--main-color)
+}
+
+.yellow-border {
+  border: 1px solid var(--main-color)
+}
+
 .grey-background {
   background-color: #e3e3e3;
 }

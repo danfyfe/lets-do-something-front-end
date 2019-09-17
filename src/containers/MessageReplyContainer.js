@@ -8,7 +8,7 @@ import { renderReplyOrReplies } from '../actions/general.js'
 
 const MessageReplyContainer = props => {
 
-  const [ open, setOpen ] = useState(false)
+  const [ open, setOpen ] = useState(true)
 
   const { replies } = props
 

@@ -41,7 +41,7 @@ export class HomePage extends React.Component {
     const { history } = this.props
     const { currentUser } = this.props.state
     const { fetched } = this.props.state
-    
+
     return(
       <>
         <Header
@@ -59,7 +59,7 @@ export class HomePage extends React.Component {
             />
           <MessagesContainer
             history={history}
-            messages={currentUser.messages}
+            currentUserId={currentUser.id}
             />
           </div> : <Loading/>
           }

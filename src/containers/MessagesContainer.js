@@ -1,14 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import MessageCard from '../components/cards/MessageCard.js'
 import Search from '../containers/Search.js'
 import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
+import API_ENDPOINT from '../ApiEndpoint.js'
+
 const MessagesContainer = props => {
 
-  const { messages } = props
-  
+  const { messages, setMessages, currentUserId } = props
+
+  useEffect(() => {
+    fetch(`${API_ENDPOINT}/users/${props.currentUserId}/messages`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: 'application/json',
+        Authorization:  localStorage.getItem("token")
+      }
+    }).then(resp=>resp.json())
+    .then( messages => {
+      setMessages(messages)
+    })
+  }, [ setMessages, currentUserId ])
+
+
   const [ adding, setAdding ] = useState(false)
   const [ searching, setSearching ] = useState(false)
 
@@ -37,4 +55,18 @@ const MessagesContainer = props => {
   </div>)
 }
 
-export default MessagesContainer
+const mapStateToProps = state => {
+  return {
+    messages: state.messages
+   }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setMessages: messages => dispatch({type:'SET_MESSAGES', messages}),
+    fetching: () => dispatch({type:'FETCHING'}),
+    fetched: () => dispatch({type:'FETCHED'})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessagesContainer)

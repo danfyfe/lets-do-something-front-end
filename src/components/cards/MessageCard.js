@@ -7,8 +7,8 @@ const MessageCard = props => {
 
   const { message } = props
 
-  const { id, content, title, event, user, created_at} = props.message
-  
+  const { id, content, title, event, user, created_at, replies} = props.message
+
   return(
     <div className='d-flex flex-column white-background med-padding border-r m-1v'>
       <div className='d-flex'>
@@ -32,7 +32,7 @@ const MessageCard = props => {
       </div>
 
 
-      <MessageReplyContainer messageId={message.id} replies={message.replies}/>
+      <MessageReplyContainer messageId={id} replies={replies}/>
 
 
     </div>

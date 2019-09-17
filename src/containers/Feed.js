@@ -17,8 +17,6 @@ const Feed = props => {
     })
   }
 
-  console.log(pendingInvites(invites), follow_requests)
-
   const renderContainers = (pendingInvites, follow_requests) => {
     if (pendingInvites.length > 0 || follow_requests.length > 0) {
       return <>
@@ -41,7 +39,7 @@ const Feed = props => {
         <span>Feed</span>
       </div>
       <div className='d-flex flex-column justify-content-between small-padding'>
-      {renderContainers(pendingInvites(invites),follow_requests)}
+      {renderContainers(pendingInvites(invites), follow_requests)}
       </div>
     </div>
     </>
