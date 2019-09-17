@@ -13,7 +13,7 @@ const MessagesContainer = props => {
   const { messages, setMessages, currentUserId } = props
 
   useEffect(() => {
-    fetch(`${API_ENDPOINT}/users/${props.currentUserId}/messages`, {
+    fetch(`${API_ENDPOINT}/users/${currentUserId}/messages`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const MessagesContainer = props => {
 
   const renderMessageCards = messages => {
     return messages.map( message => {
-      return <MessageCard key={message.id} message={message}/>
+      return <MessageCard key={message.id} message={message} currentUserId={currentUserId}/>
     })
   }
 

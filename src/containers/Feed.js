@@ -17,15 +17,15 @@ const Feed = props => {
     })
   }
 
-  const renderContainers = (pendingInvites, follow_requests) => {
-    if (pendingInvites.length > 0 || follow_requests.length > 0) {
+  const renderContainers = (invites, follow_requests) => {
+    if (invites.length > 0 || follow_requests.length > 0) {
       return <>
         <FollowRequestsContainer
           userId={id}
           followRequests={follow_requests}/>
         <UserInvitesContainer
           history={history}
-          invites={pendingInvites(invites)}/>
+          invites={invites}/>
       </>
     } else {
       return <NoContentMessageCard type={"pending requests or invites"}/>

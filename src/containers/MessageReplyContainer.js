@@ -8,9 +8,10 @@ import { renderReplyOrReplies } from '../actions/general.js'
 
 const MessageReplyContainer = props => {
 
-  const [ open, setOpen ] = useState(true)
+  const [ open, setOpen ] = useState(false)
+  const [ replies, setReplies ] = useState(props.replies)
 
-  const { replies } = props
+  const { currentUserId, messageId } = props
 
   const renderReplyCards = replies => {
     return replies.map( reply => {
@@ -18,13 +19,16 @@ const MessageReplyContainer = props => {
     })
   }
 
-
   const renderOpenIcon = open => {
     if (open) {
       return <FontAwesomeIcon icon='angle-double-up' onClick={() => setOpen(false)}/>
     } else {
       return <FontAwesomeIcon icon='angle-double-down' onClick={() => setOpen(true)}/>
     }
+  }
+
+  const addNewReply = reply => {
+    setReplies([ ...replies, reply])
   }
 
   return(<>
@@ -39,7 +43,11 @@ const MessageReplyContainer = props => {
     { open ?
       <div>
         {renderReplyCards(replies)}
-        <MessageReplyForm/>
+        <MessageReplyForm
+          currentUserId={currentUserId}
+          messageId={messageId}
+          addNewReply={addNewReply}
+          />
       </div> : null
     }
 
