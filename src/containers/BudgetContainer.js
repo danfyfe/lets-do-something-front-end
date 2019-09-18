@@ -9,15 +9,13 @@ import AddCostForm from '../components/forms/AddCostForm.js'
 
 const BudgetContainer = props => {
 
-  const { costs, users, budget, currentUserId, eventId, isOwner } = props
+  const { costs, users, budget, currentUserId, isOwner } = props
 
   const [ adding, setAdding ] = useState(false)
   const [ eventCosts, setEventCosts ] = useState(costs)
 
-  const [ total, setTotal ] = useState(totalPrice(eventCosts), users)
-  const [ perPerson, setPerPerson ] = useState(pricePerPerson(total, users))
-
-
+  // const [ total ] = useState(totalPrice(eventCosts), users)
+  // const [ perPerson, setPerPerson ] = useState(pricePerPerson(total, users))
 
 
   const addEventCost = cost => {
@@ -33,9 +31,13 @@ const BudgetContainer = props => {
   }
 
   const renderCostCards = eventCosts => {
-    return eventCosts.map( cost => {
-      return <CostCard key={cost.id} cost={cost} isOwner={isOwner} currentUserId={currentUserId} removeEventCost={removeEventCost}/>
-    })
+    if (eventCosts.length > 0) {
+      return eventCosts.map( cost => {
+        return <CostCard key={cost.id} cost={cost} isOwner={isOwner} currentUserId={currentUserId} removeEventCost={removeEventCost}/>
+      })
+    } else {
+      return <NoContentMessageCard type={'costs'}/>
+    }
   }
 
 

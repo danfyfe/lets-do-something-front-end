@@ -10,6 +10,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 import Loading from '../components/Loading.js'
 import Header from '../containers/Header.js'
 import Footer from '../containers/Footer.js'
+import Ad from '../components/Ad.js'
 // import Calendar from '../components/Calendar.js'
 
 // import UserMessagesContainer from '../containers/UserMessagesContainer.js'
@@ -47,20 +48,24 @@ export class HomePage extends React.Component {
           user={currentUser}
           history={history}/>
         { fetched && currentUser.id ?
-          <div className='main-wrapper'>
-          <FixedSideMenu
-            />
-          <Feed
-            history={history}/>
-          <EventsContainer
-            history={history}
-            currentUserId={currentUser.id}
-            />
-          <MessagesContainer
-            events={currentUser.events}
-            history={history}
-            currentUserId={currentUser.id}
-            />
+          <div className='d-flex'>
+            <div className='d-flex flex-column'>
+              <Ad url={'https://www.danscoconuts.com/'} title={"Dan's Coconuts"}/>
+            </div>
+            <div className='main-wrapper d-flex flex-column'>
+              <Feed
+                history={history}/>
+              <EventsContainer
+                history={history}
+                currentUserId={currentUser.id}
+                />
+              <MessagesContainer
+                events={currentUser.events}
+                history={history}
+                currentUserId={currentUser.id}
+                />
+            </div>
+
           </div> : <Loading/>
           }
 

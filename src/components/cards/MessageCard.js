@@ -5,7 +5,7 @@ import { formatTime } from '../../actions/general.js'
 
 const MessageCard = props => {
 
-  const { message, currentUserId } = props
+  const { currentUserId } = props
 
   const { id, content, title, event, user, created_at, replies} = props.message
 
