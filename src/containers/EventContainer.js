@@ -46,11 +46,19 @@ const EventContainer = props => {
     })
   }
 
+  const renderEditButton = isOwner => {
+    if (isOwner) {
+      return <span className='link m-auto'>Edit</span>
+    } else {
+      return null
+    }
+  }
+
   return(
     <div className='d-flex flex-column most-width m-auto med-padding'>
       <div className='d-flex flex-row justify-content-between small-padding'>
         <span className='large-font font-weight-bold'>{title}</span>
-        <span className='link m-auto'>Edit</span>
+        {renderEditButton(isOwner())}
       </div>
 
       <div className='d-flex flex-row justify-content-around'>
