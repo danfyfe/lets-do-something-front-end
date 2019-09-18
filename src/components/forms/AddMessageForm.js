@@ -1,11 +1,43 @@
 import React, { useState } from 'react'
-
+import API_ENDPOINT from '../../ApiEndpoint.js'
 
 
 const AddMessageForm = props => {
+
+  const { setAdding, events, currentUserId, addNewMessage } = props
+
   const [ title, setTitle ] = useState('');
   const [ content, setContent ] = useState('')
   const [ eventId, setEventId ] = useState()
+
+  const renderOptions = events => {
+    return events.map( event => {
+        return <option key={event.id} value={event.id}>{event.title}</option>
+    })
+  }
+
+  const addMessage = (title, content, eventId, currenUserId) => {
+    fetch(`${API_ENDPOINT}/messages`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: 'application/json',
+        Authorization:  localStorage.getItem("token")
+      },
+      body: JSON.stringify({
+        message: {
+          title,
+          content,
+          event_id: eventId,
+          user_id: currentUserId
+        }
+      })
+    }).then(resp=>resp.json())
+    .then( message => {
+      addNewMessage(message)
+      setAdding(false)
+    })
+  }
 
   return(
     <div className='d-flex flex-column white-background full-width med-padding med-font small-marg'>
@@ -27,17 +59,15 @@ const AddMessageForm = props => {
 
           <label>Event</label>
           <select onChange={e => setEventId(e.target.value)}>
-            <option value='Event 1'>Event 1</option>
-            <option value='Event 2'>Event 2</option>
-            <option value='Event 3'>Event 3</option>
-            <option value='Event 4'>Event 4</option>
+            <option value="">Select Event</option>
+            {renderOptions(events)}
           </select>
 
       </div>
 
       <div className='d-flex flex-row med-padding full-width justify-content-around'>
-        <button>Submit</button>
-        <button onClick={()=>props.setAdding(false)}>Cancel</button>
+        <button onClick={() => addMessage(title, content, eventId, currentUserId)}>Submit</button>
+        <button onClick={() => setAdding(false)}>Cancel</button>
       </div>
     </div>
   )

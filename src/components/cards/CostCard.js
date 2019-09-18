@@ -7,7 +7,7 @@ const CostCard = props => {
 
   const [ deletable, setDeletable ] = useState(false)
 
-  const { id, name, description, user, price } = props.cost
+  const { id, name, user, price } = props.cost
   const { currentUserId, isOwner, removeEventCost } = props
 
   const isCostOwner = currentUserId => {

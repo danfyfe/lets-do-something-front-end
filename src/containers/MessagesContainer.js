@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import MessageCard from '../components/cards/MessageCard.js'
+import AddMessageForm from '../components/forms/AddMessageForm.js'
 import Search from '../containers/Search.js'
 import NoContentMessageCard from '../components/cards/NoContentMessageCard.js'
 
@@ -10,7 +11,7 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 const MessagesContainer = props => {
 
-  const { messages, setMessages, currentUserId } = props
+  const { messages, setMessages, currentUserId, events } = props
 
   useEffect(() => {
     fetch(`${API_ENDPOINT}/users/${currentUserId}/messages`, {
@@ -36,6 +37,10 @@ const MessagesContainer = props => {
     })
   }
 
+  const addNewMessage = message => {
+    setMessages([...messages, message])
+  }
+
   return(<div className='yellow-background m-1v d-flex flex-column med-padding'>
     <div className='d-flex flex-row justify-content-between'>
       <div>
@@ -43,11 +48,12 @@ const MessagesContainer = props => {
       </div>
       <div className='d-flex flex-row justify-content-between half-width'>
         <span className='m-auto'>Sort By</span>
-        <FontAwesomeIcon className='m-auto' icon='plus' onClick={() => setAdding(true)}/>
+        <FontAwesomeIcon className='m-auto' icon='plus' onClick={() => setAdding(!adding)}/>
         <FontAwesomeIcon className='m-auto' icon='search' onClick={() => setSearching(true)}/>
       </div>
     </div>
     <div className='overflow-auto'>
+      { adding ? <AddMessageForm setAdding={setAdding} events={events} currentUserId={currentUserId} addNewMessage={addNewMessage}/> : null }
       { messages.length === 0 ?
         <NoContentMessageCard type={'messages'}/> : renderMessageCards(messages)
       }
