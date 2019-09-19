@@ -41,7 +41,7 @@ const EventCard = props => {
       </div>
 
       <div className='d-flex small-font justify-content-between half-width text-nowrap'>
-        <span className='text-muted'>{formatTime(start) + ' to ' + formatTime(end)}</span>
+        <span className='text-muted half-width m-auto'>{formatTime(start) + ' to ' + formatTime(end)}</span>
       </div>
 
       <>{open ?

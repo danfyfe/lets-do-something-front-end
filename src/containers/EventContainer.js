@@ -21,7 +21,7 @@ const EventContainer = props => {
     }
   }
 
-  const pendingInviteUsers = () => {
+  const pendingInviteUsers = (followers, currentUser) => {
 
     let users = []
 
@@ -84,7 +84,7 @@ const EventContainer = props => {
       <div className='d-flex flex-column m-1v'>
         <InvitesContainer
           eventId={id}
-          isOwner={isOwner} pendingInviteUsers={pendingInviteUsers()}
+          isOwner={isOwner} pendingInviteUsers={pendingInviteUsers(followers, currentUser)}
           users={users}/>
       </div>
 
