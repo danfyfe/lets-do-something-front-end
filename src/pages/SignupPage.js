@@ -73,7 +73,7 @@ const SignupPage = props => {
             <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input
-                  className='form-control form-control-sm'
+                  className='login-input'
                   id='usernameInput'
                   type='text' placeholder='Username'
                   onChange={e => setUsername(e.target.value)}/>
@@ -83,21 +83,21 @@ const SignupPage = props => {
             <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input
-                  className='form-control form-control-sm' type='email' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
+                  className='login-input' type='email' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
               </div>
             </div>
 
             <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input
-                  className='form-control form-control-sm' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+                  className='login-input' type='password' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
               </div>
             </div>
 
             <div className='form-row m-auto'>
               <div className='col-auto'>
                 <input
-                  className='form-control form-control-sm' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
+                  className='login-input' type='password' placeholder='Confirm Password' onChange={e => setPasswordConfirm(e.target.value)}/>
               </div>
             </div>
 

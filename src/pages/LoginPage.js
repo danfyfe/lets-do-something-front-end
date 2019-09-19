@@ -13,9 +13,9 @@ import ErrorMessage from '../status-messages/ErrorMessage.js'
 
 
 const LoginPage = (props) => {
+
   const [ username, setUsername ] = useState('')
   const [ password, setPassword ] = useState('')
-
 
 
   const sendToSignUpPage = () => {
@@ -61,12 +61,12 @@ const LoginPage = (props) => {
       </div>
 
 
-      <div className='container d-flex'>
+      <div className='container d-flex m1-v'>
         <img className='logo m-auto' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
       </div>
 
 
-<div className='container d-flex'>
+      <div className='container d-flex'>
 
       <div className='login container text-center'>
         <h4>LogIn!</h4>
