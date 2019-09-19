@@ -23,6 +23,8 @@ const EventCard = props => {
     props.history.push(`events/${eventId}`)
   }
 
+
+
   return(
 
     <div className='d-flex flex-column white-background med-padding border-r m-1v'>
@@ -39,9 +41,7 @@ const EventCard = props => {
       </div>
 
       <div className='d-flex small-font justify-content-between half-width text-nowrap'>
-        <span className='text-muted small-padding'>{formatTime(start)}</span>
-        <span className='small-padding'>to</span>
-        <span className='text-muted small-padding'>{formatTime(end)}</span>
+        <span className='text-muted'>{formatTime(start) + ' to ' + formatTime(end)}</span>
       </div>
 
       <>{open ?
