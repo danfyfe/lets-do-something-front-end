@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
+import { getEvent } from '../actions/eventActions.js'
 
 import Loading from '../components/Loading.js'
 import Header from '../containers/Header.js'
@@ -24,16 +25,7 @@ class EventPage extends React.Component {
     .then(resp => {
       this.props.setCurrentUser(resp.data.user)
     }).then(
-      axios({
-        method: 'GET',
-        url: `${API_ENDPOINT}/events/${this.props.match.params.id}`,
-        headers: {
-          Authorization: localStorage.getItem("token")
-        }
-      })
-      .then( resp => {
-        this.props.setCurrentEvent(resp.data.event)
-      }).then(this.props.fetched())
+      getEvent(this.props.match.params.id, this.props.setCurrentEvent, this.props.fetched)
     )
   }
 

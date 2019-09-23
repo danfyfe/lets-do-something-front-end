@@ -2,22 +2,18 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 const axios = require('axios');
 
-// export function getEvents(userId){
-//   return(dispatch) => {
-//   fetch(`${API_ENDPOINT}/users/${userId}/events`, {
-//     method: 'GET',
-//     headers: {
-//       "Content-Type": "application/json",
-//       Accept: 'application/json',
-//       Authorization:  localStorage.getItem("token")
-//     }
-//   }).then(resp=>resp.json())
-//   .then( events => {
-//     return events
-//   })
-//   }
-// }
-
+export function getEvent( eventId, setCurrentEvent, fetched) {
+  axios({
+    method: 'GET',
+    url: `${API_ENDPOINT}/events/${eventId}`,
+    headers: {
+      Authorization: localStorage.getItem("token")
+    }
+  })
+  .then( resp => {
+    setCurrentEvent(resp.data.event)
+  }).then(fetched())
+}
 
 
 export function addEvent(eventObj, cancelForm, setEvents){

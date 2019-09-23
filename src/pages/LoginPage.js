@@ -4,6 +4,7 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
+import { logIn } from '../actions/userActions.js'
 
 import ErrorMessage from '../status-messages/ErrorMessage.js'
 
@@ -23,30 +24,6 @@ const LoginPage = props => {
     return <>
       <ErrorMessage errorMessage={props.state.errorMessage}/>
     </>
-  }
-
-  const logIn = (e) => {
-    e.preventDefault()
-    axios({
-      method: 'POST',
-      url: `${API_ENDPOINT}/login`,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:  localStorage.getItem("token")
-      },
-      data: {
-        user: { username, password }
-      }
-    })
-    .then( resp => {
-      if (resp.data.error) {
-        props.setErrorMessage(resp.data.error)
-      }
-      localStorage.setItem('token', resp.data.jwt)
-      if (localStorage.token !== 'undefined') {
-        props.history.push('/home')
-      }
-    })
   }
 
   return( localStorage.token && localStorage.token !== 'undefined' ? <Redirect to={'/home'}/> :
@@ -92,7 +69,7 @@ const LoginPage = props => {
 
             <div className='m-auto'>
               <div className='col-auto'>
-                <button onClick={logIn}>Log in</button>
+                <button onClick={ e => logIn(e, username, password, props.setErrorMessage, props.history)}>Log in</button>
               </div>
             </div>
 
