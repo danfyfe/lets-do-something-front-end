@@ -15,21 +15,24 @@ import Ad from '../components/Ad.js'
 
 // import UserMessagesContainer from '../containers/UserMessagesContainer.js'
 
-import FixedSideMenu from '../containers/FixedSideMenu.js'
+// import FixedSideMenu from '../containers/FixedSideMenu.js'
 import EventsContainer from '../containers/EventsContainer.js'
 import Feed from '../containers/Feed.js'
 import MessagesContainer from '../containers/MessagesContainer.js'
 
+const axios = require('axios');
+
 export class HomePage extends React.Component {
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/profile`, {
+    axios({
       method: 'POST',
+      url: `${API_ENDPOINT}/profile`,
       headers: {
         Authorization:  localStorage.getItem("token")
       }
-    }).then(resp => resp.json())
-    .then(user => {
-      this.props.setCurrentUser(user.user)
+    })
+    .then(resp => {
+      this.props.setCurrentUser(resp.data.user)
     }).then(this.props.fetched())
   };
 

@@ -3,14 +3,9 @@ import { Redirect } from 'react-router'
 
 import { connect } from 'react-redux'
 
-// import '../css/LoginPage.css';
-// import '../css/Messages.css'
-
 import API_ENDPOINT from '../ApiEndpoint.js'
 
 import ErrorMessage from '../status-messages/ErrorMessage.js'
-
-
 
 const LoginPage = props => {
 
