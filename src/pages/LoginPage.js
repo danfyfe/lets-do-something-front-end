@@ -12,7 +12,9 @@ import ErrorMessage from '../status-messages/ErrorMessage.js'
 
 
 
-const LoginPage = (props) => {
+const LoginPage = props => {
+
+  const axios = require('axios');
 
   const [ username, setUsername ] = useState('')
   const [ password, setPassword ] = useState('')
@@ -30,21 +32,22 @@ const LoginPage = (props) => {
 
   const logIn = (e) => {
     e.preventDefault()
-    fetch(`${API_ENDPOINT}/login`, {
+    axios({
       method: 'POST',
+      url: `${API_ENDPOINT}/login`,
       headers: {
         "Content-Type": "application/json",
         Authorization:  localStorage.getItem("token")
       },
-      body: JSON.stringify({
+      data: {
         user: { username, password }
-      })
-    }).then(resp=>resp.json())
-    .then( data => {
-      if (data.error) {
-        props.setErrorMessage(data.error)
       }
-      localStorage.setItem('token', data.jwt)
+    })
+    .then( resp => {
+      if (resp.data.error) {
+        props.setErrorMessage(resp.data.error)
+      }
+      localStorage.setItem('token', resp.data.jwt)
       if (localStorage.token !== 'undefined') {
         props.history.push('/home')
       }
