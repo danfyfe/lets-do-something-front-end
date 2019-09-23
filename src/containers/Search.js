@@ -8,21 +8,24 @@ import API_ENDPOINT from '../ApiEndpoint.js'
 
 const Search = props => {
 
+  const axios = require('axios');
+
   const [ searchTerm, setSearchTerm ] = useState('')
   const [ results, setResults ] = useState(false)
 
   useEffect(() => {
-    fetch(`${API_ENDPOINT}/search/${props.searchType}/${props.state.currentUser.id}`, {
+    axios({
       method: 'GET',
+      url:`${API_ENDPOINT}/search/${props.searchType}/${props.state.currentUser.id}`,
       headers: {
         Authorization:  localStorage.getItem("token")
       }
-    }).then(resp=>resp.json())
-    .then( results => {
-      setResults(results)
+    })
+    .then( resp => {
+      setResults(resp.data)
     })
 
-  },[props.searchType, props.state.currentUser.id])
+  },[props.searchType, props.state.currentUser.id, axios])
 
 
   return(<>

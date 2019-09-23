@@ -3,8 +3,11 @@ import React, { useState } from 'react'
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const AddCostForm = props => {
+
+  const axios = require('axios');
+
   const { setAdding, currentUserId, budgetId, addEventCost } = props
-  
+
   const [ name, setName ] = useState('')
   const [ price, setPrice ] = useState('')
 
@@ -17,23 +20,24 @@ const AddCostForm = props => {
   // }
 
   const addCost = (name, price, currentUserId, budgetId) => {
-    fetch(`${API_ENDPOINT}/users/${currentUserId}/budgets/${budgetId}/costs`, {
+    axios({
       method: 'POST',
+      url: `${API_ENDPOINT}/users/${currentUserId}/budgets/${budgetId}/costs`,
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: JSON.stringify({
+      data: {
         cost: {
           name,
           price,
           budget_id: budgetId,
           user_id: currentUserId
         }
-      })
-    }).then(resp=>resp.json())
-    .then( result => {
-      addEventCost(result.cost)
+      }
+    })
+    .then( resp => {
+      addEventCost(resp.data.cost)
       setAdding(false)
     })
   }
