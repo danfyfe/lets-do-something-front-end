@@ -4,21 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import API_ENDPOINT from '../../ApiEndpoint.js'
 
 const DeleteCostCard = props => {
+
+  const axios = require('axios');
+
   const { setDeletable, costId, removeEventCost } = props
 
   const deleteCost = costId => {
-    fetch(`${API_ENDPOINT}/costs`, {
+    axios({
       method:'DELETE',
+      url: `${API_ENDPOINT}/costs`,
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: JSON.stringify({
+      data: {
         cost: { id: costId}
-      })
-    }).then(resp=>resp.json())
-    .then( result => {
-      removeEventCost(result.costId)
+      }
+    })
+    .then( resp => {
+      removeEventCost(resp.data.costId)
       // setDeletable(false)
     })
   }
