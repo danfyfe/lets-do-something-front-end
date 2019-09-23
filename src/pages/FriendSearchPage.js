@@ -8,17 +8,21 @@ import Header from '../containers/Header.js'
 import FriendSearchContainer from '../containers/FriendSearchContainer.js'
 import Footer from '../containers/Footer.js'
 
+const axios = require('axios');
+
+
 class FriendSearchPage extends React.Component {
 
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/profile`, {
+    axios({
       method: 'POST',
+      url: `${API_ENDPOINT}/profile`,
       headers: {
         Authorization:  localStorage.getItem("token")
       }
-    }).then(resp => resp.json())
-    .then(user => {
-      this.props.setCurrentUser(user.user)
+    })
+    .then(resp => {
+      this.props.setCurrentUser(resp.data.user)
     }).then(this.props.fetched())
   }
 
