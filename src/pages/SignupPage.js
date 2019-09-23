@@ -8,6 +8,8 @@ import ErrorMessage from '../status-messages/ErrorMessage.js'
 
 const SignupPage = props => {
 
+  const axios = require('axios');
+
   const [ username, setUsername ] = useState('')
   const [ password, setPassword ] = useState('')
   const [ passwordConfirm, setPasswordConfirm ] = useState('')
@@ -28,23 +30,24 @@ const SignupPage = props => {
   const createUser = (e) => {
     e.preventDefault()
 
-    fetch(`${API_ENDPOINT}/users`, {
+    axios({
       method: 'POST',
+      url: `${API_ENDPOINT}/users`,
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: JSON.stringify({
+      data: {
         user: {
           username, password, passwordConfirm, email
         }
-      })
-    }).then(resp=>resp.json())
-      .then(data => {
-        if (data.error) {
-          props.setErrorMessage(data.error)
+      }
+    })
+      .then(resp => {
+        if (resp.data.error) {
+          props.setErrorMessage(resp.data.error)
         }
-        localStorage.setItem('token', data.jwt)
+        localStorage.setItem('token', resp.data.jwt)
         if (localStorage.token !== 'undefined') {
           props.history.push('/')
         }
