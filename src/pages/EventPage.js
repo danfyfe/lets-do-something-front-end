@@ -9,27 +9,30 @@ import Footer from '../containers/Footer.js'
 
 import EventContainer from '../containers/EventContainer.js'
 
+const axios = require('axios');
 
 class EventPage extends React.Component {
 
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/profile`, {
+    axios({
       method: 'POST',
+      url: `${API_ENDPOINT}/profile`,
       headers: {
         Authorization:  localStorage.getItem("token")
       }
-    }).then(resp => resp.json())
-    .then(user => {
-      this.props.setCurrentUser(user.user)
+    })
+    .then(resp => {
+      this.props.setCurrentUser(resp.data.user)
     }).then(
-      fetch(`${API_ENDPOINT}/events/${this.props.match.params.id}`, {
+      axios({
         method: 'GET',
+        url: `${API_ENDPOINT}/events/${this.props.match.params.id}`,
         headers: {
           Authorization: localStorage.getItem("token")
         }
-      }).then(resp=>resp.json())
-      .then( event => {
-        this.props.setCurrentEvent(event.event)
+      })
+      .then( resp => {
+        this.props.setCurrentEvent(resp.data.event)
       }).then(this.props.fetched())
     )
   }
