@@ -24,18 +24,19 @@ const EventContainer = props => {
   const pendingInviteUsers = (followers, currentUser) => {
 
     let users = []
-
-    let followersWithUser = [ ...followers, currentUser]
-    invites.forEach( invite => {
-      if (invite.rsvp === null) {
-        let user = followersWithUser.find( follower => {
-          return follower.id === invite.user.id
-        })
-        if (user) {
-          users.push(user)
-        }
-      }
-    })
+    if (followers) {
+      let followersWithUser = [ ...followers, currentUser]
+      invites.forEach( invite => {
+          if (invite.rsvp === null) {
+              let user = followersWithUser.find( follower => {
+                  return follower.id === invite.user.id
+                })
+                if (user) {
+                    users.push(user)
+                  }
+                }
+              })
+    }
     return users
   }
 

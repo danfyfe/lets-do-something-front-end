@@ -8,6 +8,8 @@ import API_ENDPOINT from '../../ApiEndpoint.js'
 
 
 const EditUserInfo = props => {
+  const axios = require('axios');
+
   const [ editing, setEditing ] = useState(false)
   const [ newAttribute, setNewAttribute ] = useState('')
 
@@ -53,22 +55,23 @@ const EditUserInfo = props => {
   const updateAttribute = (e) => {
     e.preventDefault()
 
-    fetch(`${API_ENDPOINT}/users/${attribute}`, {
+    axios({
       method: 'PATCH',
+      url: `${API_ENDPOINT}/users/${attribute}`,
       headers: {
         Authorization:  localStorage.getItem("token"),
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      body: JSON.stringify({
+      data: {
         username: username, attribute: newAttributeObj
-      })
-    }).then(resp=>resp.json())
-    .then( data => {
-      if (data.error) {
-        props.setErrorMessage(data.error)
+      }
+    })
+    .then( resp => {
+      if (resp.data.error) {
+        props.setErrorMessage(resp.data.error)
       } else {
-        props.setCurrentUser(data.user)
+        props.setCurrentUser(resp.data.user)
         setEditing(!editing)
       }
     })

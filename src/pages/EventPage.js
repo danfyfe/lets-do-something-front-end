@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import API_ENDPOINT from '../ApiEndpoint.js'
+import { getEvent } from '../actions/eventActions.js'
 
 import Loading from '../components/Loading.js'
 import Header from '../containers/Header.js'
@@ -9,28 +10,22 @@ import Footer from '../containers/Footer.js'
 
 import EventContainer from '../containers/EventContainer.js'
 
+const axios = require('axios');
 
 class EventPage extends React.Component {
 
   componentDidMount(){
-    fetch(`${API_ENDPOINT}/profile`, {
+    axios({
       method: 'POST',
+      url: `${API_ENDPOINT}/profile`,
       headers: {
         Authorization:  localStorage.getItem("token")
       }
-    }).then(resp => resp.json())
-    .then(user => {
-      this.props.setCurrentUser(user.user)
+    })
+    .then(resp => {
+      this.props.setCurrentUser(resp.data.user)
     }).then(
-      fetch(`${API_ENDPOINT}/events/${this.props.match.params.id}`, {
-        method: 'GET',
-        headers: {
-          Authorization: localStorage.getItem("token")
-        }
-      }).then(resp=>resp.json())
-      .then( event => {
-        this.props.setCurrentEvent(event.event)
-      }).then(this.props.fetched())
+      getEvent(this.props.match.params.id, this.props.setCurrentEvent, this.props.fetched)
     )
   }
 

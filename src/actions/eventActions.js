@@ -1,37 +1,36 @@
 import API_ENDPOINT from '../ApiEndpoint.js'
 
-// export function getEvents(userId){
-//   return(dispatch) => {
-//   fetch(`${API_ENDPOINT}/users/${userId}/events`, {
-//     method: 'GET',
-//     headers: {
-//       "Content-Type": "application/json",
-//       Accept: 'application/json',
-//       Authorization:  localStorage.getItem("token")
-//     }
-//   }).then(resp=>resp.json())
-//   .then( events => {
-//     return events
-//   })
-//   }
-// }
+const axios = require('axios');
 
+export function getEvent( eventId, setCurrentEvent, fetched) {
+  axios({
+    method: 'GET',
+    url: `${API_ENDPOINT}/events/${eventId}`,
+    headers: {
+      Authorization: localStorage.getItem("token")
+    }
+  })
+  .then( resp => {
+    setCurrentEvent(resp.data.event)
+  }).then(fetched())
+}
 
 
 export function addEvent(eventObj, cancelForm, setEvents){
-  fetch(`${API_ENDPOINT}/events`, {
+  axios({
     method: 'POST',
+    url: `${API_ENDPOINT}/events`,
     headers: {
       "Content-Type": "application/json",
       Accept: 'application/json',
       Authorization:  localStorage.getItem("token")
     },
-    body: JSON.stringify({
+    data: {
       event: eventObj
-    })
-  }).then(resp=>resp.json())
-  .then(event => {
-    setEvents(event)
+    }
+  })
+  .then(resp => {
+    setEvents(resp.data)
     cancelForm()
   })
 }

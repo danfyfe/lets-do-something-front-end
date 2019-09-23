@@ -9,19 +9,22 @@ import Header from '../containers/Header.js'
 import UserInfoContainer from '../containers/UserInfoContainer.js'
 import Footer from '../containers/Footer.js'
 
+const axios = require('axios');
+
 class ProfilePage extends React.Component {
 
-    componentDidMount(){
-      fetch(`${API_ENDPOINT}/profile`, {
-        method: 'POST',
-        headers: {
-          Authorization:  localStorage.getItem("token")
-        }
-      }).then(resp=>resp.json())
-      .then(user => {
-        this.props.setCurrentUser(user.user)
-      }).then(this.props.fetched())
-    }
+  componentDidMount(){
+    axios({
+      method: 'POST',
+      url: `${API_ENDPOINT}/profile`,
+      headers: {
+        Authorization:  localStorage.getItem("token")
+      }
+    })
+    .then(resp => {
+      this.props.setCurrentUser(resp.data.user)
+    }).then(this.props.fetched())
+  }
 
 
   render(){
