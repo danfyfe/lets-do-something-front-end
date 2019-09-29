@@ -5,11 +5,12 @@ import '../css/Header.css';
 import SideModal from '../containers/SideModal.js'
 
 const Header = props => {
+  const { history, user } = props
   return (<>
     <div className='d-flex justify-content-between yellow-background'>
 
       <div className='m-auto'>
-        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party'/>
+        <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party' onClick={() => history.push('/')}/>
       </div>
 
       <div className='m-auto'>
@@ -17,7 +18,7 @@ const Header = props => {
       </div>
 
       <div className='m-auto'>
-        <SideModal user={props.user} history={props.history}/>
+        <SideModal user={user} history={history}/>
       </div>
 
     </div>

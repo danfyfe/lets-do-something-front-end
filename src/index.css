@@ -338,5 +338,19 @@ input, textarea, select {
   border-bottom: 1vh solid #fffff2;
 }
 
+/* @keyframes expand {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 
 
+.event-card-open {
+  animation-name: expand;
+  animation-duration: 0.15s;
+  animation-fill-mode: forwards;
+} */

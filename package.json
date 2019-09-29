@@ -46,6 +46,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.10.2",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0"
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest-enzyme": "^7.1.1"
   }
 }

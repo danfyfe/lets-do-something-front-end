@@ -44,28 +44,29 @@ const EventCard = props => {
         <span className='text-muted half-width m-auto'>{formatTime(start) + ' to ' + formatTime(end)}</span>
       </div>
 
-      <>{open ?
-        <>
-        <div className='med-font'>
-          <p>{description}</p>
+      <>{open ? <>
+        <div className='event-card-open'>
+          <div className='med-font'>
+            <p>{description}</p>
+          </div>
+
+          <div className=''>
+
+            <div className='d-flex small-font'>
+              <span>{users.length} Attendees</span>
+            </div>
+
+            <div className='d-flex tiny-font'>
+              <span>Created By: {owner.username}</span>
+            </div>
+
+          </div>
         </div>
 
-        <div className=''>
-
-          <div className='d-flex small-font'>
-            <span>{users.length} Attendees</span>
-          </div>
-
-          <div className='d-flex tiny-font'>
-            <span>Created By: {owner.username}</span>
-          </div>
-
-          <div className='d-flex'>
-            {renderOpenCloseIcon()}
-          </div>
-
+        <div className='d-flex'>
+          {renderOpenCloseIcon()}
         </div>
-        </> : <div className='d-flex'>
+       </>: <div className='d-flex'>
           {renderOpenCloseIcon()}
         </div>
       }</>
