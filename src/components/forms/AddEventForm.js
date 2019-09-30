@@ -26,7 +26,7 @@ const AddEventForm = props => {
   const [ owner_id ] = useState(id)
 
   const [ origPos ] = useState(window.scrollY)
-  
+
   return(
     <div id='event-form' className='d-flex flex-column white-background med-padding med-font border-r'>
         <div className='d-flex flex-column'>

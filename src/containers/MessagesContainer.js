@@ -52,7 +52,7 @@ const MessagesContainer = props => {
         <FontAwesomeIcon className='m-auto' icon='search' onClick={() => setSearching(true)}/>
       </div>
     </div>
-    <div className='overflow-auto'>
+    <div className=''>
       { adding ? <AddMessageForm setAdding={setAdding} events={events} currentUserId={currentUserId} addNewMessage={addNewMessage}/> : null }
       { messages.length === 0 ?
         <NoContentMessageCard type={'messages'}/> : renderMessageCards(messages)

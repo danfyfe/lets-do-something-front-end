@@ -70,6 +70,7 @@ code {
   color: #2e9eff;
 }
 
+/* variable to set main color */
 :root {
   --main-color: #FFDE07;
 }

@@ -28,7 +28,7 @@ const SideModal = props => {
           <span className='user-name'>{username}</span>
         </div>
         <hr width={75}/>
-        <button className='close-button' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
+        <button className='' onClick={()=>setMenuOpen(!menuOpen)}>Close</button>
         <hr width={25}/>
         <button onClick={handleReturn}>Home</button>
         <hr width={25}/>
