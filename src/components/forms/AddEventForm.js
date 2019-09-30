@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DatePicker from "react-datepicker";
 
 import { connect } from 'react-redux'
@@ -6,10 +6,16 @@ import { connect } from 'react-redux'
 import "react-datepicker/dist/react-datepicker.css";
 
 import { addEvent } from '../../actions/eventActions.js'
+import { scrollToElement, scrollToOrigPos } from '../../actions/general.js'
 
 
 const AddEventForm = props => {
   // console.log('add event form props', props.setEvents)
+
+  useEffect(() => {
+    scrollToElement('#event-container')
+  })
+
   const { id } = props.state.currentUser
 
   const [ title, setTitle ] = useState('')
@@ -19,8 +25,10 @@ const AddEventForm = props => {
   const [ password, setPassword ] = useState('')
   const [ owner_id ] = useState(id)
 
+  const [ origPos ] = useState(window.scrollY)
+  
   return(
-    <div className='d-flex flex-column white-background med-padding med-font border-r'>
+    <div id='event-form' className='d-flex flex-column white-background med-padding med-font border-r'>
         <div className='d-flex flex-column'>
 
             <label>Title</label>
@@ -72,7 +80,11 @@ const AddEventForm = props => {
 
       <div className='d-flex med-padding justify-content-around'>
         <button onClick={()=>addEvent({ title, description, start, end, password, owner_id}, props.cancelForm, props.setEvents )}>Submit</button>
-        <button onClick={props.cancelForm}>Cancel</button>
+        <button onClick={ () => {
+          props.cancelForm()
+          scrollToOrigPos(origPos)
+        }
+        }>Cancel</button>
       </div>
 
     </div>

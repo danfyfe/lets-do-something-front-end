@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import API_ENDPOINT from '../../ApiEndpoint.js'
+
+import { scrollToElement, scrollToOrigPos } from '../../actions/general.js'
 
 
 const AddMessageForm = props => {
 
+  useEffect(() => {
+    scrollToElement('#message-container')
+  });
+
   const { setAdding, events, currentUserId, addNewMessage } = props
 
   const [ title, setTitle ] = useState('');
-  const [ content, setContent ] = useState('')
-  const [ eventId, setEventId ] = useState()
+  const [ content, setContent ] = useState('');
+  const [ eventId, setEventId ] = useState();
+
+  const [ origPos ] = useState(window.scrollY)
+
 
   const renderOptions = events => {
     return events.map( event => {
@@ -40,7 +49,7 @@ const AddMessageForm = props => {
   }
 
   return(
-    <div className='d-flex flex-column white-background full-width med-padding med-font small-marg'>
+    <div id='message-container' className='d-flex flex-column white-background full-width med-padding med-font small-marg'>
       <div className='d-flex flex-column'>
 
         <label>Title</label>
@@ -67,7 +76,10 @@ const AddMessageForm = props => {
 
       <div className='d-flex flex-row med-padding full-width justify-content-around'>
         <button onClick={() => addMessage(title, content, eventId, currentUserId)}>Submit</button>
-        <button onClick={() => setAdding(false)}>Cancel</button>
+        <button onClick={() => {
+          setAdding(false);
+          scrollToOrigPos(origPos);
+        }}>Cancel</button>
       </div>
     </div>
   )

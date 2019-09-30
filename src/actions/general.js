@@ -12,3 +12,25 @@ export const renderReplyOrReplies = length => {
     return ' Replies'
   }
 }
+
+export const scrollToOrigPos = origPos => {
+  // console.log('in scrollToOrig', window.scrollY)
+  // const prevPos = window.scrollY
+  window.scrollTo({
+    top: origPos,
+    behavior: 'smooth'
+  })
+}
+
+
+export const scrollToElement = selector => {
+  const element = document.querySelector(`${selector}`);
+  const pos = element.getBoundingClientRect()
+  window.scrollTo({
+    top: pos.top,
+    behavior: 'smooth'
+  });
+  // console.log('in scrollToElement',window.scrollY)
+  // return window.scrollY
+}
+
