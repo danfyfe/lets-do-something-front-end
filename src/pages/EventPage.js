@@ -19,7 +19,7 @@ class EventPage extends React.Component {
       method: 'POST',
       url: `${API_ENDPOINT}/profile`,
       headers: {
-        Authorization:  localStorage.getItem("token")
+        Authorization:  localStorage.getItem("letsDoSomethingToken")
       }
     })
     .then(resp => {
@@ -30,7 +30,7 @@ class EventPage extends React.Component {
   }
 
   render(){
-    if (!localStorage.token || localStorage.token === "undefined") {
+    if (!localStorage.letsDoSomethingToken || localStorage.letsDoSomethingToken === "undefined") {
       this.props.history.push("/")
     }
 
