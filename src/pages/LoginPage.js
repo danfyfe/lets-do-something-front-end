@@ -3,14 +3,14 @@ import { Redirect } from 'react-router'
 
 import { connect } from 'react-redux'
 
-import API_ENDPOINT from '../ApiEndpoint.js'
+// import API_ENDPOINT from '../ApiEndpoint.js'
 import { logIn } from '../actions/userActions.js'
 
 import ErrorMessage from '../status-messages/ErrorMessage.js'
 
 const LoginPage = props => {
 
-  const axios = require('axios');
+  // const axios = require('axios');
 
   const [ username, setUsername ] = useState('')
   const [ password, setPassword ] = useState('')
@@ -26,7 +26,7 @@ const LoginPage = props => {
     </>
   }
 
-  return( localStorage.token && localStorage.token !== 'undefined' ? <Redirect to={'/home'}/> :
+  return( localStorage.letsDoSomethingToken && localStorage.letsDoSomethingToken !== 'undefined' ? <Redirect to={'/home'}/> :
     <>
     <div className='main'>
 

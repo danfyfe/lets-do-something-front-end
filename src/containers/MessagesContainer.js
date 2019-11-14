@@ -57,6 +57,7 @@ const MessagesContainer = props => {
       { messages.length === 0 ?
         <NoContentMessageCard type={'messages'}/> : renderMessageCards(messages)
       }
+      {searching ? <Search/> : null}
     </div>
   </div>)
 }

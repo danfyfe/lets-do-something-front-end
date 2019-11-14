@@ -7,7 +7,7 @@ const AddInviteForm = props => {
 
   const [ inviteeIds, setInviteeIds ] = useState([])
 
-  const { followers, eventId, setAdding, setPendingRSVPs, pendingInviteUsers } = props
+  const { followers, eventId, setAdding, setPendingRSVPs } = props
 
   const handleChange = e => {
     if (e.target.checked) {

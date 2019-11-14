@@ -241,7 +241,7 @@ input, textarea, select {
 
 .df-side-modal > button {
   background-color: #fffff2;
-  height: 2vh;
+  /* height: 2vh; */
 }
 
 .df-side-modal > button:hover {

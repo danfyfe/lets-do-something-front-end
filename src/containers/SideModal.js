@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
 const SideModal = props => {
+  
   const [ menuOpen, setMenuOpen] = useState(false)
 
   const handleLogOut = () => {

@@ -6,4 +6,4 @@ const getApiEndpoint = () => {
   }
 }
 
-export default getApiEndpoint()
+export default getApiEndpoint();
