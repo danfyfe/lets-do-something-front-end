@@ -34,7 +34,6 @@ class EventsContainer extends React.Component{
       //   events
       // })
       this.props.setEvents(events)
-
     })
   }
 

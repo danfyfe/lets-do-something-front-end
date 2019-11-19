@@ -36,7 +36,8 @@ class EventPage extends React.Component {
 
     return(<>
       <Header
-        user={this.props.state.currentUser}     history={this.props.history}/>
+        user={this.props.state.currentUser}     history={this.props.history}
+        />
       { this.props.state.fetched && this.props.state.currentEvent.id ?
         <>
           <EventContainer

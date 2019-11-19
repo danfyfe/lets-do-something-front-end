@@ -53,9 +53,9 @@ export class HomePage extends React.Component {
           history={history}/>
         { fetched && currentUser.id ?
           <div className='d-flex'>
-            <div className='d-flex flex-column'>
+            {/* <div className='d-flex flex-column'>
               <Ad url={'https://www.danscoconuts.com/'} title={"Dan's Coconuts"}/>
-            </div>
+            </div> */}
             <div className='main-wrapper d-flex flex-column'>
               <Feed
                 history={history}/>

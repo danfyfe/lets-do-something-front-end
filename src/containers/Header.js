@@ -7,7 +7,7 @@ import SideModal from '../containers/SideModal.js'
 const Header = props => {
   const { history, user } = props
   return (<>
-    <div className='d-flex justify-content-between yellow-background'>
+    <header className='d-flex justify-content-between yellow-background'>
 
       <div className='m-auto'>
         <img className='logo' src='https://i.imgur.com/z0gkiOz.png' alt='logo of dance party' onClick={() => history.push('/')}/>
@@ -21,7 +21,7 @@ const Header = props => {
         <SideModal user={user} history={history}/>
       </div>
 
-    </div>
+    </header>
   </>)
 }
 

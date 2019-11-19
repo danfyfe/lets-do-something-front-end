@@ -14,8 +14,10 @@ function appReducer(state = defaultState, action) {
     case 'SET_MESSAGES':
 
     return { ...state, messages:action.messages }
+
     case 'SET_EVENTS':
 
+      console.log('inside set events', action.events)
       return { ...state, events: action.events}
     case 'SET_ERROR_MESSAGE':
 

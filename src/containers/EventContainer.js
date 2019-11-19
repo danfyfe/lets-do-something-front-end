@@ -56,7 +56,7 @@ const EventContainer = props => {
   }
 
   return(
-    <div className='d-flex flex-column most-width m-auto med-padding'>
+    <div className='d-flex flex-column most-width mx-auto my-2 med-padding main-wrapper border rounded'>
       <div className='d-flex flex-row justify-content-between small-padding'>
         <span className='large-font font-weight-bold'>{title}</span>
         {renderEditButton(isOwner())}

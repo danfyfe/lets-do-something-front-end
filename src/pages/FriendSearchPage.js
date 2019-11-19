@@ -28,7 +28,7 @@ class FriendSearchPage extends React.Component {
 
 
   render(){
-    if (!localStorage.token || localStorage.token === "undefined") {
+    if (!localStorage.letsDoSomethingToken || localStorage.letsDoSomethingToken === "undefined") {
       this.props.history.push("/")
     }
 

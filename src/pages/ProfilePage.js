@@ -28,7 +28,7 @@ class ProfilePage extends React.Component {
 
 
   render(){
-    if (!localStorage.token || localStorage.token === "undefined") {
+    if (!localStorage.letsDoSomethingToken || localStorage.letsDoSomethingToken === "undefined") {
       this.props.history.push("/")
     }
 
@@ -46,7 +46,7 @@ class ProfilePage extends React.Component {
           <h3 className=''>Your Profile</h3>
           <UserInfoContainer user={currentUser}/>
           </div>
-          <Footer/>
+          {/* <Footer/> */}
 
           </> : <Loading/>
         }
