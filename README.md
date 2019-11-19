@@ -3,15 +3,15 @@ Let's Do Something! ( in progress - mobile first 😉 )
 Let's Do Something is an app designed to take the stress out of getting together with friends.
 
 A user can...
-    - search for their friends and friend them!
-    - create and event!
-    - invite their friends to an event!
-    - create a cost for their event!
-    - create a message!
-    - search for an event that belongs to their friends!
+- search for their friends and friend them!
+- create and event!
+- invite their friends to an event!
+- create a cost for their event!
+- create a message!
+- search for an event that belongs to their friends!
     
 
-
+Stay tuned! More to come!
 
 
 
